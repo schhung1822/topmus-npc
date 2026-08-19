@@ -1,0 +1,195 @@
+.gradientAtmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glowOrbLeft,
+.glowOrbRight,
+.lightSweep {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+}
+
+.glowOrbLeft {
+  top: 8%;
+  left: -10%;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgb(255 255 255 / 62%) 0%, rgb(246 190 255 / 26%) 48%, transparent 72%);
+  filter: blur(10px);
+}
+
+.glowOrbRight {
+  right: -8%;
+  bottom: -20%;
+  width: min(46vw, 640px);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgb(185 89 245 / 28%) 0%, rgb(222 166 255 / 18%) 48%, transparent 72%);
+  filter: blur(18px);
+}
+
+.lightSweep {
+  top: 20%;
+  left: 48%;
+  width: 62%;
+  height: 18%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 24%), transparent);
+  filter: blur(18px);
+  transform: rotate(-12deg);
+}
+
+.npcHeading {
+  display: flex;
+  align-items: baseline;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 0.9;
+  filter: drop-shadow(0 0 12px rgb(255 94 238 / 34%));
+}
+
+.headingLead {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-right: 0.13em;
+  color: transparent;
+  font-size: clamp(50px, 6.2vw, 76px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.095em;
+  background: linear-gradient(180deg, #fffaff 3%, #ffd8ff 25%, #f679ed 55%, #d934d8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(255 214 255 / 78%);
+  text-shadow:
+    -3px 4px 0 rgb(150 16 177 / 88%),
+    -6px 8px 8px rgb(62 0 94 / 62%),
+    0 -1px 6px rgb(255 255 255 / 90%),
+    0 0 16px rgb(255 68 235 / 82%);
+  transform: skewX(-5deg);
+}
+
+.headingLead::after {
+  position: absolute;
+  top: 13%;
+  left: 24%;
+  width: 42%;
+  height: 7%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 92%), transparent);
+  box-shadow: 0 0 7px rgb(255 255 255 / 92%);
+  content: "";
+  opacity: 0.78;
+  pointer-events: none;
+  transform: rotate(-4deg);
+}
+
+.headingTail {
+  position: relative;
+  z-index: 2;
+  margin-left: 0.04em;
+  color: #f4a9fa;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  -webkit-text-stroke: 0.5px rgb(255 220 255 / 66%);
+  text-shadow:
+    -2px 3px 0 rgb(142 15 169 / 66%),
+    0 0 9px rgb(255 107 239 / 72%);
+}
+
+.headingQuestion {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-left: 0.08em;
+  color: transparent;
+  font-size: clamp(43px, 4.7vw, 61px);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  background: linear-gradient(180deg, #fffaff 0%, #ffd2ff 38%, #e44ae1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(255 225 255 / 82%);
+  text-shadow:
+    -3px 4px 0 rgb(139 12 166 / 84%),
+    0 0 10px rgb(255 108 241 / 86%);
+  transform: rotate(5deg) translateY(0.04em);
+}
+
+@media (max-width: 420px) {
+  .headingLead {
+    font-size: clamp(42px, 14vw, 56px);
+  }
+
+  .headingTail {
+    font-size: clamp(23px, 7vw, 30px);
+  }
+
+  .headingQuestion {
+    font-size: clamp(37px, 11vw, 48px);
+  }
+}
+
+.floatingLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floatingItem {
+  position: absolute;
+  height: auto;
+  user-select: none;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.tiktokItem {
+  animation-name: tiktok-float;
+  filter: drop-shadow(0 8px 16px rgb(126 41 177 / 20%));
+}
+
+.starItem {
+  animation-name: star-float;
+  filter: drop-shadow(0 0 12px rgb(255 255 255 / 72%)) drop-shadow(0 6px 12px rgb(193 77 230 / 22%));
+}
+
+@keyframes tiktok-float {
+  0%,
+  100% {
+    transform: translate3d(-6px, 8px, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(10px, -16px, 0) rotate(6deg);
+  }
+}
+
+@keyframes star-float {
+  0%,
+  100% {
+    transform: translate3d(4px, 7px, 0) rotate(-7deg) scale(0.94);
+  }
+
+  50% {
+    transform: translate3d(-8px, -12px, 0) rotate(8deg) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingItem {
+    animation: none;
+  }
+}

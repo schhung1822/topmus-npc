@@ -1,0 +1,49 @@
+.registrationButton {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 58%);
+  background: linear-gradient(100deg, #cb18e8 0%, #ff20df 52%, #e30dcc 100%);
+  box-shadow:
+    inset 0 2px 2px rgb(255 255 255 / 58%),
+    inset 0 -3px 8px rgb(126 0 145 / 18%),
+    0 9px 22px rgb(255 27 226 / 28%);
+}
+
+.registrationButton::before {
+  position: absolute;
+  top: -65%;
+  bottom: -65%;
+  left: -34%;
+  z-index: 0;
+  width: 24%;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 18%),
+    rgb(255 255 255 / 82%),
+    rgb(255 255 255 / 18%),
+    transparent
+  );
+  filter: blur(2px);
+  transform: skewX(-18deg);
+  animation: registration-shine 2.6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes registration-shine {
+  from {
+    transform: translate3d(0, 0, 0) skewX(-18deg);
+  }
+
+  to {
+    transform: translate3d(650%, 0, 0) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .registrationButton::before {
+    animation: none;
+  }
+}

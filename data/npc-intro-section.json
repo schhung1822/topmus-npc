@@ -1,0 +1,16 @@
+{
+  "heading": "NPC là gì?",
+  "paragraphs": [
+    "NPC (Non-Player Character) là thuật ngữ chỉ những nhân vật trong game không do người chơi điều khiển, được xây dựng để tương tác, dẫn dắt hoặc tạo trải nghiệm cho người chơi.",
+    "Từ đó, LIVE NPC là hình thức người thật nhập vai thành một nhân vật cụ thể trên livestream, thể hiện tính cách, câu chuyện và phong cách riêng để tạo nội dung và tương tác trực tiếp với người xem. Đây là mô hình kết hợp giải trí, diễn xuất và tương tác thời gian thực, giúp tăng trải nghiệm và giữ chân khán giả hiệu quả."
+  ],
+  "bannerImage": "/img/banenr_sec3.webp",
+  "features": [
+    { "id": "visual-goal", "title": "Mục tiêu hình ảnh", "description": "Giúp User nhìn vào là nhận ra vai diễn, concept, lời giao tiếp và chất riêng của creator." },
+    { "id": "operation-goal", "title": "Mục tiêu vận hành", "description": "Tăng tính đồng bộ, thuận tiện đào tạo, dễ nhân bản nội dung và kiểm soát chất lượng room LIVE hơn." },
+    { "id": "appearance", "title": "LIVE NPC không chỉ là mặc đồ đẹp", "description": "Điểm quan trọng là xây hình tượng đồng bộ: lời nói, cử chỉ, ánh mắt và cách xử lý quà tặng." },
+    { "id": "consistency", "title": "Giữ tính nhất quán", "description": "Mỗi nhân vật có phục trang mặc định. Việc thay outfit thường gắn với quà kích hoạt từ User." },
+    { "id": "interaction", "title": "Chất lượng tương tác", "description": "Tương tác đến từ nội dung truyền tải, biểu cảm và khả năng giữ người xem trong phiên LIVE." },
+    { "id": "discipline", "title": "Kỷ luật vận hành", "description": "LIVE đúng thời gian, giữ tinh thần ổn định, bám quy chuẩn đào tạo để room không rời rạc." }
+  ]
+}

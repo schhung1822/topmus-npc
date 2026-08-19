@@ -1,0 +1,40 @@
+{
+  "headingHighlight": "7 NGÀY",
+  "headingSuffix": "hoàn thiện",
+  "headingBadge": "live NPC",
+  "intro": "Từ định hình nhân vật, lựa chọn phong cách đến luyện tập biểu cảm, hiệu ứng và triển khai LIVE. \r\nChương trình mang tính ứng dụng cao, giúp nhanh chóng tạo dấu ấn cá nhân, thu hút người xem và nâng cao khả năng tương tác. Phù hợp cho người mới và Creator muốn xây dựng hình ảnh nhân vật rõ nét, dễ ghi nhớ.",
+  "ctaLabel": "Đăng ký ngay",
+  "ctaHref": "#lien-he",
+  "backgroundImage": "/img/bg_sec2.webp",
+  "sideImage": "/img/banner-hero.webp",
+  "steps": [
+    {
+      "id": "chon-vibe",
+      "day": "1",
+      "title": "Trao đổi & chọn vibe",
+      "description": "Tư vấn và đưa ra vibe phù hợp theo tính cách và phục trang.",
+      "image": "/img/banner_sec2.webp"
+    },
+    {
+      "id": "xay-dung-hieu-ung",
+      "day": "2",
+      "title": "Xây dựng hiệu ứng",
+      "description": "Lên ý tưởng hiệu ứng riêng theo từng nhân vật đã chọn và tập luyện cơ bản.",
+      "image": "/img/banner_sec2.webp"
+    },
+    {
+      "id": "tap-luyen",
+      "day": "3–5",
+      "title": "Tập luyện",
+      "description": "Tăng cường tập luyện hiệu ứng nhảy, biểu cảm và bài diễn có sẵn.",
+      "image": "/img/banner_sec2.webp"
+    },
+    {
+      "id": "quay-bien-hinh",
+      "day": "6–7",
+      "title": "Quay biến hình",
+      "description": "Quay biến hình, hoàn thiện danh sách quà và chốt thời gian debut.",
+      "image": "/img/banner_sec2.webp"
+    }
+  ]
+}

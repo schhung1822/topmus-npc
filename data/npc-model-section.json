@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Mô hình",
+  "heading": "NPC",
+  "badge": "của TOPMUS",
+  "ctaLabel": "Đăng ký ngay",
+  "ctaHref": "#lien-he",
+  "cards": [
+    {
+      "id": "npc-beauty",
+      "name": "NPC BEAUTY",
+      "tagline": "Đào tạo tạo hình NPC",
+      "description": "Định hình nhân vật, biểu cảm, thần thái, giọng nói, nhịp tương tác và phong cách xuất hiện theo từng concept.",
+      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+    },
+    {
+      "id": "npc-cosplay",
+      "name": "NPC COSPLAY",
+      "tagline": "Kịch bản nội dung LIVE",
+      "description": "Gợi ý flow vào phòng, cách giữ User, nội dung tương tác, mini game, xử lý quà và xây dựng điểm nhớ riêng.",
+      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+    },
+    {
+      "id": "npc-online",
+      "name": "NPC ONLINE",
+      "tagline": "Hỗ trợ set-up hình ảnh",
+      "description": "Hỗ trợ make-up, dạy nhảy, tóc, ánh sáng, góc máy để nhân vật lên sóng chuyên nghiệp và hấp dẫn hơn.",
+      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+    },
+    {
+      "id": "npc-studio",
+      "name": "NPC STUDIO",
+      "tagline": "Công cụ vận hành",
+      "description": "Ứng dụng dashboard, media tools, form đánh giá và quy trình hỗ trợ giúp đào tạo nhanh và đồng bộ hơn.",
+      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+    }
+  ]
+}

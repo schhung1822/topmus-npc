@@ -1,0 +1,17 @@
+{
+  "title": "Creator live NPC nhà TOPMUS",
+  "bannerImage": "/img/banner_sec2.webp",
+  "categories": [
+    { "id": "beauty", "label": "NPC Beauty", "subtitle": "Topmus Live Creator Network on TikTok" },
+    { "id": "cosplay", "label": "NPC Cosplay", "subtitle": "Những màn hóa thân đầy màu sắc" },
+    { "id": "online", "label": "NPC Online", "subtitle": "Kết nối và tương tác mỗi ngày" }
+  ],
+  "npcs": [
+    { "id": "huyenchi0105", "name": "Huyenchi0105", "categoryId": "beauty", "tag": "Thư ký", "liveTime": "01:00 - 6:00", "platform": "TikTok", "contentType": "Video", "image": "/img/banner_sec2.webp" },
+    { "id": "minhanh-npc", "name": "Minhanh NPC", "categoryId": "beauty", "tag": "Nàng thơ", "liveTime": "19:00 - 23:00", "platform": "TikTok", "contentType": "Live", "image": "/img/banner_sec2.webp" },
+    { "id": "linhchii", "name": "Linhchii", "categoryId": "beauty", "tag": "Tiểu thư", "liveTime": "20:00 - 24:00", "platform": "TikTok", "contentType": "Video", "image": "/img/banner_sec2.webp" },
+    { "id": "miyuki", "name": "Miyuki Cosplay", "categoryId": "cosplay", "tag": "Cosplayer", "liveTime": "19:30 - 23:30", "platform": "TikTok", "contentType": "Live", "image": "/img/banner_sec2.webp" },
+    { "id": "hana-npc", "name": "Hana NPC", "categoryId": "cosplay", "tag": "Idol", "liveTime": "20:00 - 00:00", "platform": "TikTok", "contentType": "Video", "image": "/img/banner_sec2.webp" },
+    { "id": "annie-online", "name": "Annie Online", "categoryId": "online", "tag": "Creator", "liveTime": "18:00 - 22:00", "platform": "TikTok", "contentType": "Live", "image": "/img/banner_sec2.webp" }
+  ]
+}

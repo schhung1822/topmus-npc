@@ -1,0 +1,201 @@
+.actions {
+  position: fixed;
+  right: 14px;
+  bottom: 18px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+
+.action {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 52%),
+    0 9px 24px rgb(30 0 44 / 34%);
+  cursor: pointer;
+  transition: transform 220ms ease, filter 220ms ease, box-shadow 220ms ease;
+}
+
+.action::before {
+  position: absolute;
+  inset: 3px;
+  z-index: -1;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.action:hover,
+.action:focus-visible {
+  z-index: 2;
+  filter: brightness(1.1) saturate(1.08);
+  outline: none;
+  transform: translateY(-3px) scale(1.07);
+}
+
+.action:focus-visible {
+  box-shadow:
+    0 0 0 4px rgb(255 255 255 / 24%),
+    0 0 0 7px rgb(241 68 220 / 32%),
+    0 10px 28px rgb(30 0 44 / 42%);
+}
+
+.phoneAction {
+  background:
+    radial-gradient(circle at 32% 22%, rgb(255 255 255 / 26%), transparent 30%),
+    linear-gradient(145deg, #ff55e6 0%, #df2acb 53%, #aa189e 100%);
+}
+
+.phoneAction:hover,
+.phoneAction:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 58%),
+    0 0 20px rgb(245 65 218 / 62%),
+    0 12px 28px rgb(61 0 74 / 38%);
+}
+
+.phoneIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.phonePulse {
+  position: absolute;
+  inset: -2px;
+  z-index: -2;
+  border: 2px solid rgb(248 83 224 / 62%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.zaloAction {
+  background:
+    radial-gradient(circle at 30% 20%, rgb(255 255 255 / 28%), transparent 32%),
+    linear-gradient(145deg, #28a5ff 0%, #087dff 48%, #0561dc 100%);
+}
+
+.zaloAction:hover,
+.zaloAction:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 58%),
+    0 0 20px rgb(36 146 255 / 68%),
+    0 12px 28px rgb(16 45 102 / 38%);
+}
+
+.zaloIcon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 3px rgb(0 55 133 / 26%));
+}
+
+.topAction {
+  background:
+    radial-gradient(circle at 32% 22%, rgb(255 255 255 / 16%), transparent 34%),
+    linear-gradient(145deg, rgb(71 12 91 / 96%), rgb(35 1 49 / 96%));
+  backdrop-filter: blur(8px);
+}
+
+.topAction:hover,
+.topAction:focus-visible {
+  background: linear-gradient(145deg, #8c24a8, #4b0a64);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 42%),
+    0 0 18px rgb(190 67 212 / 52%),
+    0 12px 28px rgb(30 0 44 / 38%);
+}
+
+.topAction[data-visible="false"] {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(9px) scale(0.88);
+}
+
+.topAction[data-visible="true"] {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.topIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.actionLabel {
+  position: absolute;
+  right: calc(100% + 13px);
+  padding: 8px 11px;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 9px;
+  background: rgb(31 0 45 / 94%);
+  box-shadow: 0 8px 22px rgb(19 0 29 / 28%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(5px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  white-space: nowrap;
+}
+
+.actionLabel::after {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background: rgb(31 0 45 / 94%);
+  content: "";
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.action:hover .actionLabel,
+.action:focus-visible .actionLabel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 640px) {
+  .actions {
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .action {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .phonePulse {
+    animation: contact-pulse 2.2s ease-out infinite;
+  }
+}
+
+@keyframes contact-pulse {
+  0%,
+  35% {
+    opacity: 0.58;
+    transform: scale(1);
+  }
+
+  78%,
+  100% {
+    opacity: 0;
+    transform: scale(1.38);
+  }
+}
