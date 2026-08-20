@@ -112,41 +112,30 @@ export function AchievementStatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate min-h-[520px] w-full overflow-hidden bg-[#450063] bg-[image:url('/img/bg_sec.webp')] bg-cover bg-[position:27%_center] text-white sm:min-h-[440px] lg:aspect-[1920/540] lg:min-h-0 lg:bg-center"
+      className={styles.section}
       aria-label="Thành tựu nổi bật của TOPMUS Entertainment"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[#350052]/35 lg:bg-transparent"
-      />
-      <div className="mx-auto flex min-h-[520px] w-full max-w-[1280px] items-end px-4 py-10 sm:min-h-[440px] sm:items-center sm:px-6 lg:min-h-full lg:max-w-none lg:p-0">
-        <div className={`${styles.statsGrid} w-full grid-cols-2 gap-3 sm:gap-4 lg:w-auto`}>
+      <div aria-hidden="true" className={styles.veil} />
+
+      <div className={styles.designStage}>
+        <ul className={styles.statsGrid}>
           {statistics.map((statistic, index) => (
-            <article
-              className={`${styles.statCard} grid min-h-[128px] place-content-center rounded-[18px] border border-white/25 bg-[linear-gradient(180deg,rgba(241,72,229,0.96),rgba(214,35,207,0.96))] px-2 py-4 text-center shadow-[inset_0_1px_rgba(255,255,255,0.4),0_12px_30px_rgba(63,0,93,0.28)] backdrop-blur-sm sm:min-h-[138px] lg:px-[clamp(4px,0.55vw,11px)] lg:py-[clamp(7px,0.65vw,13px)]`}
-              key={statistic.accessibleLabel}
-            >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/15 to-transparent"
-              />
+            <li className={styles.statCard} key={statistic.accessibleLabel}>
+              <div aria-hidden="true" className={styles.cardSheen} />
               <span
                 aria-hidden="true"
-                className="relative text-[clamp(30px,5vw,42px)] leading-none font-black tracking-[-0.04em] text-white tabular-nums font-bold [text-shadow:0_2px_10px_rgba(111,0,126,0.24)] lg:text-[clamp(26px,2.25vw,43px)]"
+                className={styles.statValue}
               >
                 {numberFormatter.format(values[index])}
                 {statistic.suffix}
               </span>
-              <p
-                aria-hidden="true"
-                className="relative mt-2 text-[12px] leading-[1.25] font-medium text-white sm:text-sm lg:mt-[clamp(4px,0.45vw,9px)] lg:text-[clamp(10px,0.9vw,17px)] lg:leading-[1.18] lg:tracking-[-0.02em]"
-              >
+              <p aria-hidden="true" className={styles.statLabel}>
                 {statistic.label}
               </p>
-              <span className="sr-only">{statistic.accessibleLabel}</span>
-            </article>
+              <span className={styles.srOnly}>{statistic.accessibleLabel}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
