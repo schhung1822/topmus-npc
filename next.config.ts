@@ -2,8 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Ảnh CMS được tạo trong public/uploads ở runtime và được Nginx phục vụ trực tiếp.
-    // Bỏ Image Optimization để ảnh mới không phụ thuộc danh sách public lúc Next khởi động.
+    // Ảnh CMS runtime được phục vụ qua /api/uploads, không phụ thuộc static files của Next/Nginx.
     unoptimized: true,
     remotePatterns: [
       {

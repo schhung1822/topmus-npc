@@ -3,6 +3,7 @@ import "server-only";
 import { randomUUID } from "node:crypto";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type NpcIntroFeature = {
   id: string;
@@ -20,7 +21,9 @@ export type NpcIntroContent = {
 const contentPath = path.join(process.cwd(), "data", "npc-intro-section.json");
 
 export async function getNpcIntroContent(): Promise<NpcIntroContent> {
-  return JSON.parse(await readFile(contentPath, "utf8")) as NpcIntroContent;
+  return normalizeUploadPaths(
+    JSON.parse(await readFile(contentPath, "utf8")) as NpcIntroContent,
+  );
 }
 
 export async function saveNpcIntroContent(content: NpcIntroContent) {

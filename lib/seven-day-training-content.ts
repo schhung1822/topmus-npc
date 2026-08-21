@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { saveUploadedImage } from "@/lib/image-upload";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type TrainingStep = {
   id: string;
@@ -27,7 +28,9 @@ export type SevenDayTrainingContent = {
 const contentPath = path.join(process.cwd(), "data", "seven-day-training-section.json");
 
 export async function getSevenDayTrainingContent(): Promise<SevenDayTrainingContent> {
-  return JSON.parse(await readFile(contentPath, "utf8")) as SevenDayTrainingContent;
+  return normalizeUploadPaths(
+    JSON.parse(await readFile(contentPath, "utf8")) as SevenDayTrainingContent,
+  );
 }
 
 export async function saveSevenDayTrainingContent(content: SevenDayTrainingContent) {

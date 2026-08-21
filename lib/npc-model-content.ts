@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { saveUploadedImage } from "@/lib/image-upload";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type NpcModelCard = {
   id: string;
@@ -25,7 +26,9 @@ export type NpcModelContent = {
 const contentPath = path.join(process.cwd(), "data", "npc-model-section.json");
 
 export async function getNpcModelContent(): Promise<NpcModelContent> {
-  return JSON.parse(await readFile(contentPath, "utf8")) as NpcModelContent;
+  return normalizeUploadPaths(
+    JSON.parse(await readFile(contentPath, "utf8")) as NpcModelContent,
+  );
 }
 
 export async function saveNpcModelContent(content: NpcModelContent) {

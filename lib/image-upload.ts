@@ -4,11 +4,11 @@ import { randomUUID } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import { uploadsRoot } from "@/lib/upload-path";
 
 /** Định dạng ảnh được phép tải lên; tất cả đều được chuyển sang WEBP khi lưu. */
 export const uploadImageTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
 
-const uploadsRoot = path.join(process.cwd(), "public", "uploads");
 const webpQuality = 82;
 
 type SaveUploadedImageOptions = {
@@ -25,7 +25,7 @@ type SaveUploadedImageOptions = {
 
 /**
  * Lưu ảnh tải lên từ trang quản trị dưới dạng WEBP.
- * Trả về đường dẫn công khai của ảnh, hoặc null khi người dùng không chọn file.
+ * Trả về đường dẫn endpoint công khai của ảnh, hoặc null khi người dùng không chọn file.
  */
 export async function saveUploadedImage({
   file,
@@ -56,5 +56,5 @@ export async function saveUploadedImage({
   await mkdir(directory, { recursive: true });
   const filename = `${prefix}-${randomUUID()}.webp`;
   await writeFile(path.join(directory, filename), webpImage);
-  return `/uploads/${folder}/${filename}`;
+  return `/api/uploads/${folder}/${filename}`;
 }

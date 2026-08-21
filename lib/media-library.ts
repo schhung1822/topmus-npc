@@ -2,9 +2,14 @@ import "server-only";
 
 import { readdir, readFile, stat, unlink } from "node:fs/promises";
 import path from "node:path";
+import {
+  resolveUploadFilePath,
+  toServedUploadPath,
+  uploadsRoot,
+} from "@/lib/upload-path";
 
 export type MediaImage = {
-  /** Đường dẫn công khai, ví dụ "/uploads/npc/creator-abc.webp". */
+  /** Đường dẫn công khai, ví dụ "/api/uploads/npc/creator-abc.webp". */
   path: string;
   folder: string;
   filename: string;
@@ -14,7 +19,6 @@ export type MediaImage = {
   usedBy: string[];
 };
 
-const uploadsRoot = path.join(process.cwd(), "public", "uploads");
 const dataDirectory = path.join(process.cwd(), "data");
 const imageExtensions = new Set([".webp", ".jpg", ".jpeg", ".png", ".ico"]);
 
@@ -30,7 +34,9 @@ const dataFileLabels = new Map([
 
 function collectImagePaths(value: unknown, found: Set<string>) {
   if (typeof value === "string") {
-    if (value.startsWith("/uploads/")) found.add(value);
+    if (value.startsWith("/uploads/") || value.startsWith("/api/uploads/")) {
+      found.add(toServedUploadPath(value));
+    }
     return;
   }
   if (Array.isArray(value)) {
@@ -89,7 +95,7 @@ export async function listMediaImages(): Promise<MediaImage[]> {
     for (const file of files) {
       if (!file.isFile() || !imageExtensions.has(path.extname(file.name).toLowerCase())) continue;
 
-      const publicPath = `/uploads/${folder}/${file.name}`;
+      const publicPath = `/api/uploads/${folder}/${file.name}`;
       const details = await stat(path.join(uploadsRoot, folder, file.name));
 
       images.push({
@@ -108,12 +114,8 @@ export async function listMediaImages(): Promise<MediaImage[]> {
 
 /** Chỉ chấp nhận đường dẫn nằm gọn trong public/uploads để chặn thoát thư mục. */
 function resolveUploadPath(publicPath: string) {
-  if (!publicPath.startsWith("/uploads/")) return null;
-
-  const absolutePath = path.join(process.cwd(), "public", publicPath);
-  const normalized = path.resolve(absolutePath);
-  if (normalized !== absolutePath || !normalized.startsWith(uploadsRoot + path.sep)) return null;
-  if (!imageExtensions.has(path.extname(normalized).toLowerCase())) return null;
+  const normalized = resolveUploadFilePath(publicPath);
+  if (!normalized || !imageExtensions.has(path.extname(normalized).toLowerCase())) return null;
 
   return normalized;
 }

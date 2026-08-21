@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { saveUploadedImage } from "@/lib/image-upload";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type HighlightVideo = {
   id: string;
@@ -50,7 +51,9 @@ export function extractYouTubeVideoId(input: string) {
 }
 
 export async function getVideoSectionContent(): Promise<VideoSectionContent> {
-  const content = JSON.parse(await readFile(contentPath, "utf8")) as VideoSectionContent;
+  const content = normalizeUploadPaths(
+    JSON.parse(await readFile(contentPath, "utf8")) as VideoSectionContent,
+  );
 
   return {
     ...content,

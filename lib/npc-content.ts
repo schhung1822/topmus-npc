@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { saveUploadedImage } from "@/lib/image-upload";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type NpcCategory = {
   id: string;
@@ -33,7 +34,7 @@ const contentPath = path.join(process.cwd(), "data", "npc-section.json");
 
 export async function getNpcSectionContent(): Promise<NpcSectionContent> {
   const rawContent = await readFile(contentPath, "utf8");
-  return JSON.parse(rawContent) as NpcSectionContent;
+  return normalizeUploadPaths(JSON.parse(rawContent) as NpcSectionContent);
 }
 
 export async function saveNpcSectionContent(content: NpcSectionContent) {

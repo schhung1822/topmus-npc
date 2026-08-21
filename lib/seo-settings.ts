@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { saveUploadedImage } from "@/lib/image-upload";
+import { normalizeUploadPaths } from "@/lib/upload-path";
 
 export type SeoSettings = {
   siteName: string;
@@ -29,7 +30,9 @@ const faviconTypes = new Map([
 ]);
 
 export async function getSeoSettings(): Promise<SeoSettings> {
-  const settings = JSON.parse(await readFile(settingsPath, "utf8")) as SeoSettings;
+  const settings = normalizeUploadPaths(
+    JSON.parse(await readFile(settingsPath, "utf8")) as SeoSettings,
+  );
 
   return {
     ...settings,
@@ -77,5 +80,5 @@ export async function saveFavicon(file: File) {
   await mkdir(uploadDirectory, { recursive: true });
   const filename = `favicon-${randomUUID()}.${extension}`;
   await writeFile(path.join(uploadDirectory, filename), Buffer.from(await file.arrayBuffer()));
-  return `/uploads/seo/${filename}`;
+  return `/api/uploads/seo/${filename}`;
 }
