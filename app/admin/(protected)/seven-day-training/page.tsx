@@ -71,27 +71,18 @@ export default async function AdminSevenDayTrainingPage({
 
           <article className="rounded-[18px] border border-[#e5e6df] bg-[#fffefa] p-5 sm:p-6">
             <p className="text-[10px] font-extrabold tracking-[0.1em] text-[#8c6896] uppercase">Hình nền</p>
-            <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">Ảnh nền và ảnh trang trí</h2>
+            <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">Một ảnh nền cho toàn section</h2>
 
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              <div>
-                <p className="text-[11px] font-bold text-[#8c7c90]">Ảnh nền hiện tại</p>
-                <span className="relative mt-2 block aspect-[16/9] overflow-hidden rounded-xl bg-[#f2e5f6]">
-                  <Image className="object-cover" src={content.backgroundImage} alt="" fill sizes="200px" />
-                </span>
-              </div>
-              <div>
-                <p className="text-[11px] font-bold text-[#8c7c90]">Ảnh trang trí hai bên</p>
-                <span className="relative mt-2 block aspect-[16/9] overflow-hidden rounded-xl bg-[#f2e5f6]">
-                  <Image className="object-cover" src={content.sideImage} alt="" fill sizes="200px" />
-                </span>
-              </div>
+            <div className="mt-5">
+              <p className="text-[11px] font-bold text-[#8c7c90]">Ảnh nền hiện tại</p>
+              <span className="relative mt-2 block aspect-[16/9] overflow-hidden rounded-xl bg-[#f2e5f6]">
+                <Image className="object-cover" src={content.backgroundImage} alt="" fill sizes="500px" />
+              </span>
             </div>
 
             <form className="mt-5 grid gap-4" action={updateTrainingBackgroundAction}>
               <ImagePicker name="backgroundImage" label="Thay ảnh nền" library={library} />
-              <ImagePicker name="sideImage" label="Thay ảnh trang trí hai bên" library={library} />
-              <p className="text-[11px] leading-5 text-[#8a918d]">Ảnh nền nên là ảnh ngang tối màu, rộng tối thiểu 1920px. Ảnh trang trí hiển thị mờ ở hai mép trên màn hình lớn. Hỗ trợ JPG, PNG, WEBP; tối đa 8MB. Để trống nếu giữ ảnh hiện tại.</p>
+              <p className="text-[11px] leading-5 text-[#8a918d]">Ảnh này phủ toàn bộ section theo chế độ object-cover. Nên dùng ảnh ngang tối màu, rộng tối thiểu 1920px. Hỗ trợ JPG, PNG, WEBP; tối đa 8MB. Để trống nếu giữ ảnh hiện tại.</p>
               <button className={primaryButtonClasses} type="submit">Lưu hình nền</button>
             </form>
           </article>

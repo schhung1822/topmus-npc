@@ -210,7 +210,7 @@ export function SiteFooter() {
 
       <div className="border-t border-white/[0.07] bg-black/30">
         <div className="mx-auto flex min-h-[48px] w-full max-w-[1280px] flex-col items-center justify-center gap-1 px-4 py-3 text-center text-[12px] text-white/38 sm:flex-row sm:gap-2 sm:px-6">
-          <p>© {new Date().getFullYear()} Bản quyền thuộc về &amp; Cung cấp bởi NEXTGENCY</p>
+          <p>© {new Date().getFullYear()} Bản quyền thuộc về &amp; Cung cấp bởi <a className="text-white/38 hover:text-white" href="https://nextgency.vn/" target="_blank">NEXTGENCY</a></p>
         </div>
       </div>
     </footer>

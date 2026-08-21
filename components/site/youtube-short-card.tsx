@@ -172,10 +172,13 @@ export function YouTubeShortCard({
   function toggleMute() {
     const player = playerRef.current;
     if (!player) return;
-    if (player.isMuted()) {
+
+    if (muted) {
+      if (typeof player.unMute !== "function") return;
       player.unMute();
       setMuted(false);
     } else {
+      if (typeof player.mute !== "function") return;
       player.mute();
       setMuted(true);
     }

@@ -56,27 +56,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
       aria-labelledby="software-tools-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-30 bg-[image:url('/img/bg_sec2.webp')] bg-cover bg-center opacity-80"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(66,0,117,0.18)_0%,rgba(75,0,125,0.5)_56%,rgba(55,0,94,0.92)_100%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-[21%] bottom-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,173,249,0.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,173,249,0.45)_1px,transparent_1px)] [background-size:38px_38px] [mask-image:linear-gradient(90deg,#000_0%,rgba(0,0,0,0.72)_21%,transparent_46%,transparent_54%,rgba(0,0,0,0.72)_79%,#000_100%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-[8%] top-[29%] bottom-[5%] -z-10 opacity-[0.17] [background-image:repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(255,167,246,0.7)_76px,rgba(255,167,246,0.7)_80px)] [mask-image:linear-gradient(180deg,transparent,#000_24%,#000_82%,transparent)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-[22%] left-1/2 -z-10 h-[52%] w-[112%] -translate-x-1/2 rounded-[50%] border-t border-[#ff9ef1]/45 bg-[radial-gradient(ellipse_at_center,rgba(244,71,226,0.35),rgba(68,0,117,0)_68%)] shadow-[0_-26px_80px_rgba(238,45,218,0.22)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute top-[7%] left-1/2 -z-10 h-52 w-[min(760px,90vw)] -translate-x-1/2 rounded-full bg-[#d737e5]/20 blur-[90px]"
+        className="pointer-events-none absolute inset-0 -z-30 bg-[image:url('/img/bg-tool.webp')] bg-cover bg-[center_30%] opacity-80"
         aria-hidden="true"
       />
 
@@ -86,14 +66,6 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
             isVisible ? "translate-y-0 scale-100 opacity-100" : "-translate-y-5 scale-95 opacity-0"
           }`}
         >
-          <span
-            className="pointer-events-none absolute -inset-x-[14%] -inset-y-[18%] rotate-[-2deg] rounded-[50%] border-2 border-[#e2a0ff]/55 shadow-[0_0_24px_rgba(255,101,238,0.33),inset_0_0_20px_rgba(255,138,239,0.18)]"
-            aria-hidden="true"
-          />
-          <span
-            className="pointer-events-none absolute -inset-x-[9%] -inset-y-[9%] rotate-[3deg] rounded-[50%] border border-white/15"
-            aria-hidden="true"
-          />
           <Image
             className="pointer-events-none absolute top-[53%] -left-[15%] z-10 size-11 animate-benefit-glow object-contain drop-shadow-[0_0_16px_rgba(255,255,255,0.95)] motion-reduce:animate-none sm:size-14"
             src="/img/icon-start.webp"
@@ -131,10 +103,10 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                   aria-hidden="true"
                 />
 
-                <div className="relative aspect-[10/18.7] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
+                <div className="relative aspect-[1/2] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
                   <Image
-                    className="scale-[1.18] object-cover object-center"
-                    src="/img/banner_sec2.webp"
+                    className="scale-[1] object-contain object-center"
+                    src="/img/phone-bg.webp"
                     alt="Giao diện phần mềm hỗ trợ NPC Live của TOPMUS"
                     fill
                     sizes="(max-width: 1024px) 250px, 275px"

@@ -72,17 +72,6 @@ export function WhyTopmusSection({ tickerItems }: { tickerItems: string[] }) {
           >
             NPC LIVE TẠI TOPMUS?
           </h2>
-          <div aria-hidden="true" className={styles.titleSwoosh}>
-            <span className={styles.swooshBack} />
-            <span className={styles.swooshFront} />
-            <Image
-              alt=""
-              className={styles.swooshStar}
-              height={58}
-              src="/img/icon-start.webp"
-              width={58}
-            />
-          </div>
         </div>
 
         <div className="mt-20 grid items-center gap-10 lg:mt-16 lg:grid-cols-[minmax(300px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">

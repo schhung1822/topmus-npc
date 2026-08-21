@@ -8,7 +8,7 @@ import styles from "./benefits-section.module.css";
 const benefitCards = [
   {
     id: "luong-cung",
-    src: "/img/banner_sec2.webp",
+    src: "/img/img2.webp",
     alt: "Poster tuyển dụng NPC Live với lương cứng từ 10 đến 40 triệu mỗi tháng",
     title: (
       <>
@@ -22,7 +22,7 @@ const benefitCards = [
   },
   {
     id: "hoa-hong",
-    src: "/img/banner_sec2.webp",
+    src: "/img/img3.webp",
     alt: "Poster hoa hồng lên tới 70% dành cho NPC Live Creator",
     title: (
       <>
@@ -36,7 +36,7 @@ const benefitCards = [
   },
   {
     id: "thuong-bxh",
-    src: "/img/banner_sec2.webp",
+    src: "/img/img1.webp",
     alt: "Poster bảng xếp hạng NST Live tháng 5",
     title: (
       <>
@@ -89,9 +89,9 @@ export function BenefitsSection() {
         alt=""
         aria-hidden="true"
         className={`${styles.floatingDecoration} ${styles.coinLeft}`}
-        height={150}
+        height={240}
         src="/img/icon1.webp"
-        width={150}
+        width={240}
       />
       <Image
         alt=""
@@ -199,16 +199,6 @@ export function BenefitsSection() {
         >
           <span className={`${styles.cornerRibbon} ${styles.cornerRibbonLeft}`} aria-hidden="true" />
           <span className={`${styles.cornerRibbon} ${styles.cornerRibbonRight}`} aria-hidden="true" />
-          <div className={`${styles.equalizer} ${styles.equalizerLeft}`} aria-hidden="true">
-            {[48, 76, 61, 34, 84, 57, 43, 69, 29].map((width, index) => (
-              <span key={index} style={{ width: `${width}%` }} />
-            ))}
-          </div>
-          <div className={`${styles.equalizer} ${styles.equalizerRight}`} aria-hidden="true">
-            {[42, 70, 55, 82, 36, 64, 47, 76, 31].map((width, index) => (
-              <span key={index} style={{ width: `${width}%` }} />
-            ))}
-          </div>
 
           <h3 className={styles.incomeTitle}>
             THU NHẬP KHÔNG GIỚI HẠN

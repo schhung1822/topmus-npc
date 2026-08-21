@@ -21,7 +21,6 @@ export type SevenDayTrainingContent = {
   ctaLabel: string;
   ctaHref: string;
   backgroundImage: string;
-  sideImage: string;
   steps: TrainingStep[];
 };
 

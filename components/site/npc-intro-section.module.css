@@ -60,7 +60,7 @@
   padding-right: 0.13em;
   color: transparent;
   font-size: clamp(50px, 6.2vw, 76px);
-  font-weight: 900;
+  font-weight: 700;
   font-style: italic;
   letter-spacing: -0.095em;
   background: linear-gradient(180deg, #fffaff 3%, #ffd8ff 25%, #f679ed 55%, #d934d8 100%);
@@ -68,36 +68,16 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px rgb(255 214 255 / 78%);
-  text-shadow:
-    -3px 4px 0 rgb(150 16 177 / 88%),
-    -6px 8px 8px rgb(62 0 94 / 62%),
-    0 -1px 6px rgb(255 255 255 / 90%),
-    0 0 16px rgb(255 68 235 / 82%);
   transform: skewX(-5deg);
-}
-
-.headingLead::after {
-  position: absolute;
-  top: 13%;
-  left: 24%;
-  width: 42%;
-  height: 7%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 92%), transparent);
-  box-shadow: 0 0 7px rgb(255 255 255 / 92%);
-  content: "";
-  opacity: 0.78;
-  pointer-events: none;
-  transform: rotate(-4deg);
 }
 
 .headingTail {
   position: relative;
   z-index: 2;
   margin-left: 0.04em;
-  color: #f4a9fa;
+  color: #ff92ff;
   font-size: clamp(27px, 3vw, 39px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.055em;
   -webkit-text-stroke: 0.5px rgb(255 220 255 / 66%);
   text-shadow:
@@ -112,17 +92,15 @@
   margin-left: 0.08em;
   color: transparent;
   font-size: clamp(43px, 4.7vw, 61px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.08em;
   background: linear-gradient(180deg, #fffaff 0%, #ffd2ff 38%, #e44ae1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px rgb(255 225 255 / 82%);
-  text-shadow:
-    -3px 4px 0 rgb(139 12 166 / 84%),
-    0 0 10px rgb(255 108 241 / 86%);
   transform: rotate(5deg) translateY(0.04em);
+  width: 40px;
 }
 
 @media (max-width: 420px) {

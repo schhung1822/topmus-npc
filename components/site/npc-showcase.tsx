@@ -335,7 +335,7 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
                 >
                   {content.npcs.map((npc) => (
                     <article
-                      className="group w-[82%] shrink-0 snap-start overflow-hidden rounded-[12px] border border-[#eed9ee] bg-white shadow-[0_8px_24px_rgba(82,20,100,0.1)] transition duration-300 hover:-translate-y-1 hover:border-[#e7b9e2] hover:shadow-[0_16px_34px_rgba(82,20,100,0.17)] sm:w-[46%] lg:w-[31.2%]"
+                      className="group w-full shrink-0 snap-start overflow-hidden rounded-[12px] border border-[#eed9ee] bg-white shadow-[0_4px_8px_rgba(82,20,100,0.1)] transition duration-300 hover:-translate-y-1 hover:border-[#e7b9e2] hover:shadow-[0_16px_34px_rgba(82,20,100,0.17)] sm:w-[calc((100%_-_0.875rem)/2)] lg:w-[calc((100%_-_1.75rem)/3)]"
                       key={npc.id}
                     >
                       <div className="relative aspect-[0.75] overflow-hidden bg-[linear-gradient(160deg,#1a002d,#5f0b81_66%,#ff50da)]">
@@ -344,22 +344,8 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
                           src={npc.image}
                           alt={npc.name}
                           fill
-                          sizes="(max-width: 640px) 82vw, (max-width: 1024px) 44vw, 205px"
+                          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 205px"
                         />
-                        <div
-                          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_52%,rgba(81,0,105,0.42)_72%,rgba(79,0,103,0.9)_100%)]"
-                          aria-hidden="true"
-                        />
-                        <div
-                          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,#ff8df0,transparent)] opacity-70"
-                          aria-hidden="true"
-                        />
-                        <span className="absolute right-[42%] bottom-[47px] left-2 rounded-r-full border-l-2 border-white/60 bg-[linear-gradient(90deg,#d72cce,#f45ae5_72%,transparent)] px-2.5 py-1 text-[10px] font-medium text-white shadow-[0_4px_10px_rgba(96,0,111,0.2)]">
-                          {npc.tag}
-                        </span>
-                        <h4 className="absolute right-2 bottom-4 left-2 truncate text-[12px] font-bold text-white [text-shadow:0_2px_5px_rgba(47,0,69,0.55)] sm:text-[13px]">
-                          {npc.name}
-                        </h4>
                       </div>
 
                       <div className="bg-[linear-gradient(180deg,#ffffff,#fffaff)] p-2.5">

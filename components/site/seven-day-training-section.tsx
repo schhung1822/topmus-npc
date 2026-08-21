@@ -43,73 +43,14 @@ export function SevenDayTrainingSection({ content }: { content: SevenDayTraining
     >
       <div className="pointer-events-none absolute inset-0 -z-30" aria-hidden="true">
         <Image
-          className="object-cover object-center opacity-65"
+          className="object-cover object-[center_top] opacity-65"
           src={content.backgroundImage}
           alt=""
           fill
           sizes="100vw"
         />
       </div>
-      <div
-        className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(72,0,119,0.72)_0%,rgba(83,0,134,0.88)_44%,rgba(54,0,91,0.96)_100%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.13] [background-image:linear-gradient(rgba(255,180,248,0.55)_1px,transparent_1px),linear-gradient(90deg,rgba(255,180,248,0.55)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:linear-gradient(180deg,#000_0%,transparent_68%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-[8%] top-0 -z-10 h-[28%] opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.22)_2px,transparent_2px),linear-gradient(90deg,rgba(255,255,255,0.22)_2px,transparent_2px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_top,#000,transparent_76%)]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute top-[6%] left-1/2 -z-10 h-72 w-[min(820px,92vw)] -translate-x-1/2 rounded-full bg-[#d33bea]/20 blur-[100px]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[46%] bg-[radial-gradient(ellipse_at_50%_100%,rgba(230,63,218,0.28),transparent_69%)]"
-        aria-hidden="true"
-      />
 
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 -z-10 hidden h-[78%] w-[31%] opacity-[0.2] [mask-image:linear-gradient(90deg,#000_0%,rgba(0,0,0,0.92)_43%,transparent_100%)] lg:block"
-        aria-hidden="true"
-      >
-        <Image
-          className="object-cover object-[24%_center] grayscale-[20%] saturate-[0.82]"
-          src={content.sideImage}
-          alt=""
-          fill
-          sizes="31vw"
-        />
-        <span className="absolute inset-0 bg-[#6c04a0]/35 mix-blend-color" />
-      </div>
-      <div
-        className="pointer-events-none absolute right-0 bottom-0 -z-10 hidden h-[78%] w-[31%] opacity-[0.2] [mask-image:linear-gradient(270deg,#000_0%,rgba(0,0,0,0.92)_43%,transparent_100%)] lg:block"
-        aria-hidden="true"
-      >
-        <Image
-          className="object-cover object-[78%_center] grayscale-[20%] saturate-[0.82]"
-          src={content.sideImage}
-          alt=""
-          fill
-          sizes="31vw"
-        />
-        <span className="absolute inset-0 bg-[#6c04a0]/35 mix-blend-color" />
-      </div>
-
-      <span
-        className="pointer-events-none absolute top-[8%] left-[17%] hidden rotate-[-18deg] text-[54px] font-black text-[#d784ec]/15 lg:block"
-        aria-hidden="true"
-      >
-        ♪
-      </span>
-      <span
-        className="pointer-events-none absolute top-[20%] right-[8%] hidden rotate-[18deg] text-[48px] font-black text-[#d784ec]/12 lg:block"
-        aria-hidden="true"
-      >
-        ♫
-      </span>
 
       <div className="mx-auto w-full max-w-[1280px] px-4 pt-16 pb-16 sm:px-6 sm:pt-[72px] lg:min-h-[1030px] lg:px-8 lg:pt-[78px] lg:pb-20">
         <header

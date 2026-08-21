@@ -5,36 +5,35 @@
   "intro": "Từ định hình nhân vật, lựa chọn phong cách đến luyện tập biểu cảm, hiệu ứng và triển khai LIVE. \r\nChương trình mang tính ứng dụng cao, giúp nhanh chóng tạo dấu ấn cá nhân, thu hút người xem và nâng cao khả năng tương tác. Phù hợp cho người mới và Creator muốn xây dựng hình ảnh nhân vật rõ nét, dễ ghi nhớ.",
   "ctaLabel": "Đăng ký ngay",
   "ctaHref": "#lien-he",
-  "backgroundImage": "/img/bg_sec2.webp",
-  "sideImage": "/img/banner-hero.webp",
+  "backgroundImage": "/uploads/seven-day-training/background-01a34435-8cd5-4c74-a8bf-0b1e938aca83.webp",
   "steps": [
     {
       "id": "chon-vibe",
       "day": "1",
       "title": "Trao đổi & chọn vibe",
       "description": "Tư vấn và đưa ra vibe phù hợp theo tính cách và phục trang.",
-      "image": "/img/banner_sec2.webp"
+      "image": "/uploads/seven-day-training/step-6865ecc1-3e25-48cb-a96e-12d61ab00265.webp"
     },
     {
       "id": "xay-dung-hieu-ung",
       "day": "2",
       "title": "Xây dựng hiệu ứng",
       "description": "Lên ý tưởng hiệu ứng riêng theo từng nhân vật đã chọn và tập luyện cơ bản.",
-      "image": "/img/banner_sec2.webp"
+      "image": "/uploads/seven-day-training/step-d504127c-6540-4e7b-b635-86ecaea05b81.webp"
     },
     {
       "id": "tap-luyen",
       "day": "3–5",
       "title": "Tập luyện",
       "description": "Tăng cường tập luyện hiệu ứng nhảy, biểu cảm và bài diễn có sẵn.",
-      "image": "/img/banner_sec2.webp"
+      "image": "/uploads/seven-day-training/step-90577459-cb32-47c5-9996-9eaf21d96924.webp"
     },
     {
       "id": "quay-bien-hinh",
       "day": "6–7",
       "title": "Quay biến hình",
       "description": "Quay biến hình, hoàn thiện danh sách quà và chốt thời gian debut.",
-      "image": "/img/banner_sec2.webp"
+      "image": "/uploads/seven-day-training/step-29540b73-3f62-4bd4-b0d3-5996cd45c9bc.webp"
     }
   ]
 }

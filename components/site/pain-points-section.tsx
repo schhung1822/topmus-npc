@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowDown, Eye, MessageCircle } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import styles from "./pain-points-section.module.css";
 
@@ -14,7 +14,7 @@ const painPoints = [
         sau 15 phút
       </>
     ),
-    icon: "message",
+    icon: "/img/icon.mess.webp",
     position: "lg:absolute lg:top-0 lg:left-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(-4deg)_rotateY(20deg)]",
     animation: "animate-pain-float",
@@ -27,7 +27,7 @@ const painPoints = [
         3–5 mắt xem
       </>
     ),
-    icon: "eye",
+    icon: "/img/icon-eye.webp",
     position: "lg:absolute lg:top-0 lg:right-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(-4deg)_rotateY(-20deg)]",
     animation: "animate-pain-float-reverse",
@@ -40,7 +40,7 @@ const painPoints = [
         một mình
       </>
     ),
-    icon: "person",
+    icon: "/img/icon3.webp",
     position: "lg:absolute lg:bottom-0 lg:left-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(2deg)_rotateY(24deg)]",
     animation: "animate-pain-float-reverse",
@@ -53,39 +53,23 @@ const painPoints = [
         lương cứng
       </>
     ),
-    icon: "money",
+    icon: "/img/icon1.webp",
     position: "lg:absolute lg:right-0 lg:bottom-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(2deg)_rotateY(-24deg)]",
     animation: "animate-pain-float",
   },
 ] as const;
 
-function PainPointIcon({ type }: { type: (typeof painPoints)[number]["icon"] }) {
-  if (type === "person" || type === "money") {
-    return (
-      <Image
-        className="size-[66px] object-contain drop-shadow-[0_7px_12px_rgba(70,0,101,0.24)]"
-        src={type === "person" ? "/img/icon3.webp" : "/img/icon1.webp"}
-        alt=""
-        width={80}
-        height={80}
-        aria-hidden="true"
-      />
-    );
-  }
-
+function PainPointIcon({ src }: { src: (typeof painPoints)[number]["icon"] }) {
   return (
-    <span className="grid size-[68px] place-items-center text-[#eefcff] drop-shadow-[0_7px_8px_rgba(69,0,104,0.35)]">
-      {type === "message" ? (
-        <MessageCircle
-          className="size-[62px] fill-[#d8b7ff]"
-          strokeWidth={1.8}
-          aria-hidden="true"
-        />
-      ) : (
-        <Eye className="size-[66px] fill-[#cbaeff]" strokeWidth={1.8} aria-hidden="true" />
-      )}
-    </span>
+    <Image
+      className="size-[66px] object-contain drop-shadow-[0_7px_12px_rgba(70,0,101,0.24)]"
+      src={src}
+      alt=""
+      width={80}
+      height={80}
+      aria-hidden="true"
+    />
   );
 }
 
@@ -166,7 +150,7 @@ export function PainPointsSection() {
                   >
                     <div className={styles.cardShine} />
                     <div className="relative mx-auto">
-                      <PainPointIcon type={painPoint.icon} />
+                      <PainPointIcon src={painPoint.icon} />
                     </div>
                     <h3 className="relative mt-1 text-[clamp(19px,3vw,27px)] leading-[1.08] font-bold tracking-[-0.035em] text-white [text-shadow:0_2px_5px_rgba(94,0,111,0.26)] lg:text-[27px]">
                       {painPoint.title}

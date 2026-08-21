@@ -48,7 +48,7 @@ export function VideoHighlightsSection({ content }: { content: VideoSectionConte
         <div className="flex items-end justify-between gap-5">
           <div>
             <h2
-              className="text-[clamp(26px,3vw,36px)] leading-tight font-extrabold tracking-[-0.025em] [text-shadow:0_3px_12px_rgba(35,0,58,0.45)]"
+              className="text-[clamp(26px,3vw,36px)] leading-tight font-bold tracking-[-0.025em] [text-shadow:0_3px_12px_rgba(35,0,58,0.45)]"
               id="video-highlights-title"
             >
               {content.heading}

@@ -59,9 +59,7 @@ export async function updateTrainingBackgroundAction(formData: FormData) {
   const content = await getSevenDayTrainingContent();
 
   const background = await uploadedImage(formData, "backgroundImage", "background");
-  const side = await uploadedImage(formData, "sideImage", "side");
   if (background) content.backgroundImage = background;
-  if (side) content.sideImage = side;
 
   await saveSevenDayTrainingContent(content);
   refresh();

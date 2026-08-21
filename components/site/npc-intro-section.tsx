@@ -62,7 +62,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
             src={content.bannerImage}
             alt="Giới thiệu LIVE NPC"
             fill
-            sizes="(max-width: 1090px) 100vw, 1090px"
+            sizes="(max-width: 1280px) 100vw, 1280px"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(58,0,93,0.96)_0%,rgba(75,0,112,0.82)_38%,rgba(75,0,112,0.12)_70%,transparent_100%)] max-lg:bg-[linear-gradient(90deg,rgba(58,0,93,0.94),rgba(64,0,96,0.66))]" />
 
@@ -93,7 +93,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
           </div>
         </article>
 
-        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {content.features.map((feature) => (
             <article
               className="min-h-[126px] rounded-2xl border border-white/80 bg-white/90 px-6 py-5 shadow-[inset_-12px_-12px_24px_rgba(232,199,241,0.2),0_8px_24px_rgba(118,48,135,0.07)] backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(118,48,135,0.12)]"
@@ -102,7 +102,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
               <h3 className="text-[16px] font-bold leading-5 text-[#5a0877] sm:text-base">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-[13px] leading-[1.55] w-full sm:w-[88%] text-[#6b6b6b] sm:text-[14px]">
+              <p className="mt-2 text-[13px] leading-[1.55] w-full font-normal sm:w-[88%] text-[#6b6b6b] sm:text-[14px]">
                 {feature.description}
               </p>
             </article>

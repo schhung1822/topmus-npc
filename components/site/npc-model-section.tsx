@@ -183,10 +183,18 @@ export function NpcModelSection({
 
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6">
         <div
-          className={`relative overflow-hidden rounded-[24px] bg-[linear-gradient(180deg,#2a0143_0%,#180429_38%,#3b1256_72%,#3b1055_100%)] px-4 py-10 shadow-[0_30px_80px_rgba(60,0,96,0.35)] transition duration-700 sm:px-8 sm:py-12 lg:px-12 lg:py-14 ${
+          className={`relative overflow-hidden rounded-[24px] bg-[#220033] px-4 py-10 shadow-[0_30px_80px_rgba(60,0,96,0.35)] transition duration-700 sm:px-8 sm:py-12 lg:px-12 lg:py-14 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
+          <Image
+            className="pointer-events-none object-cover object-center"
+            src="/img/bg-model.webp"
+            alt=""
+            fill
+            sizes="(max-width: 1280px) 100vw, 1232px"
+            aria-hidden="true"
+          />
           <div
             className="pointer-events-none absolute -top-20 left-[12%] size-64 animate-benefit-glow rounded-full bg-[#8f6bff]/30 blur-[70px] motion-reduce:animate-none"
             aria-hidden="true"
