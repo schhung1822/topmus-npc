@@ -65,6 +65,39 @@
     0 0 13px rgb(255 84 233 / 48%);
 }
 
+.achievementGallery {
+  display: grid;
+  width: 100%;
+  max-width: 420px;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(10px, 2.5vw, 18px);
+  margin-inline: auto;
+}
+
+.achievementCard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(#09000d, #09000d) padding-box,
+    linear-gradient(135deg, #9747ff 0%, #ef4bd8 52%, #ff9bed 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: clamp(14px, 2vw, 24px);
+  box-shadow:
+    0 22px 42px rgb(20 0 31 / 52%),
+    0 0 26px rgb(226 73 220 / 30%);
+}
+
+.achievementImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .titleSwoosh {
   position: absolute;
   right: 4%;
@@ -145,6 +178,13 @@
   .swooshStar {
     right: -8px;
     bottom: -1px;
+  }
+}
+
+@media (min-width: 640px) {
+  .achievementGallery {
+    max-width: 680px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

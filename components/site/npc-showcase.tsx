@@ -21,6 +21,8 @@ type DragState = {
   axis: "pending" | "horizontal" | "vertical";
 };
 
+const AUTO_PLAY_DELAY_MS = 5_000;
+
 export function NpcShowcase({ content }: NpcShowcaseProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const scrollAnimationRef = useRef<number | null>(null);
@@ -29,6 +31,10 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
   const [canScrollForward, setCanScrollForward] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocusWithin, setHasFocusWithin] = useState(false);
+  const canMoveSlider = canScrollBack || canScrollForward;
+  const isAutoPlayPaused = isDragging || isHovered || hasFocusWithin;
 
   const updateSliderControls = useCallback(() => {
     const slider = sliderRef.current;
@@ -65,7 +71,7 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
     };
   }, [content.npcs.length, updateSliderControls]);
 
-  function animateSliderTo(targetLeft: number) {
+  const animateSliderTo = useCallback((targetLeft: number) => {
     const slider = sliderRef.current;
     if (!slider) return;
 
@@ -111,9 +117,9 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
     };
 
     scrollAnimationRef.current = requestAnimationFrame(animate);
-  }
+  }, [updateSliderControls]);
 
-  function goToNpc(index: number) {
+  const goToNpc = useCallback((index: number) => {
     const slider = sliderRef.current;
     const card = slider?.children[index] as HTMLElement | undefined;
     if (!slider || !card) return;
@@ -121,15 +127,34 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
     const firstCard = slider.firstElementChild as HTMLElement | null;
     const targetLeft = card.offsetLeft - (firstCard?.offsetLeft ?? 0);
     animateSliderTo(targetLeft);
-  }
+  }, [animateSliderTo]);
 
-  function moveSlider(direction: -1 | 1) {
-    const targetIndex = Math.min(
-      Math.max(activeIndex + direction, 0),
-      content.npcs.length - 1,
-    );
+  const moveSlider = useCallback((direction: -1 | 1) => {
+    if (!canMoveSlider || content.npcs.length <= 1) return;
+
+    const targetIndex =
+      direction === 1
+        ? canScrollForward
+          ? activeIndex + 1
+          : 0
+        : canScrollBack
+          ? activeIndex - 1
+          : content.npcs.length - 1;
+
     goToNpc(targetIndex);
-  }
+  }, [activeIndex, canMoveSlider, canScrollBack, canScrollForward, content.npcs.length, goToNpc]);
+
+  useEffect(() => {
+    if (!canMoveSlider || content.npcs.length <= 1 || isAutoPlayPaused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const intervalId = window.setInterval(() => {
+      if (dragStateRef.current || scrollAnimationRef.current !== null) return;
+      moveSlider(1);
+    }, AUTO_PLAY_DELAY_MS);
+
+    return () => window.clearInterval(intervalId);
+  }, [canMoveSlider, content.npcs.length, isAutoPlayPaused, moveSlider]);
 
   function stopSliderAnimation() {
     if (scrollAnimationRef.current === null) return;
@@ -282,7 +307,17 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
             />
           </div>
 
-          <div className="relative min-w-0 bg-[#FFF0FF] p-5 sm:p-7 lg:px-7 lg:pt-11 lg:pb-7">
+          <div
+            className="relative min-w-0 bg-[#FFF0FF] p-5 sm:p-7 lg:px-7 lg:pt-11 lg:pb-7"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onFocusCapture={() => setHasFocusWithin(true)}
+            onBlurCapture={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setHasFocusWithin(false);
+              }
+            }}
+          >
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h3 className="text-[18px] leading-tight font-bold text-[#2f1139] sm:text-[20px]">
@@ -300,7 +335,7 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
                   className="grid size-9 cursor-pointer place-items-center rounded-full border border-[#d9cbdc] bg-[#e6dfe8] text-[#896d90] shadow-[0_5px_14px_rgba(67,30,76,0.08)] transition duration-200 hover:-translate-y-0.5 hover:border-[#c86fd5] hover:bg-[#eed0f2] hover:text-[#711185] hover:shadow-[0_8px_19px_rgba(143,33,158,0.22)] disabled:cursor-default disabled:border-transparent disabled:bg-[#d4d4d4] disabled:text-white disabled:opacity-45 disabled:hover:translate-y-0 disabled:hover:shadow-none"
                   type="button"
                   aria-label="Xem NPC trước"
-                  disabled={!canScrollBack}
+                  disabled={!canMoveSlider}
                   onClick={() => moveSlider(-1)}
                 >
                   <ChevronLeft className="size-4" strokeWidth={2.5} aria-hidden="true" />
@@ -309,7 +344,7 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
                   className="grid size-9 cursor-pointer place-items-center rounded-full border border-[#721592] bg-[#510281] text-white shadow-[0_7px_17px_rgba(105,16,145,0.28)] transition duration-200 hover:-translate-y-0.5 hover:border-[#ff8bec] hover:bg-[#d634c4] hover:shadow-[0_9px_23px_rgba(214,52,196,0.38)] disabled:cursor-default disabled:border-transparent disabled:bg-[#d4d4d4] disabled:shadow-none disabled:opacity-45 disabled:hover:translate-y-0"
                   type="button"
                   aria-label="Xem NPC tiếp theo"
-                  disabled={!canScrollForward}
+                  disabled={!canMoveSlider}
                   onClick={() => moveSlider(1)}
                 >
                   <ChevronRight className="size-4" strokeWidth={2.5} aria-hidden="true" />

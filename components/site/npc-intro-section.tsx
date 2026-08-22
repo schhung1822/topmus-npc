@@ -64,7 +64,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
             fill
             sizes="(max-width: 1280px) 100vw, 1280px"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(58,0,93,0.96)_0%,rgba(75,0,112,0.82)_38%,rgba(75,0,112,0.12)_70%,transparent_100%)] max-lg:bg-[linear-gradient(90deg,rgba(58,0,93,0.94),rgba(64,0,96,0.66))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(58,0,93,0.96)_0%,rgba(75,0,112,0.82)_30%,rgba(75,0,112,0)_70%,transparent_100%)] max-lg:bg-[linear-gradient(90deg,rgba(58,0,93,0.94),rgba(64,0,96,0.66))]" />
 
           <div className="relative z-10 flex min-h-[430px] max-w-[570px] flex-col justify-center px-6 py-10 text-white sm:min-h-[470px] sm:px-10 lg:min-h-[430px] lg:w-[54%] lg:px-11">
             <h2 aria-label={content.heading} className={styles.npcHeading}>
@@ -85,7 +85,6 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
             <div className="mt-6 space-y-4 text-[13px] leading-[1.62] text-white/92 sm:text-sm">
               {content.paragraphs.map((paragraph, index) => (
                 <p key={`${index}-${paragraph.slice(0, 18)}`}>
-                  {index === 0 ? <strong>NPC (Non-Player Character) </strong> : null}
                   {index === 0 ? paragraph.replace(/^NPC \(Non-Player Character\)\s*/, "") : paragraph}
                 </p>
               ))}

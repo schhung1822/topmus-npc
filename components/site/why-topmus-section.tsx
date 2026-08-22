@@ -2,28 +2,20 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import styles from "./why-topmus-section.module.css";
 
-const galleryImages = [
+const achievementImages = [
   {
-    src: "/img/banner-hero.webp",
-    alt: "Đội ngũ NPC Live Creator của TOPMUS",
-    className: "object-cover object-[24%_center]",
+    src: "/img/tm1.webp",
+    alt: "Nhà sáng tạo TOPMUS được vinh danh trên SkyLED lớn nhất Đông Nam Á tại TCN Season 3",
+    width: 2000,
+    height: 2000,
   },
   {
-    src: "/img/banenr_sec3.webp",
-    alt: "Nhà sáng tạo livestream tại studio TOPMUS",
-    className: "object-cover object-right",
+    src: "/img/tm2.webp",
+    alt: "Các nhà sáng tạo TOPMUS được vinh danh tại TikTok LIVE Clash Season 3",
+    width: 2048,
+    height: 2048,
   },
-  {
-    src: "/img/banner_sec2.webp",
-    alt: "Các nhà sáng tạo NPC Beauty",
-    className: "object-cover object-center",
-  },
-  {
-    src: "/img/banner-hero.webp",
-    alt: "Cộng đồng nhà sáng tạo TOPMUS",
-    className: "object-cover object-[73%_center]",
-  },
-];
+] as const;
 
 function TickerGroup({ items }: { items: string[] }) {
   return (
@@ -56,11 +48,11 @@ export function WhyTopmusSection({ tickerItems }: { tickerItems: string[] }) {
       aria-labelledby="why-topmus-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(76,0,111,0.18),rgba(104,4,145,0.22))]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(31,0,48,0.64),rgba(56,0,78,0.72))]"
         aria-hidden="true"
       />
 
-      <div className="mx-auto min-h-[610px] w-full max-w-[1280px] px-4 pt-12 pb-10 sm:px-6 sm:pt-14 lg:pt-12">
+      <div className="mx-auto min-h-[720px] w-full max-w-[1280px] px-4 pt-12 pb-10 sm:px-6 sm:pt-14 lg:pt-16">
         <div className={styles.titleBlock}>
           <p className={styles.titleEyebrow}>
             Vì sao nên bắt đầu nghề
@@ -96,6 +88,21 @@ export function WhyTopmusSection({ tickerItems }: { tickerItems: string[] }) {
                 aria-hidden="true"
               />
             </a>
+          </div>
+
+          <div className={styles.achievementGallery}>
+            {achievementImages.map((image) => (
+              <figure className={styles.achievementCard} key={image.src}>
+                <Image
+                  className={styles.achievementImage}
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 92vw"
+                />
+              </figure>
+            ))}
           </div>
         </div>
       </div>
