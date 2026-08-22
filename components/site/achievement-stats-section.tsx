@@ -41,7 +41,7 @@ const statistics = [
     accessibleLabel: "Hơn 13 giải thưởng lớn trong nước",
   },
   {
-    value: 70,
+    value: 60,
     suffix: "%",
     label: (
       <>
@@ -50,7 +50,13 @@ const statistics = [
         chia sẻ tối đa
       </>
     ),
-    accessibleLabel: "Hoa hồng chia sẻ tối đa 70%",
+    accessibleLabel: "Hoa hồng chia sẻ tối đa 60%",
+  },
+  {
+    value: "TOP 1",
+    suffix: "",
+    label: <>SEA & CCA</>,
+    accessibleLabel: "TOP 1 SEA & CCA",
   },
 ];
 
@@ -60,7 +66,11 @@ export function AchievementStatsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const animationFrameRef = useRef<number | null>(null);
   const hasAnimatedRef = useRef(false);
-  const [values, setValues] = useState(() => statistics.map(() => 0));
+  const [values, setValues] = useState<(number | string)[]>(() =>
+    statistics.map((statistic) =>
+      typeof statistic.value === "number" ? 0 : statistic.value,
+    ),
+  );
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -86,7 +96,11 @@ export function AchievementStatsSection() {
           const easedProgress = 1 - Math.pow(1 - progress, 3);
 
           setValues(
-            statistics.map((statistic) => Math.round(statistic.value * easedProgress)),
+            statistics.map((statistic) =>
+              typeof statistic.value === "number"
+                ? Math.round(statistic.value * easedProgress)
+                : statistic.value,
+            ),
           );
 
           if (progress < 1) {
@@ -119,22 +133,25 @@ export function AchievementStatsSection() {
 
       <div className={styles.designStage}>
         <ul className={styles.statsGrid}>
-          {statistics.map((statistic, index) => (
-            <li className={styles.statCard} key={statistic.accessibleLabel}>
-              <div aria-hidden="true" className={styles.cardSheen} />
-              <span
-                aria-hidden="true"
-                className={styles.statValue}
-              >
-                {numberFormatter.format(values[index])}
-                {statistic.suffix}
-              </span>
-              <p aria-hidden="true" className={styles.statLabel}>
-                {statistic.label}
-              </p>
-              <span className={styles.srOnly}>{statistic.accessibleLabel}</span>
-            </li>
-          ))}
+          {statistics.map((statistic, index) => {
+            const displayedValue = values[index];
+
+            return (
+              <li className={styles.statCard} key={statistic.accessibleLabel}>
+                <div aria-hidden="true" className={styles.cardSheen} />
+                <span aria-hidden="true" className={styles.statValue}>
+                  {typeof displayedValue === "number"
+                    ? numberFormatter.format(displayedValue)
+                    : displayedValue}
+                  {statistic.suffix}
+                </span>
+                <p aria-hidden="true" className={styles.statLabel}>
+                  {statistic.label}
+                </p>
+                <span className={styles.srOnly}>{statistic.accessibleLabel}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

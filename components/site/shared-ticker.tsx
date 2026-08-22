@@ -15,8 +15,8 @@ function TickerGroup({ items, variant }: Pick<SharedTickerProps, "items" | "vari
         <div
           className={
             isDark
-              ? "flex shrink-0 items-center gap-4 pl-5 text-[17px] leading-none font-extrabold whitespace-nowrap text-white sm:gap-6 sm:pl-7 sm:text-[21px]"
-              : "flex shrink-0 items-center gap-3.5 pl-[18px] text-base leading-none font-extrabold whitespace-nowrap text-white sm:gap-5 sm:pl-6 sm:text-[19px]"
+              ? "flex shrink-0 items-center gap-4 pl-5 text-[17px] leading-none font-bold whitespace-nowrap text-white sm:gap-6 sm:pl-7 sm:text-[21px]"
+              : "flex shrink-0 items-center gap-3.5 pl-[18px] text-base leading-none font-bold whitespace-nowrap text-white sm:gap-5 sm:pl-6 sm:text-[19px]"
           }
           key={`${index}-${item}`}
         >

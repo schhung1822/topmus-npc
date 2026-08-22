@@ -9,9 +9,7 @@ const painPoints = [
   {
     title: (
       <>
-        Cạn chuyện
-        <br />
-        sau 15 phút
+        Nhàm chán với live nhóm, chạy KPI áp lực, thu nhập không đạt mong muốn
       </>
     ),
     icon: "/img/icon.mess.webp",
@@ -22,9 +20,7 @@ const painPoints = [
   {
     title: (
       <>
-        Live cả buổi,
-        <br />
-        3–5 mắt xem
+        Live cả buổi ít mắt xem · Tự bơi một mình · Không lương cứng
       </>
     ),
     icon: "/img/icon-eye.webp",
@@ -35,9 +31,7 @@ const painPoints = [
   {
     title: (
       <>
-        Tự bơi
-        <br />
-        một mình
+        Không được đào tạo, không có công cụ, phần mền chuyên dụng - ekip hỗ trợ
       </>
     ),
     icon: "/img/icon3.webp",
@@ -48,9 +42,7 @@ const painPoints = [
   {
     title: (
       <>
-        Không
-        <br />
-        lương cứng
+        Bạn là người có năng khiếu diễn xuất/nhảy, muốn thử sức nhưng chưa biết bắt đầu từ đâu
       </>
     ),
     icon: "/img/icon1.webp",
@@ -115,7 +107,7 @@ export function PainPointsSection() {
       </div>
 
       <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-6">
-        <div className="relative mx-auto flex w-full max-w-[720px] flex-col lg:min-h-[520px]">
+        <div className="relative mx-auto flex w-full max-w-[960px] flex-col lg:min-h-[520px]">
           <div
             className={`relative z-10 mx-auto mb-9 w-full max-w-[420px] text-center transition duration-700 lg:absolute lg:top-1/2 lg:left-1/2 lg:mb-0 lg:w-[350px] lg:-translate-x-1/2 lg:-translate-y-1/2 ${
               isVisible ? "opacity-100" : "opacity-0"
@@ -129,14 +121,14 @@ export function PainPointsSection() {
               id="pain-points-title"
             >
               <span>KHÔNG BỨT</span>
-              <span>LÊN ĐƯỢC ?</span>
+              <span className="-translate-y-[8px]">LÊN ĐƯỢC ?</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:block">
             {painPoints.map((painPoint, index) => (
               <div
-                className={`w-full transition duration-700 lg:w-[260px] ${painPoint.position} ${
+                className={`w-full transition duration-700 lg:w-[320px] ${painPoint.position} ${
                   isVisible
                     ? "translate-y-0 scale-100 opacity-100"
                     : "translate-y-10 scale-90 opacity-0"
@@ -152,7 +144,7 @@ export function PainPointsSection() {
                     <div className="relative mx-auto">
                       <PainPointIcon src={painPoint.icon} />
                     </div>
-                    <h3 className="relative mt-1 text-[clamp(19px,3vw,27px)] leading-[1.08] font-bold tracking-[-0.035em] text-white [text-shadow:0_2px_5px_rgba(94,0,111,0.26)] lg:text-[27px]">
+                    <h3 className="relative mt-1 text-[clamp(16px,3vw,22px)] leading-[27px] font-bold tracking-[-0.035em] text-white [text-shadow:0_2px_5px_rgba(94,0,111,0.26)] lg:h-[114px] lg:text-[22px]">
                       {painPoint.title}
                     </h3>
                   </article>
@@ -163,7 +155,7 @@ export function PainPointsSection() {
         </div>
 
         <div
-          className={`mx-auto mt-10 max-w-[780px] rounded-[17px] border border-white/[0.04] bg-[#4a0075]/78 px-6 py-4 text-center text-[13px] leading-[1.42] shadow-[0_18px_40px_rgba(46,0,72,0.22)] backdrop-blur-sm transition duration-700 sm:text-[14px] lg:mt-[58px] lg:flex lg:min-h-[72px] lg:items-center lg:justify-center ${
+          className={`mx-auto mt-10 max-w-[780px] rounded-[17px] border border-white/[0.04] bg-[#510281]/78 px-6 py-4 text-center text-[13px] leading-[1.42] shadow-[0_18px_40px_rgba(46,0,72,0.22)] backdrop-blur-sm transition duration-700 sm:text-[14px] lg:mt-[58px] lg:flex lg:min-h-[72px] lg:items-center lg:justify-center ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
           style={{ transitionDelay: "680ms" }}

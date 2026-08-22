@@ -28,7 +28,7 @@ const benefitCards = [
       <>
         HOA HỒNG TỚI
         <br />
-        <span className="text-[1.6em] leading-none">70%</span>
+        <span className="text-[1.6em] leading-none">60%</span>
       </>
     ),
     imageClass: "object-cover object-center",

@@ -58,6 +58,12 @@
   backdrop-filter: blur(6px);
 }
 
+.statCard:last-child:nth-child(odd) {
+  width: calc(50% - 6px);
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
 .cardSheen {
   position: absolute;
   z-index: -1;
@@ -72,7 +78,7 @@
 .statValue {
   position: relative;
   color: #fff;
-  font-size: clamp(30px, 9vw, 42px);
+  font-size: clamp(30px, 9vw, 40px);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   line-height: 1;
@@ -84,7 +90,7 @@
   position: relative;
   margin: 8px 0 0;
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1.25;
 }
@@ -122,6 +128,10 @@
 
   .statCard {
     min-height: 138px;
+  }
+
+  .statCard:last-child:nth-child(odd) {
+    width: calc(50% - 8px);
   }
 
   .statLabel {
@@ -164,7 +174,7 @@
     width: 38.02%;
     max-width: none;
     height: 21.13%;
-    grid-template-columns: 0.94fr 1.24fr 1fr 0.94fr;
+    grid-template-columns: 0.94fr 1.24fr 1fr 0.94fr 0.94fr;
     column-gap: 2.05%;
     margin: 0;
   }
@@ -180,18 +190,25 @@
     backdrop-filter: none;
   }
 
+  .statCard:last-child:nth-child(odd) {
+    width: auto;
+    grid-column: auto;
+    justify-self: stretch;
+  }
+
   .cardSheen {
     display: none;
   }
 
   .statValue {
-    font-size: 8.113cqh;
+    font-size: 40px;
   }
 
   .statLabel {
-    margin-top: 1.51cqh;
-    font-size: 3.208cqh;
-    line-height: 1.18;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    height: 46px;
     letter-spacing: -0.02em;
     white-space: nowrap;
   }
