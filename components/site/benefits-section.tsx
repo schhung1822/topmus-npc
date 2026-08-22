@@ -22,7 +22,7 @@ const benefitCards = [
   },
   {
     id: "hoa-hong",
-    src: "/img/img3.webp",
+    src: "/img/img4.webp",
     alt: "Poster hoa hồng lên tới 70% dành cho NPC Live Creator",
     title: (
       <>
@@ -53,7 +53,7 @@ const benefitCards = [
 const incomeTiers = [
   { label: "THÁNG 1 - 3", amount: "3 – 10 TRIỆU", note: "Giai đoạn ươm mầm" },
   { label: "THÁNG 4 - 6", amount: "10 – 25 TRIỆU", note: "Giai đoạn ổn định" },
-  { label: "SAU 6 THÁNG", amount: "30 – 100+ TRIỆU", note: "Nhóm bứt phá" },
+  { label: "SAU 6 THÁNG", amount: "25 – 50 TRIỆU", note: "Nhóm bứt phá" },
 ] as const;
 
 export function BenefitsSection() {
