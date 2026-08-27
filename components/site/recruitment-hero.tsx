@@ -9,7 +9,7 @@ const benefits = [
     alt: "Biểu tượng thu nhập",
     content: (
       <>
-        Lương cứng ổn định + hoa hồng chia sẻ <strong>lên tới 70%</strong>
+        Lương cứng 10-50tr/chính sách <strong>hoa hồng tới 60%</strong>
       </>
     ),
   },
@@ -18,7 +18,7 @@ const benefits = [
     alt: "Biểu tượng studio livestream",
     content: (
       <>
-        Studio và hệ thống thiết bị live trị giá <strong>5.000 USD</strong>
+         Lộ trình đào tạo <strong>10 ngày + 30 ngày theo dõi cải tiến hoàn thiện</strong>
       </>
     ),
   },
@@ -27,7 +27,7 @@ const benefits = [
     alt: "Biểu tượng mentor",
     content: (
       <>
-        <strong>Mentor 1:1</strong> phân tích dữ liệu từng buổi live
+        GIờ làm linh hoạt <strong>24/7</strong> & Ekip support tận tâm
       </>
     ),
   },
@@ -84,12 +84,13 @@ export function RecruitmentHero({ tickerItems }: { tickerItems: string[] }) {
                 id="recruitment-title"
               >
                 <span className="block text-white">TOPMUS Entertainment</span>
-                Tuyển gấp 2026
+                Tuyển ngay NPC Live!
               </h1>
               <p className="mx-auto mt-[22px] max-w-[520px] text-[16px] leading-[1.55] text-white/90 md:mx-0 md:mt-[38px] md:max-w-[480px] md:leading-[1.42]">
-                Nhập vai nhân vật, livestream trên TikTok và biến cá tính của bạn thành thu nhập
-                thật. Không cần kinh nghiệm - TOPMUS đào tạo từ con số 0 với lộ trình 45 ngày thực
-                chiến. Đợt này tuyển ứng viên nữ từ 18 tuổi, ngoại hình ưa nhìn.
+                • Là Idol live đơn tại nhà,nhàm chán? <br></br>
+                • Là idol live nhóm, áp lực cạnh tranh cao, KPI gắt? <br></br>
+                • Biết nhảy, đam mê live mà chưa biết bắt đầu từ đâu? <br></br>
+                • Dù bạn là ai, chỉ cần có năng khiếu & ngoại hình, NPC là lựa chọn tuyệt vời, mô hình Live mới đang được săn đón tại TikTok Live!
               </p>
             </div>
 

@@ -12,9 +12,9 @@ const benefitCards = [
     alt: "Poster tuyển dụng NPC Live với lương cứng từ 10 đến 40 triệu mỗi tháng",
     title: (
       <>
-        LƯƠNG CỨNG
+        LỘ TRÌNH
         <br />
-        ỔN ĐỊNH
+        ĐÀO TẠO
       </>
     ),
     imageClass: "object-cover object-[20%_center]",
@@ -26,9 +26,9 @@ const benefitCards = [
     alt: "Poster hoa hồng lên tới 70% dành cho NPC Live Creator",
     title: (
       <>
-        HOA HỒNG TỚI
+         LƯƠNG CỨNG
         <br />
-        <span className="text-[1.6em] leading-none">60%</span>
+        HOA HỒNG 60%
       </>
     ),
     imageClass: "object-cover object-center",
@@ -40,9 +40,9 @@ const benefitCards = [
     alt: "Poster bảng xếp hạng NST Live tháng 5",
     title: (
       <>
-        THƯỞNG NÓNG
+        GIỜ LÀM
         <br />
-        THEO BXH THÁNG
+        LINH HOẠT
       </>
     ),
     imageClass: "object-cover object-[82%_center]",
@@ -51,9 +51,9 @@ const benefitCards = [
 ] as const;
 
 const incomeTiers = [
-  { label: "THÁNG 1 - 3", amount: "3 – 10 TRIỆU", note: "Giai đoạn ươm mầm" },
-  { label: "THÁNG 4 - 6", amount: "10 – 25 TRIỆU", note: "Giai đoạn ổn định" },
-  { label: "SAU 6 THÁNG", amount: "25 – 50 TRIỆU", note: "Nhóm bứt phá" },
+  { label: "THÁNG ĐẦU", amount: "10 – 20 TRIỆU", note: "Giai đoạn ươm mầm không KPI" },
+  { label: "THÁNG 2 - 4", amount: "12 – 50 TRIỆU", note: "Giai đoạn ổn định" },
+  { label: "SAU 5 THÁNG", amount: "50 TRIỆU +", note: "Nhóm bứt phá, thu nhập vô hạn" },
 ] as const;
 
 export function BenefitsSection() {

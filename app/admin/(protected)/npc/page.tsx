@@ -115,6 +115,14 @@ export default async function AdminNpcPage({
                 Loại nội dung
                 <input className={inputClasses} name="contentType" defaultValue="Video" required />
               </label>
+              <label className={labelClasses}>
+                Link kênh TikTok
+                <input className={inputClasses} type="url" inputMode="url" name="tiktokUrl" placeholder="https://www.tiktok.com/@tenkenh" />
+              </label>
+              <label className={labelClasses}>
+                Link video TikTok
+                <input className={inputClasses} type="url" inputMode="url" name="videoUrl" placeholder="https://www.tiktok.com/@tenkenh/video/..." />
+              </label>
               <ImagePicker className="sm:col-span-2" name="image" label="Ảnh NPC" library={library} />
               <button className="h-11 cursor-pointer rounded-xl border-0 bg-[linear-gradient(90deg,#671482,#a52aaa)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(104,20,130,0.16)] transition hover:-translate-y-0.5 sm:col-span-2" type="submit">
                 + Thêm NPC
@@ -157,6 +165,8 @@ export default async function AdminNpcPage({
                     <label className={labelClasses}>Giờ live<input className={inputClasses} name="liveTime" defaultValue={npc.liveTime} required /></label>
                     <label className={labelClasses}>Nền tảng<input className={inputClasses} name="platform" defaultValue={npc.platform} required /></label>
                     <label className={labelClasses}>Loại nội dung<input className={inputClasses} name="contentType" defaultValue={npc.contentType} required /></label>
+                    <label className={labelClasses}>Link kênh TikTok<input className={inputClasses} type="url" inputMode="url" name="tiktokUrl" defaultValue={npc.tiktokUrl} placeholder="https://www.tiktok.com/@tenkenh" /></label>
+                    <label className={labelClasses}>Link video TikTok<input className={inputClasses} type="url" inputMode="url" name="videoUrl" defaultValue={npc.videoUrl} placeholder="https://www.tiktok.com/@tenkenh/video/..." /></label>
                     <ImagePicker className="sm:col-span-2" name="image" label="Thay ảnh" library={library} />
                     <button className="h-10 cursor-pointer rounded-xl border-0 bg-[#5d1476] text-xs font-bold text-white hover:bg-[#741b91] sm:col-span-2" type="submit">Lưu thay đổi NPC</button>
                   </form>

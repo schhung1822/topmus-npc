@@ -141,7 +141,7 @@ export function SevenDayTrainingSection({ content }: { content: SevenDayTraining
                         sizes="(max-width: 640px) 46vw, (max-width: 1024px) 45vw, 164px"
                       />
                       <span
-                        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 animate-benefit-shine bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent)] motion-reduce:hidden"
+                        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 animate-training-image-shine bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent)] motion-reduce:hidden"
                         aria-hidden="true"
                       />
                       <span

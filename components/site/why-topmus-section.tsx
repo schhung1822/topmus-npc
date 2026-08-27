@@ -1,8 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import styles from "./why-topmus-section.module.css";
 
-const achievementImages = [
+type WhyTopmusSlide = {
+  src: string;
+  alt: string;
+};
+
+type WhyTopmusSectionProps = {
+  tickerItems: string[];
+  creatorSlides: WhyTopmusSlide[];
+  trainingSlides: WhyTopmusSlide[];
+};
+
+const fallbackSlides = [
   {
     src: "/img/tm1.webp",
     alt: "Nhà sáng tạo TOPMUS được vinh danh trên SkyLED lớn nhất Đông Nam Á tại TCN Season 3",
@@ -16,6 +30,45 @@ const achievementImages = [
     height: 2048,
   },
 ] as const;
+
+const SLIDE_INTERVAL_MS = 3_000;
+
+function AutoFadeSlider({ slides }: { slides: readonly WhyTopmusSlide[] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const visibleIndex = activeIndex % Math.max(slides.length, 1);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % slides.length);
+    }, SLIDE_INTERVAL_MS);
+
+    return () => window.clearInterval(intervalId);
+  }, [slides.length]);
+
+  return (
+    <figure className={styles.achievementCard}>
+      {slides.map((image, index) => {
+        const isActive = index === visibleIndex;
+
+        return (
+          <Image
+            className={`${styles.achievementImage} ${styles.achievementSlide} ${
+              isActive ? styles.achievementSlideActive : ""
+            }`}
+            src={image.src}
+            alt={isActive ? image.alt : ""}
+            fill
+            sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 92vw"
+            aria-hidden={!isActive}
+            key={`${image.src}-${index}`}
+          />
+        );
+      })}
+    </figure>
+  );
+}
 
 function TickerGroup({ items }: { items: string[] }) {
   return (
@@ -40,7 +93,14 @@ function TickerGroup({ items }: { items: string[] }) {
   );
 }
 
-export function WhyTopmusSection({ tickerItems }: { tickerItems: string[] }) {
+export function WhyTopmusSection({
+  tickerItems,
+  creatorSlides,
+  trainingSlides,
+}: WhyTopmusSectionProps) {
+  const resolvedCreatorSlides = creatorSlides.length ? creatorSlides : [fallbackSlides[0]];
+  const resolvedTrainingSlides = trainingSlides.length ? trainingSlides : [fallbackSlides[1]];
+
   return (
     <section
       className="relative isolate overflow-hidden bg-[#5b087e] bg-[image:url('/img/bga.webp')] bg-cover bg-center text-white"
@@ -91,18 +151,8 @@ export function WhyTopmusSection({ tickerItems }: { tickerItems: string[] }) {
           </div>
 
           <div className={styles.achievementGallery}>
-            {achievementImages.map((image) => (
-              <figure className={styles.achievementCard} key={image.src}>
-                <Image
-                  className={styles.achievementImage}
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 92vw"
-                />
-              </figure>
-            ))}
+            <AutoFadeSlider slides={resolvedCreatorSlides} />
+            <AutoFadeSlider slides={resolvedTrainingSlides} />
           </div>
         </div>
       </div>

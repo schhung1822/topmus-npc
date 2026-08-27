@@ -95,7 +95,18 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.achievementSlide {
+  opacity: 0;
+  transition: opacity 700ms ease-in;
+  will-change: opacity;
+}
+
+.achievementSlideActive {
+  z-index: 1;
+  opacity: 1;
 }
 
 .titleSwoosh {
@@ -191,6 +202,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .swooshStar {
     animation: title-star-glow 3s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achievementSlide {
+    transition: none;
   }
 }
 

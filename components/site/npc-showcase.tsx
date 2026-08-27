@@ -165,6 +165,7 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
 
   function handlePointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     if (event.pointerType === "mouse" && event.button !== 0) return;
+    if ((event.target as HTMLElement).closest("a, button, input, select, textarea")) return;
     const slider = sliderRef.current;
     if (!slider) return;
 
@@ -391,12 +392,44 @@ export function NpcShowcase({ content }: NpcShowcaseProps) {
                           </span>
                         </div>
                         <div className="mt-3 grid grid-cols-2 gap-2">
-                          <span className="rounded-full bg-[#FFE4FF] px-2 py-1.5 text-center text-[12px] font-medium text-[#000000]">
-                            {npc.platform}
-                          </span>
-                          <span className="rounded-full bg-[#510281] px-2 py-1.5 text-center text-[12px] font-medium text-white shadow-[0_4px_10px_rgba(102,16,139,0.16)]">
-                            {npc.contentType}
-                          </span>
+                          {npc.tiktokUrl ? (
+                            <a
+                              className="rounded-full bg-[#FFE4FF] px-2 py-1.5 text-center text-[12px] font-medium text-[#000000] no-underline transition hover:bg-[#f9c9f8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9C1C9B]"
+                              href={npc.tiktokUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              draggable={false}
+                              aria-label={`Xem kênh TikTok của ${npc.name} trong tab mới`}
+                            >
+                              {npc.platform}
+                            </a>
+                          ) : (
+                            <span
+                              className="cursor-not-allowed rounded-full bg-[#FFE4FF] px-2 py-1.5 text-center text-[12px] font-medium text-[#000000] opacity-55"
+                              aria-disabled="true"
+                            >
+                              {npc.platform}
+                            </span>
+                          )}
+                          {npc.videoUrl ? (
+                            <a
+                              className="rounded-full bg-[#510281] px-2 py-1.5 text-center text-[12px] font-medium text-white no-underline shadow-[0_4px_10px_rgba(102,16,139,0.16)] transition hover:bg-[#7510a8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#510281]"
+                              href={npc.videoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              draggable={false}
+                              aria-label={`Xem video TikTok của ${npc.name} trong tab mới`}
+                            >
+                              {npc.contentType}
+                            </a>
+                          ) : (
+                            <span
+                              className="cursor-not-allowed rounded-full bg-[#510281] px-2 py-1.5 text-center text-[12px] font-medium text-white opacity-55 shadow-[0_4px_10px_rgba(102,16,139,0.16)]"
+                              aria-disabled="true"
+                            >
+                              {npc.contentType}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </article>

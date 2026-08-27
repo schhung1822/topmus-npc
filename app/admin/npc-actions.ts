@@ -25,6 +25,20 @@ function requiredText(formData: FormData, name: string, label: string) {
   return value;
 }
 
+function optionalHttpUrl(formData: FormData, name: string, label: string) {
+  const value = text(formData, name);
+  if (!value) return "";
+
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "http:" && url.protocol !== "https:") throw new Error();
+  } catch {
+    throw new Error(`${label} không hợp lệ. Hãy nhập URL bắt đầu bằng http:// hoặc https://.`);
+  }
+
+  return value;
+}
+
 function refreshNpcPages() {
   revalidatePath("/");
   revalidatePath("/admin");
@@ -67,6 +81,8 @@ export async function addNpcAction(formData: FormData) {
     liveTime: requiredText(formData, "liveTime", "Giờ live"),
     platform: text(formData, "platform") || "TikTok",
     contentType: text(formData, "contentType") || "Video",
+    tiktokUrl: optionalHttpUrl(formData, "tiktokUrl", "Link kênh TikTok"),
+    videoUrl: optionalHttpUrl(formData, "videoUrl", "Link video TikTok"),
     image: uploadedImage || content.bannerImage,
   });
 
@@ -98,6 +114,8 @@ export async function updateNpcAction(formData: FormData) {
   npc.liveTime = requiredText(formData, "liveTime", "Giờ live");
   npc.platform = text(formData, "platform") || "TikTok";
   npc.contentType = text(formData, "contentType") || "Video";
+  npc.tiktokUrl = optionalHttpUrl(formData, "tiktokUrl", "Link kênh TikTok");
+  npc.videoUrl = optionalHttpUrl(formData, "videoUrl", "Link video TikTok");
   if (uploadedImage) npc.image = uploadedImage;
 
   await saveNpcSectionContent(content);

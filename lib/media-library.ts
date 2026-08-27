@@ -29,7 +29,6 @@ const dataFileLabels = new Map([
   ["npc-model-section.json", "Mô hình NPC"],
   ["seo-settings.json", "SEO & Favicon"],
   ["seven-day-training-section.json", "Lộ trình 7 ngày"],
-  ["video-section.json", "Video highlight"],
 ]);
 
 function collectImagePaths(value: unknown, found: Set<string>) {

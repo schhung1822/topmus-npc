@@ -14,7 +14,6 @@ const navigation = [
   { href: "/admin/npc", label: "Creator NPC", icon: "✦" },
   { href: "/admin/npc-intro", label: "NPC là gì?", icon: "?" },
   { href: "/admin/npc-model", label: "Mô hình NPC", icon: "◱" },
-  { href: "/admin/videos", label: "Video highlight", icon: "▶" },
   { href: "/admin/seven-day-training", label: "Lộ trình 7 ngày", icon: "◷" },
   { href: "/admin/media", label: "Thư viện ảnh", icon: "◨" },
 ];

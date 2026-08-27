@@ -26,8 +26,8 @@ const applicationSteps = [
   },
   {
     number: "03",
-    title: "Bắt đầu lộ trình 45 ngày",
-    description: "Trúng tuyển – bạn được xếp mentor, chọn nhân vật và bước vào giai đoạn ươm mầm.",
+    title: "Bắt đầu lộ trình 40 ngày",
+    description: "Trúng tuyển – Bạn sẽ bắt đầu lộ trình đào tạo 10 ngày + 30 ngày theo dõi cải tiến hoàn thiện ",
   },
 ] as const;
 

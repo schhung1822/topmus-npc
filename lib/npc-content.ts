@@ -20,6 +20,8 @@ export type NpcProfile = {
   liveTime: string;
   platform: string;
   contentType: string;
+  tiktokUrl: string;
+  videoUrl: string;
   image: string;
 };
 
@@ -32,9 +34,31 @@ export type NpcSectionContent = {
 
 const contentPath = path.join(process.cwd(), "data", "npc-section.json");
 
+function normalizeExternalUrl(value: unknown) {
+  if (typeof value !== "string") return "";
+  const normalized = value.trim();
+  if (!normalized) return "";
+
+  try {
+    const url = new URL(normalized);
+    return url.protocol === "http:" || url.protocol === "https:" ? normalized : "";
+  } catch {
+    return "";
+  }
+}
+
 export async function getNpcSectionContent(): Promise<NpcSectionContent> {
   const rawContent = await readFile(contentPath, "utf8");
-  return normalizeUploadPaths(JSON.parse(rawContent) as NpcSectionContent);
+  const content = normalizeUploadPaths(JSON.parse(rawContent) as NpcSectionContent);
+
+  return {
+    ...content,
+    npcs: content.npcs.map((npc) => ({
+      ...npc,
+      tiktokUrl: normalizeExternalUrl(npc.tiktokUrl),
+      videoUrl: normalizeExternalUrl(npc.videoUrl),
+    })),
+  };
 }
 
 export async function saveNpcSectionContent(content: NpcSectionContent) {

@@ -6,10 +6,10 @@ import { type FormEvent, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 
 const benefits = [
-  "Cơ hội trở thành nhà sáng tạo hàng đầu trên TikTok và các nền tảng streaming khác.",
-  "Bứt phá thu nhập với lương cứng + hoa hồng tới 70% + thưởng nóng hấp dẫn.",
+  "Cơ hội trở thành nhà sáng tạo hàng đầu trên TikTok",
+  "Bứt phá thu nhập với lương cứng 10 - 50 triệu + hoa hồng tới 60% + thưởng nóng hấp dẫn.",
   "Xây dựng thương hiệu cá nhân bài bản theo lộ trình chuyên nghiệp riêng.",
-  "Không gian làm việc đẳng cấp với hệ thống thiết bị livestream trị giá 5.000 USD.",
+  "Không gian làm việc đẳng cấp với hệ thống thiết bị livestream trị giá 10.000 USD.",
   "Kết nối và thăng tiến qua sự kiện offline, minishow và cơ hội lên báo lớn.",
 ];
 
@@ -256,7 +256,7 @@ export function ApplicationSection() {
             </span>
             <span>
               <strong className="block text-[18px] leading-[1.15] font-extrabold text-[#EDDCFF] sm:text-[20px]">
-                Cộng đồng 3.000+ nhà sáng tạo tinh hoa
+                Cộng đồng 2.000+ nhà sáng tạo tinh hoa
               </strong>
               <span className="mt-1.5 block text-[11px] font-bold text-[#D1BCFF]">
                 Tham gia nhóm Zalo TOPMUS →

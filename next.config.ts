@@ -4,13 +4,6 @@ const nextConfig: NextConfig = {
   images: {
     // Ảnh CMS runtime được phục vụ qua /api/uploads, không phụ thuộc static files của Next/Nginx.
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ytimg.com",
-        pathname: "/vi/**",
-      },
-    ],
   },
   experimental: {
     serverActions: {

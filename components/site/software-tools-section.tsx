@@ -7,28 +7,29 @@ import { SharedTicker } from "./shared-ticker";
 const softwareTools = [
   {
     id: "npc-dashboard",
-    title: ["NPC", "Dashboard"],
-    description: "Trang nội bộ hiển thị thông tin NPC, tiến độ triển khai và phân nhóm nhân vật.",
+    title: ["Production", "Team"],
+    description: "Ekip sản xuất hiệu ứng riêng, quay clip, chụp ảnh định kì, kỹ thuật trực full ca live",
   },
   {
     id: "visual-upgrade",
     title: ["Visual", "Upgrade"],
-    description: "Hỗ trợ không gian LIVE, make-up, tóc và thiết kế hiệu ứng chuyên nghiệp.",
+    description: "Hỗ trợ không gian LIVE, nhân sự make-up, tóc và thiết kế hiệu ứng chuyên nghiệp.",
   },
   {
     id: "training-system",
     title: ["Training", "System"],
-    description: "Danh sách kỹ năng cần đạt, giờ tập, biểu cảm thoại mẫu và lịch duyệt.",
+    description: "Danh sách kỹ năng cần đạt, giờ tập có trainer đào tạo, biểu cảm thoại mẫu và lịch duyệt.",
   },
   {
     id: "hp-action",
-    title: ["HP", "ACTION"],
-    description: "Hiệu ứng độc quyền, danh sách quà tự động và các bộ tài nguyên khác.",
+    title: ["NPC", "ACTION"],
+    description: "Bộ công cụ phần mền chạy hiệu ứng, app làm đẹp, app âm thanh, đảm bảo mọi thứ chỉnh chu",
   },
 ] as const;
 
 export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] }) {
   const sectionRef = useRef<HTMLElement>(null);
+  const phoneVideoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -48,6 +49,39 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = phoneVideoRef.current;
+    if (!video) return;
+
+    let isVideoInView = false;
+
+    const syncPlayback = () => {
+      if (isVideoInView && !document.hidden) {
+        void video.play().catch(() => undefined);
+        return;
+      }
+
+      video.pause();
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVideoInView = entry.isIntersecting && entry.intersectionRatio >= 0.35;
+        syncPlayback();
+      },
+      { threshold: [0, 0.35] },
+    );
+
+    observer.observe(video);
+    document.addEventListener("visibilitychange", syncPlayback);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", syncPlayback);
+      video.pause();
+    };
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -56,7 +90,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
       aria-labelledby="software-tools-title"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-30 bg-[image:url('/img/bg-tool.webp')] bg-cover bg-[center_30%] opacity-80"
+        className="pointer-events-none absolute inset-0 -z-30 bg-[image:url('/img/bg-tool.webp')] bg-cover bg-[center_-80px] opacity-80"
         aria-hidden="true"
       />
 
@@ -79,9 +113,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
             className="relative z-10 px-8 text-center text-[clamp(25px,3vw,39px)] leading-[1.04] font-bold tracking-[0.01em] text-white uppercase [text-shadow:0_0_15px_rgba(255,112,235,0.95),0_4px_5px_rgba(36,0,64,0.72)] sm:px-12"
             id="software-tools-title"
           >
-            Các công cụ
-            <br />
-            hỗ trợ phần mềm
+            Ekip - công cụ hỗ trợ
           </h2>
         </header>
 
@@ -104,15 +136,21 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                 />
 
                 <div className="relative aspect-[1/2] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
-                  <Image
-                    className="scale-[1] object-contain object-center"
-                    src="/img/phone-bg.webp"
-                    alt="Giao diện phần mềm hỗ trợ NPC Live của TOPMUS"
-                    fill
-                    sizes="(max-width: 1024px) 250px, 275px"
-                  />
+                  <video
+                    ref={phoneVideoRef}
+                    className="absolute inset-0 size-full object-cover object-center"
+                    aria-label="Video giới thiệu TOPMUS trong màn hình điện thoại"
+                    poster="/img/phone-bg.webp"
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    disablePictureInPicture
+                  >
+                    <source src="/video/gioithieu.mp4" type="video/mp4" />
+                  </video>
                   <div
-                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(31,0,58,0.9)_0%,rgba(75,0,118,0.28)_24%,rgba(64,0,105,0.12)_63%,rgba(26,0,49,0.95)_100%)]"
+                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(31,0,58,0.28)_0%,rgba(75,0,118,0.08)_28%,transparent_62%,rgba(26,0,49,0.42)_100%)]"
                     aria-hidden="true"
                   />
 
@@ -121,7 +159,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                     aria-hidden="true"
                   />
                   <span
-                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-20 w-[38%] animate-benefit-shine bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.24),transparent)] motion-reduce:hidden"
+                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-20 w-[38%] animate-software-video-shine bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.24),transparent)] motion-reduce:hidden"
                     aria-hidden="true"
                   />
                 </div>

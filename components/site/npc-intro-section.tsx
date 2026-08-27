@@ -84,7 +84,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
             </h2>
             <div className="mt-6 space-y-4 text-[13px] leading-[1.62] text-white/92 sm:text-sm">
               {content.paragraphs.map((paragraph, index) => (
-                <p key={`${index}-${paragraph.slice(0, 18)}`}>
+                <p className="whitespace-pre-line" key={`${index}-${paragraph.slice(0, 18)}`}>
                   {index === 0 ? paragraph.replace(/^NPC \(Non-Player Character\)\s*/, "") : paragraph}
                 </p>
               ))}
@@ -92,7 +92,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
           </div>
         </article>
 
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
           {content.features.map((feature) => (
             <article
               className="min-h-[126px] rounded-2xl border border-white/80 bg-white/90 px-6 py-5 shadow-[inset_-12px_-12px_24px_rgba(232,199,241,0.2),0_8px_24px_rgba(118,48,135,0.07)] backdrop-blur-sm transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(118,48,135,0.12)]"
@@ -101,7 +101,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
               <h3 className="text-[16px] font-bold leading-5 text-[#5a0877] sm:text-base">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-[13px] leading-[1.55] w-full font-normal sm:w-[88%] text-[#6b6b6b] sm:text-[14px]">
+              <p className="mt-2 w-full whitespace-pre-line text-[13px] font-normal leading-[1.55] text-[#6b6b6b] sm:w-[88%] sm:text-[14px]">
                 {feature.description}
               </p>
             </article>

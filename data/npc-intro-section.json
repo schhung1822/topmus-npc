@@ -1,40 +1,30 @@
 {
   "heading": "NPC là gì?",
   "paragraphs": [
-    "NPC Live là hình thức người thật hóa thân thành một nhân vật có sẵn, giống NPC trong game — mỗi nhân vật đều có cách nói, hành động và cách tương tác riêng. Khi người xem thả tim hoặc tặng quà, hệ thống sẽ kích hoạt hiệu ứng và người live phản ứng theo đúng vai, đúng kịch bản đã chuẩn bị. Bạn không cần tự nghĩ nội dung mỗi ngày vì tạo hình, nhân vật, hiệu ứng và kịch bản đều có ekip hỗ trợ; việc chính là nhập vai tốt, diễn tự nhiên và giữ người xem thật cuốn.",
+    "NPC là hình thức người thật nhập vai thành một nhân vật cụ thể trên livestream, thể hiện tính cách, câu chuyện và phong cách riêng để tạo nội dung và tương tác trực tiếp với người xem. Đây là mô hình kết hợp giải trí, diễn xuất và tương tác thời gian thực, giúp tăng trải nghiệm và giữ chân khán giả hiệu quả",
     "Từ đó, LIVE NPC là hình thức người thật nhập vai thành một nhân vật cụ thể trên livestream, thể hiện tính cách, câu chuyện và phong cách riêng để tạo nội dung và tương tác trực tiếp với người xem. Đây là mô hình kết hợp giải trí, diễn xuất và tương tác thời gian thực, giúp tăng trải nghiệm và giữ chân khán giả hiệu quả."
   ],
   "bannerImage": "/api/uploads/npc/intro-banner-5e2fbc76-ad89-43aa-8491-47d523cff721.webp",
   "features": [
     {
       "id": "visual-goal",
-      "title": "Mục tiêu hình ảnh",
-      "description": "Giúp User nhìn vào là nhận ra vai diễn, concept, lời giao tiếp và chất riêng của creator."
+      "title": "Mô hình mới, đang là xu hướng tại Việt Nam",
+      "description": "• NPC live là hướng đi mới, còn ít người làm.\r\n • Dễ tạo sự khác biệt và giữ chân người xem."
     },
     {
       "id": "operation-goal",
-      "title": "Mục tiêu vận hành",
-      "description": "Tăng tính đồng bộ, thuận tiện đào tạo, dễ nhân bản nội dung và kiểm soát chất lượng room LIVE hơn."
+      "title": "Đã chứng minh thành công trên thế giới",
+      "description": "• Mô hình đã và đang thu về lượng quà tặng lớn ở nhiều thị trường.\r\n • Có case thực tế để tham khảo, không phải thử nghiệm."
     },
     {
       "id": "appearance",
-      "title": "LIVE NPC không chỉ là mặc đồ đẹp",
-      "description": "Điểm quan trọng là xây hình tượng đồng bộ: lời nói, cử chỉ, ánh mắt và cách xử lý quà tặng."
+      "title": "Kịch bản và lời thoại setup sẵn",
+      "description": "• Lời thoại, tình huống tương tác, cách kêu gọi quà tặng đều được chuẩn bị trước.\r\n • Người live không phải tự nghĩ, chỉ cần làm theo."
     },
     {
       "id": "consistency",
-      "title": "Giữ tính nhất quán",
-      "description": "Mỗi nhân vật có phục trang mặc định. Việc thay outfit thường gắn với quà kích hoạt từ User."
-    },
-    {
-      "id": "interaction",
-      "title": "Chất lượng tương tác",
-      "description": "Tương tác đến từ nội dung truyền tải, biểu cảm và khả năng giữ người xem trong phiên LIVE."
-    },
-    {
-      "id": "discipline",
-      "title": "Kỷ luật vận hành",
-      "description": "LIVE đúng thời gian, giữ tinh thần ổn định, bám quy chuẩn đào tạo để room không rời rạc."
+      "title": "Ekip đồng hành trong suốt buổi live",
+      "description": "• Đội hỗ trợ kỹ thuật và vận hành theo dõi từng phiên.\r\n • Sự cố được xử lý ngay, không gián đoạn."
     }
   ]
 }

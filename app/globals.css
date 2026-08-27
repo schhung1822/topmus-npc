@@ -8,6 +8,8 @@
   --animate-benefit-float: pain-float 6s ease-in-out infinite;
   --animate-benefit-glow: benefit-glow 3.2s ease-in-out infinite;
   --animate-benefit-shine: benefit-shine 4.5s ease-in-out infinite;
+  --animate-training-image-shine: training-image-shine 4.5s ease-in-out infinite;
+  --animate-software-video-shine: software-video-shine 4.5s ease-in-out infinite;
   --animate-benefit-pulse: benefit-pulse 2.6s ease-in-out infinite;
   --animate-npc-text-in: npc-text-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-npc-frame-glow: npc-frame-glow 3.4s ease-in-out infinite;
@@ -68,6 +70,28 @@
     45%,
     100% {
       transform: translate3d(320%, 0, 0) skewX(-18deg);
+    }
+  }
+
+  @keyframes training-image-shine {
+    0% {
+      transform: translate3d(-140%, 0, 0) skewX(-18deg);
+    }
+
+    55%,
+    100% {
+      transform: translate3d(440%, 0, 0) skewX(-18deg);
+    }
+  }
+
+  @keyframes software-video-shine {
+    0% {
+      transform: translate3d(-140%, 0, 0) skewX(-18deg);
+    }
+
+    55%,
+    100% {
+      transform: translate3d(440%, 0, 0) skewX(-18deg);
     }
   }
 

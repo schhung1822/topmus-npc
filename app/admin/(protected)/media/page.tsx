@@ -14,7 +14,7 @@ const folderLabels = new Map([
   ["npc-model", "Mô hình NPC"],
   ["seo", "SEO & chia sẻ"],
   ["seven-day-training", "Lộ trình 7 ngày"],
-  ["videos", "Video highlight"],
+  ["videos", "Ảnh nội dung NPC"],
 ]);
 
 function formatSize(bytes: number) {

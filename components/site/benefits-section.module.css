@@ -313,7 +313,7 @@
   color: #fff;
   font-size: clamp(17px, 2vw, 22px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.035em;
   text-align: center;
   text-shadow: 0 3px 6px rgb(72 0 96 / 38%), 0 0 8px rgb(255 115 241 / 36%);
@@ -463,7 +463,7 @@
     0 8px 18px rgb(37 0 61 / 32%);
   color: #fff;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
@@ -507,8 +507,8 @@
   margin: 0;
   color: #fff;
   font-size: clamp(25px, 3.3vw, 36px);
-  font-weight: 900;
-  line-height: 1;
+  font-weight: 700;
+  line-height: 1.3;
   letter-spacing: -0.035em;
   white-space: nowrap;
   text-shadow: 0 2px 4px rgb(74 0 89 / 30%);

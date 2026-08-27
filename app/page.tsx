@@ -11,7 +11,6 @@ import { NpcShowcase } from "@/components/site/npc-showcase";
 import { NpcIntroSection } from "@/components/site/npc-intro-section";
 import { NpcModelSection } from "@/components/site/npc-model-section";
 import { RecruitmentHero } from "@/components/site/recruitment-hero";
-import { VideoHighlightsSection } from "@/components/site/video-highlights-section";
 import { WhyTopmusSection } from "@/components/site/why-topmus-section";
 import { PainPointsSection } from "@/components/site/pain-points-section";
 import { FloatingContactActions } from "@/components/site/floating-contact-actions";
@@ -20,7 +19,6 @@ import { SiteAnalytics } from "@/components/site/site-analytics";
 import { getNpcSectionContent } from "@/lib/npc-content";
 import { getNpcIntroContent } from "@/lib/npc-intro-content";
 import { getNpcModelContent } from "@/lib/npc-model-content";
-import { getVideoSectionContent } from "@/lib/video-content";
 import { getHeroBannerContent } from "@/lib/hero-banner-content";
 import { getTickerContent } from "@/lib/ticker-content";
 import { getSevenDayTrainingContent } from "@/lib/seven-day-training-content";
@@ -34,7 +32,6 @@ export default async function Home() {
     npcContent,
     npcIntroContent,
     npcModelContent,
-    videoContent,
     tickerContent,
     trainingContent,
     seo,
@@ -43,7 +40,6 @@ export default async function Home() {
     getNpcSectionContent(),
     getNpcIntroContent(),
     getNpcModelContent(),
-    getVideoSectionContent(),
     getTickerContent(),
     getSevenDayTrainingContent(),
     getSeoSettings(),
@@ -52,18 +48,26 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-white text-[#1d1025]">
       <SiteHeader />
-
       <main id="noi-dung-chinh">
         <HeroBanner content={heroBannerContent} />
         <RecruitmentHero tickerItems={tickerContent.items} />
         <AchievementStatsSection />
         <NpcShowcase content={npcContent} />
         <NpcIntroSection content={npcIntroContent} />
-        <WhyTopmusSection tickerItems={tickerContent.items} />
+        <WhyTopmusSection
+          tickerItems={tickerContent.items}
+          creatorSlides={npcContent.npcs.map((npc) => ({
+            src: npc.image,
+            alt: `Creator Live NPC ${npc.name}`,
+          }))}
+          trainingSlides={trainingContent.steps.map((step) => ({
+            src: step.image,
+            alt: `${step.title} - ngày ${step.day} trong lộ trình hoàn thiện Live NPC`,
+          }))}
+        />
         <PainPointsSection />
         <BenefitsSection />
         <NpcModelSection content={npcModelContent} tickerItems={tickerContent.items} />
-        <VideoHighlightsSection content={videoContent} />
         <SoftwareToolsSection tickerItems={tickerContent.items} />
         <SevenDayTrainingSection content={trainingContent} />
         <CandidateFitSection />

@@ -21,43 +21,51 @@
   "npcs": [
     {
       "id": "huyenchi0105",
-      "name": "Huyenchi0105",
+      "name": "RULLY",
       "categoryId": "beauty",
       "tag": "Thư ký",
-      "liveTime": "01:00 - 6:00",
+      "liveTime": "21:00",
       "platform": "TikTok",
       "contentType": "Video",
-      "image": "/uploads/npc/creator-797a7f5c-5c9e-427b-aa45-332f589f71b6.webp"
+      "image": "/api/uploads/npc/creator-797a7f5c-5c9e-427b-aa45-332f589f71b6.webp",
+      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
+      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
     },
     {
       "id": "minhanh-npc",
-      "name": "Minhanh NPC",
+      "name": "HAAZY",
       "categoryId": "beauty",
       "tag": "Nàng thơ",
-      "liveTime": "19:00 - 23:00",
+      "liveTime": "15:00",
       "platform": "TikTok",
-      "contentType": "Live",
-      "image": "/uploads/npc/creator-15061797-3b7e-454a-af7b-4235929d5d6b.webp"
+      "contentType": "Video",
+      "image": "/api/uploads/npc/creator-15061797-3b7e-454a-af7b-4235929d5d6b.webp",
+      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
+      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
     },
     {
       "id": "linhchii",
-      "name": "Linhchii",
+      "name": "AMBER",
       "categoryId": "beauty",
       "tag": "Tiểu thư",
-      "liveTime": "20:00 - 24:00",
+      "liveTime": "09:00",
       "platform": "TikTok",
       "contentType": "Video",
-      "image": "/uploads/npc/creator-be79294c-0966-4a2d-beff-9e15cb916ec2.webp"
+      "image": "/api/uploads/npc/creator-be79294c-0966-4a2d-beff-9e15cb916ec2.webp",
+      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
+      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
     },
     {
       "id": "miyuki",
-      "name": "Miyuki Cosplay",
+      "name": "AMBER DEVIL",
       "categoryId": "cosplay",
       "tag": "Cosplayer",
       "liveTime": "19:30 - 23:30",
       "platform": "TikTok",
       "contentType": "Live",
-      "image": "/uploads/npc/creator-20151c7a-eb3d-4ecc-bda0-b8a52d9d563d.webp"
+      "image": "/api/uploads/npc/creator-20151c7a-eb3d-4ecc-bda0-b8a52d9d563d.webp",
+      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
+      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
     }
   ]
 }
