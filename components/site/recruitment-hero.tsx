@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { RecruitmentVideo } from "./recruitment-video";
 import styles from "./recruitment-hero.module.css";
 
 const benefits = [
@@ -75,41 +76,47 @@ export function RecruitmentHero({ tickerItems }: { tickerItems: string[] }) {
       />
 
       <div className="mx-auto flex min-h-[434px] w-full max-w-[1280px] flex-col justify-center px-5 py-[60px] sm:py-[80px]">
-        <div className="flex flex-col sm:flex-row items-center gap-7 justify-between">
-          <div className="text-center md:text-left">
-            <h1
-              className="m-0 text-[27px] leading-[1.22] font-bold tracking-[-0.025em] text-[#ff1cf0] md:text-[clamp(30px,2.2vw,40px)]"
-              id="recruitment-title"
-            >
-              <span className="block text-white">TOPMUS Entertainment</span>
-              Tuyển gấp 2026
-            </h1>
-            <p className="mt-[22px] max-w-[520px] text-[16px] leading-[1.55] text-white/90 md:mt-[38px] md:max-w-[480px] md:leading-[1.42]">
-              Nhập vai nhân vật, livestream trên TikTok và biến cá tính của bạn thành thu nhập
-              thật. Không cần kinh nghiệm - TOPMUS đào tạo từ con số 0 với lộ trình 45 ngày thực
-              chiến. Đợt này tuyển ứng viên nữ từ 18 tuổi, ngoại hình ưa nhìn.
-            </p>
+        <div className="grid items-center gap-10 md:grid-cols-[minmax(280px,0.9fr)_minmax(0,1.1fr)] md:gap-12 lg:gap-16">
+          <div className="w-full md:col-start-2 md:row-start-1">
+            <div className="text-center md:text-left">
+              <h1
+                className="m-0 text-[27px] leading-[1.22] font-bold tracking-[-0.025em] text-[#ff1cf0] md:text-[clamp(30px,2.2vw,40px)]"
+                id="recruitment-title"
+              >
+                <span className="block text-white">TOPMUS Entertainment</span>
+                Tuyển gấp 2026
+              </h1>
+              <p className="mx-auto mt-[22px] max-w-[520px] text-[16px] leading-[1.55] text-white/90 md:mx-0 md:mt-[38px] md:max-w-[480px] md:leading-[1.42]">
+                Nhập vai nhân vật, livestream trên TikTok và biến cá tính của bạn thành thu nhập
+                thật. Không cần kinh nghiệm - TOPMUS đào tạo từ con số 0 với lộ trình 45 ngày thực
+                chiến. Đợt này tuyển ứng viên nữ từ 18 tuổi, ngoại hình ưa nhìn.
+              </p>
+            </div>
+
+            <ul className="mx-auto mt-7 grid list-none max-w-[640px] gap-[7px] p-0 md:mx-0" aria-label="Quyền lợi khi ứng tuyển">
+              {benefits.map((benefit) => (
+                <li
+                  className={`${styles.benefitCard} flex min-h-16 items-center rounded-[14px] border border-[#de9bff]/30 bg-[linear-gradient(90deg,rgba(87,0,123,0.42),rgba(58,0,93,0.2))] px-3 py-2.5 text-[14px] leading-[1.35] font-bold text-white shadow-[inset_0_1px_rgba(255,255,255,0.05),0_9px_22px_rgba(17,0,28,0.1)] sm:items-center sm:rounded-2xl sm:px-[30px] sm:py-2 sm:text-[16px]`}
+                  key={benefit.icon}
+                >
+                  <Image
+                    alt={benefit.alt}
+                    className={`${styles.benefitIcon} mt-px mr-2 size-[39px] shrink-0 object-contain drop-shadow-[0_4px_8px_rgba(28,0,44,0.18)] sm:mt-0 sm:mr-2.5 sm:size-[42px]`}
+                    height={64}
+                    src={benefit.icon}
+                    width={64}
+                  />
+                  <span className="[&_strong]:font-bold [&_strong]:text-[#fa26df]">
+                    {benefit.content}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <ul className="m-0 grid list-none max-w-[640px] gap-[7px] p-0" aria-label="Quyền lợi khi ứng tuyển">
-            {benefits.map((benefit) => (
-              <li
-                className={`${styles.benefitCard} flex min-h-16 items-center rounded-[14px] border border-[#de9bff]/30 bg-[linear-gradient(90deg,rgba(87,0,123,0.42),rgba(58,0,93,0.2))] px-3 py-2.5 text-[14px] leading-[1.35] font-bold text-white shadow-[inset_0_1px_rgba(255,255,255,0.05),0_9px_22px_rgba(17,0,28,0.1)] sm:items-center sm:rounded-2xl sm:px-[30px] sm:py-2 sm:text-[16px]`}
-                key={benefit.icon}
-              >
-                <Image
-                  alt={benefit.alt}
-                  className={`${styles.benefitIcon} mt-px mr-2 size-[39px] shrink-0 object-contain drop-shadow-[0_4px_8px_rgba(28,0,44,0.18)] sm:mt-0 sm:mr-2.5 sm:size-[42px]`}
-                  height={64}
-                  src={benefit.icon}
-                  width={64}
-                />
-                <span className="[&_strong]:font-bold [&_strong]:text-[#fa26df]">
-                  {benefit.content}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="flex w-full justify-center md:col-start-1 md:row-start-1">
+            <RecruitmentVideo />
+          </div>
         </div>
 
         <div className="mt-7 grid justify-items-center md:mt-[48px]">
