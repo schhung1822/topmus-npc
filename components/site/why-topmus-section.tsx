@@ -54,7 +54,7 @@ function AutoFadeSlider({ slides }: { slides: readonly WhyTopmusSlide[] }) {
             src={image.src}
             alt={isActive ? image.alt : ""}
             fill
-            sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 92vw"
+            sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 46vw"
             aria-hidden={!isActive}
             key={image.id || `${image.src}-${index}`}
           />
@@ -120,8 +120,8 @@ export function WhyTopmusSection({
           </h2>
         </div>
 
-        <div className="mt-20 grid items-center gap-10 lg:mt-16 lg:grid-cols-[minmax(300px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
-          <div className="mx-auto w-full max-w-[450px] lg:mx-0 lg:pl-6">
+        <div className="mt-6 sm:mt-20 grid items-center gap-10 lg:mt-16 lg:grid-cols-[minmax(300px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
+          <div className="order-2 mx-auto w-full max-w-[450px] lg:order-1 lg:mx-0 lg:pl-6">
             <p className="text-[14px] leading-[1.5] font-medium text-white/95 sm:text-[16px]">
               TOPMUS thành lập năm 2021, chuyên tuyển dụng – đào tạo – quản lý nhà sáng tạo trên
               TikTok. TOPMUS Entertainment hiện giữ Top 1 khu vực Đông Nam Á & Trung Á tại SEA &
@@ -144,7 +144,7 @@ export function WhyTopmusSection({
             </a>
           </div>
 
-          <div className={styles.achievementGallery}>
+          <div className={`order-1 lg:order-2 ${styles.achievementGallery}`}>
             <AutoFadeSlider slides={resolvedCreatorSlides} />
             <AutoFadeSlider slides={resolvedTrainingSlides} />
           </div>
