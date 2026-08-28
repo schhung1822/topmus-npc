@@ -181,7 +181,7 @@
 .posterMedia {
   position: relative;
   width: 100%;
-  aspect-ratio: 0.89;
+  aspect-ratio: 1;
   overflow: hidden;
   border: 1px solid rgb(255 224 255 / 48%);
   border-radius: 7px;

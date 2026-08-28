@@ -352,9 +352,13 @@ export function NpcModelSection({
 
                             <div
                               className={`relative z-10 transition-opacity duration-500 ${
-                                isFront ? "opacity-100 delay-200" : "opacity-0"
+                                isNear
+                                  ? isFront
+                                    ? "opacity-100 delay-200"
+                                    : "opacity-100"
+                                  : "opacity-0"
                               }`}
-                              aria-hidden={isFront ? undefined : true}
+                              aria-hidden={isNear ? undefined : true}
                             >
                               <h3
                                 className={`text-center text-[clamp(18px,1.6vw,18px)] leading-tight font-black tracking-[0.02em] text-white [text-shadow:0_2px_6px_rgba(70,0,90,0.45)] motion-reduce:animate-none ${

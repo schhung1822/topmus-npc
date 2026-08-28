@@ -164,8 +164,7 @@ export function PainPointsSection() {
             <span className="font-semibold text-[#ff63e8]">
               NPC Live tại TOPMUS sinh ra để xử đúng những nỗi đau này:
             </span>{" "}
-            nhân vật và kịch bản có sẵn, mentor đọc số liệu thay bạn, thiết bị 10.000 USD, lương
-            cứng làm nền thu nhập.
+            Lương cứng 10-50tr/chính sách hoa hồng tới 60%, Lộ trình đào tạo 10 ngày + 30 ngày theo dõi, GIờ làm linh hoạt 24/7 & Ekip support tận tâm
           </p>
         </div>
 
