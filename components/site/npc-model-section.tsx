@@ -77,6 +77,9 @@ export function NpcModelSection({
   const total = content.cards.length;
   const slotCount = ringSlotCount(total);
   const angleStep = slotCount ? 360 / slotCount : 0;
+  const ringRadiusScale = angleStep
+    ? Math.max(1, Math.sin(Math.PI / 4) / Math.sin((angleStep * Math.PI) / 180))
+    : 1;
   const activeSlot = slotCount ? ((step % slotCount) + slotCount) % slotCount : 0;
   const activeIndex = total ? activeSlot % total : 0;
 
@@ -213,28 +216,19 @@ export function NpcModelSection({
             aria-hidden="true"
           />
 
-          <header className="relative flex items-center justify-center gap-2 sm:gap-3">
-            <Sparkle className="size-4 shrink-0 animate-benefit-glow text-white/90 motion-reduce:animate-none sm:size-5" />
-            <p className="text-right text-[clamp(17px,2.2vw,27px)] leading-[1.05] font-bold tracking-[-0.02em] text-white">
-              {content.eyebrow.split(" ").map((word, index) => (
-                <span className="block" key={`${index}-${word}`}>
-                  {word}
-                </span>
-              ))}
-            </p>
+          <header className="relative mx-auto flex w-fit max-w-full justify-center px-[clamp(24px,6vw,76px)] text-center">
             <h2
-              className="bg-[linear-gradient(180deg,#ffffff_6%,#ffe6ff_32%,#ff7cf0_74%,#d93fd0_100%)] bg-clip-text text-[clamp(48px,8.5vw,90px)] leading-none font-bold tracking-[-0.05em] text-transparent [filter:drop-shadow(0_4px_0_rgba(120,10,150,0.6))_drop-shadow(0_0_18px_rgba(255,110,240,0.55))]"
+              className="flex flex-col items-center text-[clamp(32px,7vw,54px)] leading-[1.2] font-bold tracking-[-0.055em]"
               id="npc-model-title"
             >
-              {content.heading}
+              <span className="relative block w-fit whitespace-nowrap bg-[linear-gradient(270deg,#ffffff_0%,#fff7ff_31%,#ffc5f8_55%,#ed68e5_100%)] bg-clip-text text-transparent [-webkit-text-stroke:1px_rgba(255,225,255,0.88)] [filter:drop-shadow(0_4px_0_#92258f)_drop-shadow(0_8px_10px_rgba(47,0,67,0.52))_drop-shadow(0_0_11px_rgba(255,96,235,0.6))]">
+                {content.eyebrow} {content.heading}
+                <Sparkle className="absolute top-[44%] left-[calc(100%+0.08em)] rotate-[20deg] size-[0.7em] -translate-y-1/2 animate-benefit-glow text-[#8df8ff] [filter:drop-shadow(0_0_6px_#33dcff)_drop-shadow(0_0_16px_rgba(85,224,255,0.9))] motion-reduce:animate-none" />
+              </span>
+              <span className="-mt-2 block whitespace-nowrap bg-[linear-gradient(270deg,#ffffff_0%,#fff7ff_31%,#ffc5f8_55%,#ed68e5_100%)] bg-clip-text text-transparent [-webkit-text-stroke:1px_rgba(255,225,255,0.88)] [filter:drop-shadow(0_4px_0_#92258f)_drop-shadow(0_8px_10px_rgba(47,0,67,0.52))_drop-shadow(0_0_11px_rgba(255,96,235,0.6))]">
+                {content.badge}
+              </span>
             </h2>
-            <span className="grid min-w-[92px] leading-[16px] place-items-center rounded-[50%] border border-[#ffc8fb]/70 bg-[linear-gradient(150deg,#ff6fe4,#c928c4)] px-4 py-2 text-center text-[11px] leading-[1] font-extrabold text-white shadow-[0_0_22px_rgba(255,90,232,0.6),inset_0_1px_0_rgba(255,255,255,0.45)] sm:min-w-[112px] sm:text-[13px]">
-              {content.badge.split(" ").map((word, index) => (
-                <span className="block" key={`${index}-${word}`}>
-                  {word}
-                </span>
-              ))}
-            </span>
           </header>
 
           {total ? (
@@ -257,7 +251,7 @@ export function NpcModelSection({
                 className="relative mx-auto h-[calc(88vw+120px)] max-w-[1000px] [--card-w:min(56vw,240px)] [perspective:1600px] [perspective-origin:50%_42%] sm:h-[clamp(432px,66vw,506px)] sm:[--card-w:clamp(160px,22vw,240px)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/60"
                 style={
                   {
-                    "--ring-r": "clamp(220px, 31vw, 404px)",
+                    "--ring-r": `clamp(${220 * ringRadiusScale}px, ${31 * ringRadiusScale}vw, ${404 * ringRadiusScale}px)`,
                   } as CSSProperties
                 }
                 role="group"
@@ -284,7 +278,7 @@ export function NpcModelSection({
 
                     return (
                       <div
-                        className={`absolute top-0 left-1/2 transition-opacity duration-500 ${
+                        className={`absolute -top-10 left-1/2 transition-opacity duration-500 ${
                           isVisible && isFront
                             ? "opacity-100"
                             : isVisible && isNear
@@ -294,17 +288,17 @@ export function NpcModelSection({
                               : "pointer-events-none opacity-0"
                         }`}
                         style={{
-                          width: "var(--card-w)",
-                          marginLeft: "calc(var(--card-w) / -2)",
+                          width: "calc(var(--card-w) * 1.28 + 80px)",
+                          marginLeft: "calc(var(--card-w) * -0.64 - 40px)",
                           transform: `rotateY(${slot * angleStep}deg) translateZ(var(--ring-r))`,
                         }}
                         aria-hidden={isNear ? undefined : true}
                         key={`${card.id}-${slot}`}
                       >
                         <button
-                          className={`block w-full border-0 bg-transparent p-0 text-left transition duration-700 [backface-visibility:hidden] ${
+                          className={`block w-full overflow-visible border-0 bg-transparent p-10 text-left transition duration-700 ${
                             isFront
-                              ? "cursor-default [filter:brightness(1)]"
+                              ? "cursor-default"
                               : "cursor-pointer [filter:brightness(0.62)_saturate(0.85)]"
                           }`}
                           type="button"
@@ -313,14 +307,14 @@ export function NpcModelSection({
                           onClick={() => goToCard(slot % total)}
                         >
                           <div
-                            className={`relative aspect-[0.66] w-full overflow-hidden rounded-[26px] border-[3px] bg-[#0b0011] transition-colors duration-700 ${
+                            className={`relative mx-auto aspect-[0.66] w-[var(--card-w)] overflow-hidden rounded-[26px] border-[3px] bg-[#e7befe] transition-colors duration-700 ${
                               isFront
                                 ? "animate-npc-frame-glow border-[#ff5ae8] motion-reduce:animate-none"
                                 : "border-[#e14bd8]/80 shadow-[0_0_16px_rgba(225,75,216,0.4)]"
                             }`}
                           >
                             <Image
-                              className="object-cover"
+                              className="object-contain"
                               src={card.image}
                               alt={card.name}
                               fill
@@ -339,14 +333,14 @@ export function NpcModelSection({
                           </div>
 
                           <div
-                            className={`relative z-10 -mt-9 ml-[-14%] flex min-h-[152px] w-[128%] flex-col justify-center rounded-[18px] border-2 py-4 pr-5 pl-7 transition-colors duration-700 ${
+                            className={`relative z-10 mx-auto -mt-9 flex min-h-[152px] w-[calc(var(--card-w)*1.28)] flex-col justify-center rounded-[18px] border-2 py-4 pr-5 pl-7 transition-colors duration-700 ${
                               isFront
                                 ? "border-[#ffb3f6] bg-[linear-gradient(160deg,#f957ef,#e02ad4_55%,#c11cb2)] shadow-[0_0_30px_rgba(255,76,233,0.55),inset_0_1px_0_rgba(255,255,255,0.4)]"
                                 : "border-[#ff9df0]/75 bg-[linear-gradient(160deg,#e93fe0,#c81fbc_60%,#a4159a)]"
                             }`}
                           >
                             <Image
-                              className={`pointer-events-none absolute top-1/2 -left-7 z-0 w-[54px] -translate-y-1/2 object-contain drop-shadow-[0_6px_14px_rgba(40,0,60,0.45)] transition-opacity duration-500 sm:-left-8 sm:w-[64px] ${
+                              className={`pointer-events-none absolute top-1/2 -left-7 z-20 w-[54px] -translate-y-1/2 object-contain drop-shadow-[0_6px_14px_rgba(40,0,60,0.45)] transition-opacity duration-500 sm:-left-8 sm:w-[64px] ${
                                 isFront ? "opacity-100" : "opacity-0"
                               }`}
                               src="/img/tiktok_item.webp"
@@ -363,7 +357,7 @@ export function NpcModelSection({
                               aria-hidden={isFront ? undefined : true}
                             >
                               <h3
-                                className={`text-center text-[clamp(14px,1.6vw,18px)] leading-tight font-black tracking-[0.02em] text-white [text-shadow:0_2px_6px_rgba(70,0,90,0.45)] motion-reduce:animate-none ${
+                                className={`text-center text-[clamp(18px,1.6vw,18px)] leading-tight font-black tracking-[0.02em] text-white [text-shadow:0_2px_6px_rgba(70,0,90,0.45)] motion-reduce:animate-none ${
                                   isFront ? "animate-npc-text-in" : ""
                                 }`}
                                 style={{ animationDelay: "180ms" }}

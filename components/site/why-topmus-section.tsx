@@ -3,12 +3,8 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import type { WhyTopmusSlide } from "@/lib/why-topmus-content";
 import styles from "./why-topmus-section.module.css";
-
-type WhyTopmusSlide = {
-  src: string;
-  alt: string;
-};
 
 type WhyTopmusSectionProps = {
   tickerItems: string[];
@@ -18,16 +14,14 @@ type WhyTopmusSectionProps = {
 
 const fallbackSlides = [
   {
-    src: "/img/tm1.webp",
-    alt: "Nhà sáng tạo TOPMUS được vinh danh trên SkyLED lớn nhất Đông Nam Á tại TCN Season 3",
-    width: 2000,
-    height: 2000,
+    id: "creator-fallback",
+    src: "/img/img1a.webp",
+    alt: "Creator Live NPC tại TOPMUS",
   },
   {
-    src: "/img/tm2.webp",
-    alt: "Các nhà sáng tạo TOPMUS được vinh danh tại TikTok LIVE Clash Season 3",
-    width: 2048,
-    height: 2048,
+    id: "training-fallback",
+    src: "/img/img2a.webp",
+    alt: "Hoạt động đào tạo Live NPC tại TOPMUS",
   },
 ] as const;
 
@@ -62,7 +56,7 @@ function AutoFadeSlider({ slides }: { slides: readonly WhyTopmusSlide[] }) {
             fill
             sizes="(min-width: 1024px) 27vw, (min-width: 640px) 43vw, 92vw"
             aria-hidden={!isActive}
-            key={`${image.src}-${index}`}
+            key={image.id || `${image.src}-${index}`}
           />
         );
       })}

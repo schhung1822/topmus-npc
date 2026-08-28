@@ -13,8 +13,9 @@ const navigation = [
   { href: "/admin/ticker", label: "Chữ chạy", icon: "↔" },
   { href: "/admin/npc", label: "Creator NPC", icon: "✦" },
   { href: "/admin/npc-intro", label: "NPC là gì?", icon: "?" },
+  { href: "/admin/why-topmus", label: "Vì sao chọn TOPMUS", icon: "◇" },
   { href: "/admin/npc-model", label: "Mô hình NPC", icon: "◱" },
-  { href: "/admin/seven-day-training", label: "Lộ trình 7 ngày", icon: "◷" },
+  { href: "/admin/seven-day-training", label: "Lộ trình 10 ngày", icon: "◷" },
   { href: "/admin/media", label: "Thư viện ảnh", icon: "◨" },
 ];
 

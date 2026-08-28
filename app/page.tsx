@@ -23,6 +23,7 @@ import { getHeroBannerContent } from "@/lib/hero-banner-content";
 import { getTickerContent } from "@/lib/ticker-content";
 import { getSevenDayTrainingContent } from "@/lib/seven-day-training-content";
 import { getSeoSettings } from "@/lib/seo-settings";
+import { getWhyTopmusContent } from "@/lib/why-topmus-content";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +35,7 @@ export default async function Home() {
     npcModelContent,
     tickerContent,
     trainingContent,
+    whyTopmusContent,
     seo,
   ] = await Promise.all([
     getHeroBannerContent(),
@@ -42,6 +44,7 @@ export default async function Home() {
     getNpcModelContent(),
     getTickerContent(),
     getSevenDayTrainingContent(),
+    getWhyTopmusContent(),
     getSeoSettings(),
   ]);
 
@@ -56,16 +59,10 @@ export default async function Home() {
         <NpcIntroSection content={npcIntroContent} />
         <WhyTopmusSection
           tickerItems={tickerContent.items}
-          creatorSlides={npcContent.npcs.map((npc) => ({
-            src: npc.image,
-            alt: `Creator Live NPC ${npc.name}`,
-          }))}
-          trainingSlides={trainingContent.steps.map((step) => ({
-            src: step.image,
-            alt: `${step.title} - ngày ${step.day} trong lộ trình hoàn thiện Live NPC`,
-          }))}
+          creatorSlides={whyTopmusContent.creatorSlides}
+          trainingSlides={whyTopmusContent.trainingSlides}
         />
-        <PainPointsSection />
+         <PainPointsSection />
         <BenefitsSection />
         <NpcModelSection content={npcModelContent} tickerItems={tickerContent.items} />
         <SoftwareToolsSection tickerItems={tickerContent.items} />

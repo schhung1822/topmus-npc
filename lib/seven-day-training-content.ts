@@ -10,7 +10,6 @@ export type TrainingStep = {
   id: string;
   day: string;
   title: string;
-  description: string;
   image: string;
 };
 

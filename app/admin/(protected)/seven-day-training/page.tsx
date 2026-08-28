@@ -13,7 +13,7 @@ import {
 } from "../../seven-day-training-actions";
 
 export const metadata: Metadata = {
-  title: "Quản lý lộ trình 7 ngày",
+  title: "Quản lý lộ trình 10 ngày",
   robots: { index: false, follow: false },
 };
 
@@ -40,8 +40,8 @@ export default async function AdminSevenDayTrainingPage({
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div>
           <p className="text-[11px] font-extrabold tracking-[0.12em] text-[#748079] uppercase">Nội dung LadiPage</p>
-          <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#16231d] lg:text-[42px]" id="training-admin-title">Section “Lộ trình 7 ngày”</h1>
-          <p className="mt-3 max-w-[650px] text-sm leading-6 text-[#6f7772]">Quản lý tiêu đề, đoạn mô tả, nút đăng ký, ảnh nền và từng bước trong lộ trình đào tạo.</p>
+          <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#16231d] lg:text-[42px]" id="training-admin-title">Section “Lộ trình 10 ngày”</h1>
+          <p className="mt-3 max-w-[650px] text-sm leading-6 text-[#6f7772]">Quản lý tiêu đề, đoạn mô tả, nút đăng ký, ảnh nền và từng ngày trong lộ trình đào tạo.</p>
         </div>
         <a className="inline-flex h-11 items-center justify-center rounded-xl bg-[linear-gradient(90deg,#671482,#a52aaa)] px-5 text-xs font-bold text-white no-underline shadow-[0_8px_20px_rgba(104,20,130,0.18)] transition hover:-translate-y-0.5" href="/#lo-trinh-7-ngay" target="_blank">Xem ngoài trang chủ ↗</a>
       </div>
@@ -60,7 +60,7 @@ export default async function AdminSevenDayTrainingPage({
               <label className={labelClasses}>Tiêu đề lớn<input className={inputClasses} name="headingHighlight" defaultValue={content.headingHighlight} required /></label>
               <label className={labelClasses}>Chữ bên phải tiêu đề<input className={inputClasses} name="headingSuffix" defaultValue={content.headingSuffix} required /></label>
               <label className={labelClasses}>Nhãn hồng<input className={inputClasses} name="headingBadge" defaultValue={content.headingBadge} required /></label>
-              <p className="text-[11px] leading-5 text-[#8a918d]">Tiêu đề lớn hiển thị trên một dòng, nên giữ ngắn như “7 NGÀY” để không bị tràn trên điện thoại.</p>
+              <p className="text-[11px] leading-5 text-[#8a918d]">Tiêu đề lớn hiển thị trên một dòng, nên giữ ngắn như “10 NGÀY” để không bị tràn trên điện thoại.</p>
               <label className={labelClasses}>Đoạn mô tả<textarea className={textareaClasses} name="intro" defaultValue={content.intro} required /></label>
               <label className={labelClasses}>Chữ trên nút<input className={inputClasses} name="ctaLabel" defaultValue={content.ctaLabel} required /></label>
               <label className={labelClasses}>Liên kết nút<input className={inputClasses} name="ctaHref" defaultValue={content.ctaHref} required /></label>
@@ -92,19 +92,19 @@ export default async function AdminSevenDayTrainingPage({
           <article className="rounded-[18px] border border-[#e5e6df] bg-[#fffefa] p-5 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-[10px] font-extrabold tracking-[0.1em] text-[#8c6896] uppercase">Các bước</p>
-                <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">{content.steps.length} bước trong lộ trình</h2>
+                <p className="text-[10px] font-extrabold tracking-[0.1em] text-[#8c6896] uppercase">Các ngày</p>
+                <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">{content.steps.length} ngày trong lộ trình</h2>
               </div>
-              <span className="rounded-full bg-[#f3eaf6] px-3 py-1.5 text-[10px] font-extrabold text-[#66108b]">Ảnh vuông 1:1</span>
+              <span className="rounded-full bg-[#f3eaf6] px-3 py-1.5 text-[10px] font-extrabold text-[#66108b]">Icon vuông 1:1</span>
             </div>
-            <p className="mt-3 text-[11px] leading-5 text-[#8a918d]">Các bước xếp thành bậc thang từ trái sang phải theo đúng thứ tự bên dưới. Nên giữ 3–5 bước để bố cục trên máy tính vừa khung.</p>
+            <p className="mt-3 text-[11px] leading-5 text-[#8a918d]">Trên máy tính, ngày 1–5 nằm ở cột trái và ngày 6–10 ở cột phải. Trên điện thoại, các ngày hiển thị liên tục trong một cột.</p>
 
             <div className="mt-5 grid gap-3">
               {content.steps.map((step, index) => (
                 <details className="group overflow-hidden rounded-2xl border border-[#e7e4e8] bg-white" key={step.id}>
                   <summary className="flex cursor-pointer list-none items-center gap-3 p-4 marker:hidden">
                     <span className="relative size-11 shrink-0 overflow-hidden rounded-xl bg-[#f2e5f6]">
-                      <Image className="object-cover" src={step.image} alt="" fill sizes="44px" />
+                      <Image className="object-contain" src={step.image} alt="" fill sizes="44px" />
                     </span>
                     <span className="min-w-0 flex-1">
                       <strong className="block truncate text-sm text-[#23192a]">{step.title}</strong>
@@ -117,10 +117,9 @@ export default async function AdminSevenDayTrainingPage({
                     <form className="grid gap-3" action={updateTrainingStepAction}>
                       <input type="hidden" name="id" value={step.id} />
                       <label className={labelClasses}>Số ngày<input className={inputClasses} name="day" defaultValue={step.day} required /></label>
-                      <label className={labelClasses}>Tiêu đề bước<input className={inputClasses} name="title" defaultValue={step.title} required /></label>
-                      <label className={labelClasses}>Nội dung bước<textarea className={textareaClasses} name="description" defaultValue={step.description} required /></label>
-                      <ImagePicker name="image" label="Thay ảnh minh họa" library={library} />
-                      <p className="text-[11px] leading-5 text-[#8a918d]">Ảnh hiển thị dạng vuông và được phóng to nhẹ, nên chọn ảnh có nhân vật ở giữa khung. Để trống nếu giữ ảnh hiện tại.</p>
+                      <label className={labelClasses}>Nội dung ngày<input className={inputClasses} name="title" defaultValue={step.title} required /></label>
+                      <ImagePicker name="image" label="Thay icon của ngày" library={library} />
+                      <p className="text-[11px] leading-5 text-[#8a918d]">Nên dùng icon vuông PNG hoặc WEBP có nền trong suốt. Để trống nếu giữ icon hiện tại.</p>
                       <button className="h-10 cursor-pointer rounded-xl border-0 bg-[#5d1476] text-xs font-bold text-white hover:bg-[#741b91]" type="submit">Lưu thay đổi</button>
                     </form>
 
@@ -136,7 +135,7 @@ export default async function AdminSevenDayTrainingPage({
                     </div>
                     <form className="mt-2" action={deleteTrainingStepAction}>
                       <input type="hidden" name="id" value={step.id} />
-                      <button className="h-9 w-full cursor-pointer rounded-xl border border-[#f0cfc9] bg-[#fff3f0] text-xs font-bold text-[#a43a2c] hover:bg-[#ffe8e2] disabled:cursor-not-allowed disabled:opacity-40" type="submit" disabled={content.steps.length <= 1}>Xóa bước</button>
+                      <button className="h-9 w-full cursor-pointer rounded-xl border border-[#f0cfc9] bg-[#fff3f0] text-xs font-bold text-[#a43a2c] hover:bg-[#ffe8e2] disabled:cursor-not-allowed disabled:opacity-40" type="submit" disabled={content.steps.length <= 1}>Xóa ngày</button>
                     </form>
                   </div>
                 </details>
@@ -146,13 +145,12 @@ export default async function AdminSevenDayTrainingPage({
 
           <article className="rounded-[18px] border border-[#e5e6df] bg-[#fffefa] p-5 sm:p-6">
             <p className="text-[10px] font-extrabold tracking-[0.1em] text-[#8c6896] uppercase">Thêm mới</p>
-            <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">Thêm bước vào lộ trình</h2>
+            <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">Thêm ngày vào lộ trình</h2>
             <form className="mt-5 grid gap-4" action={addTrainingStepAction}>
-              <label className={labelClasses}>Số ngày<input className={inputClasses} name="day" placeholder="VD: 3–5" required /></label>
-              <label className={labelClasses}>Tiêu đề bước<input className={inputClasses} name="title" required /></label>
-              <label className={labelClasses}>Nội dung bước<textarea className={textareaClasses} name="description" required /></label>
-              <ImagePicker name="image" label="Ảnh minh họa" library={library} />
-              <button className="h-11 cursor-pointer rounded-xl border-0 bg-[linear-gradient(90deg,#671482,#a52aaa)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(104,20,130,0.16)] transition hover:-translate-y-0.5" type="submit">+ Thêm bước</button>
+              <label className={labelClasses}>Số ngày<input className={inputClasses} name="day" placeholder="VD: 10" required /></label>
+              <label className={labelClasses}>Nội dung ngày<input className={inputClasses} name="title" required /></label>
+              <ImagePicker name="image" label="Icon của ngày" library={library} />
+              <button className="h-11 cursor-pointer rounded-xl border-0 bg-[linear-gradient(90deg,#671482,#a52aaa)] px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(104,20,130,0.16)] transition hover:-translate-y-0.5" type="submit">+ Thêm ngày</button>
             </form>
           </article>
         </div>

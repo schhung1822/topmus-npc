@@ -13,7 +13,8 @@ const folderLabels = new Map([
   ["npc", "Creator NPC"],
   ["npc-model", "Mô hình NPC"],
   ["seo", "SEO & chia sẻ"],
-  ["seven-day-training", "Lộ trình 7 ngày"],
+  ["seven-day-training", "Lộ trình 10 ngày"],
+  ["why-topmus", "Vì sao chọn TOPMUS"],
   ["videos", "Ảnh nội dung NPC"],
 ]);
 

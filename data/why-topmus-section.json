@@ -1,0 +1,66 @@
+{
+  "creatorSlides": [
+    {
+      "id": "creator-rully",
+      "src": "/api/uploads/why-topmus/creator-27664e6d-15ee-4dcc-b02d-ce0e776ab300.webp",
+      "alt": "MIEIGHT8"
+    },
+    {
+      "id": "creator-haazy",
+      "src": "/api/uploads/why-topmus/creator-9131a2ff-3a7b-401e-8ae5-2f04a5728573.webp",
+      "alt": "LÊ NGUYỄN TRÀ VI"
+    },
+    {
+      "id": "creator-amber",
+      "src": "/api/uploads/why-topmus/creator-a1afd071-ceda-4c06-93c9-da30ed31ec84.webp",
+      "alt": "Creator Live NPC AMBER"
+    },
+    {
+      "id": "creator-amber-devil",
+      "src": "/api/uploads/why-topmus/creator-298e2837-78b8-4230-b7b3-6e8bb7d53c55.webp",
+      "alt": "JENNY TRẦN"
+    },
+    {
+      "id": "793d1290-b4b6-469d-aec7-464def512dae",
+      "src": "/api/uploads/why-topmus/creator-79604497-32f4-4421-ba3e-986b662a8994.webp",
+      "alt": "TRÚC PHƯƠNG"
+    },
+    {
+      "id": "7377c807-08b5-458d-9375-989b944847fd",
+      "src": "/api/uploads/why-topmus/creator-8173c9f9-55c7-427a-87c4-42f25403d6b2.webp",
+      "alt": "TINA TRANG"
+    }
+  ],
+  "trainingSlides": [
+    {
+      "id": "training-chon-vibe",
+      "src": "/api/uploads/seven-day-training/step-6865ecc1-3e25-48cb-a96e-12d61ab00265.webp",
+      "alt": "Hỗ trợ kỹ thuật"
+    },
+    {
+      "id": "training-xay-dung-hieu-ung",
+      "src": "/api/uploads/seven-day-training/step-d504127c-6540-4e7b-b635-86ecaea05b81.webp",
+      "alt": "Hỗ trợ kỹ thuật"
+    },
+    {
+      "id": "training-tap-luyen",
+      "src": "/api/uploads/seven-day-training/step-90577459-cb32-47c5-9996-9eaf21d96924.webp",
+      "alt": "Đào tạo kỹ năng"
+    },
+    {
+      "id": "training-quay-bien-hinh",
+      "src": "/api/uploads/seven-day-training/step-29540b73-3f62-4bd4-b0d3-5996cd45c9bc.webp",
+      "alt": "Thiết bị hiện đại"
+    },
+    {
+      "id": "5c92da0e-9212-41e1-969b-58f13fffd0da",
+      "src": "/api/uploads/why-topmus/training-b7730ebb-fca1-4da6-b42e-02b7d2d317b6.webp",
+      "alt": "Hỗ trợ kỹ thuật"
+    },
+    {
+      "id": "922d049f-15b3-4a46-9b1e-03ee850b36bf",
+      "src": "/api/uploads/why-topmus/training-12d6c702-3b1d-4149-9714-f5878895de99.webp",
+      "alt": "Hỗ trợ makeup"
+    }
+  ]
+}

@@ -74,9 +74,8 @@ export async function addTrainingStepAction(formData: FormData) {
   content.steps.push({
     id: randomUUID(),
     day: requiredText(formData, "day", "Số ngày"),
-    title: requiredText(formData, "title", "Tiêu đề bước"),
-    description: requiredText(formData, "description", "Nội dung bước"),
-    image: image || "/img/banner_sec2.webp",
+    title: requiredText(formData, "title", "Nội dung ngày"),
+    image: image || "/img/day2.webp",
   });
 
   await saveSevenDayTrainingContent(content);
@@ -87,15 +86,14 @@ export async function addTrainingStepAction(formData: FormData) {
 export async function updateTrainingStepAction(formData: FormData) {
   await requireAdmin();
   const content = await getSevenDayTrainingContent();
-  const id = requiredText(formData, "id", "ID bước");
+  const id = requiredText(formData, "id", "ID ngày");
   const step = content.steps.find((item) => item.id === id);
-  if (!step) throw new Error("Không tìm thấy bước cần cập nhật.");
+  if (!step) throw new Error("Không tìm thấy ngày cần cập nhật.");
 
   const image = await uploadedImage(formData, "image", "step");
 
   step.day = requiredText(formData, "day", "Số ngày");
-  step.title = requiredText(formData, "title", "Tiêu đề bước");
-  step.description = requiredText(formData, "description", "Nội dung bước");
+  step.title = requiredText(formData, "title", "Nội dung ngày");
   if (image) step.image = image;
 
   await saveSevenDayTrainingContent(content);
@@ -106,10 +104,10 @@ export async function updateTrainingStepAction(formData: FormData) {
 export async function deleteTrainingStepAction(formData: FormData) {
   await requireAdmin();
   const content = await getSevenDayTrainingContent();
-  const id = requiredText(formData, "id", "ID bước");
+  const id = requiredText(formData, "id", "ID ngày");
 
   if (content.steps.length <= 1) {
-    throw new Error("Cần giữ lại ít nhất một bước trong lộ trình.");
+    throw new Error("Cần giữ lại ít nhất một ngày trong lộ trình.");
   }
 
   content.steps = content.steps.filter((item) => item.id !== id);
@@ -121,7 +119,7 @@ export async function deleteTrainingStepAction(formData: FormData) {
 export async function moveTrainingStepAction(formData: FormData) {
   await requireAdmin();
   const content = await getSevenDayTrainingContent();
-  const id = requiredText(formData, "id", "ID bước");
+  const id = requiredText(formData, "id", "ID ngày");
   const direction = text(formData, "direction");
   const currentIndex = content.steps.findIndex((item) => item.id === id);
   const targetIndex = direction === "up" ? currentIndex - 1 : currentIndex + 1;

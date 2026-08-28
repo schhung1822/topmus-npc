@@ -1,37 +1,44 @@
 {
-  "eyebrow": "Mô hình",
+  "eyebrow": "Dàn",
   "heading": "NPC",
-  "badge": "của TOPMUS",
+  "badge": "đang chờ bạn!",
   "ctaLabel": "Đăng ký ngay",
   "ctaHref": "#lien-he",
   "cards": [
     {
       "id": "npc-beauty",
-      "name": "NPC BEAUTY",
-      "tagline": "Đào tạo tạo hình NPC",
-      "description": "Định hình nhân vật, biểu cảm, thần thái, giọng nói, nhịp tương tác và phong cách xuất hiện theo từng concept.",
-      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+      "name": "NPC BADDIE",
+      "tagline": "NPC BADDIE",
+      "description": "Cá tính, lạnh lùng và đầy cuốn hút. Phù hợp NPC ngầu, tương tác mạnh và có chất “bad girl energy”.",
+      "image": "/api/uploads/npc-model/card-576bb9d8-abb5-488d-8487-35400d63f25f.webp"
     },
     {
       "id": "npc-cosplay",
-      "name": "NPC COSPLAY",
-      "tagline": "Kịch bản nội dung LIVE",
-      "description": "Gợi ý flow vào phòng, cách giữ User, nội dung tương tác, mini game, xử lý quà và xây dựng điểm nhớ riêng.",
-      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+      "name": "NPC RACER",
+      "tagline": "NPC RACER",
+      "description": "Năng động, tự tin và luôn thích dẫn đầu. Phù hợp NPC cá tính, phản ứng nhanh và mang tinh thần cạnh tranh đầy nhiệt huyết.",
+      "image": "/api/uploads/npc-model/card-d76e3651-9408-4195-a2e2-636876176f23.webp"
     },
     {
       "id": "npc-online",
-      "name": "NPC ONLINE",
-      "tagline": "Hỗ trợ set-up hình ảnh",
-      "description": "Hỗ trợ make-up, dạy nhảy, tóc, ánh sáng, góc máy để nhân vật lên sóng chuyên nghiệp và hấp dẫn hơn.",
-      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+      "name": "NPC SAILOR",
+      "tagline": "NPC SAILOR",
+      "description": "Thanh lịch, tinh nghịch và có chút kiêu kỳ. Phù hợp NPC đáng yêu, lanh lợi và mang nét cổ điển đầy duyên dáng.",
+      "image": "/api/uploads/npc-model/card-452129ca-7a6b-404b-9073-c5846f999f5e.webp"
     },
     {
       "id": "npc-studio",
-      "name": "NPC STUDIO",
-      "tagline": "Công cụ vận hành",
-      "description": "Ứng dụng dashboard, media tools, form đánh giá và quy trình hỗ trợ giúp đào tạo nhanh và đồng bộ hơn.",
-      "image": "/uploads/videos/thumbnail-3b3c8677-681a-41d7-b7d6-ea3586e70c4c.webp"
+      "name": "NPC ANGEL",
+      "tagline": "NPC ANGEL",
+      "description": "Dịu dàng, trong trẻo và đầy mộng mơ. Phù hợp NPC ngọt ngào, ấm áp và mang năng lượng chữa lành.",
+      "image": "/api/uploads/npc-model/card-87a25f23-e142-4f74-97e7-020029662363.webp"
+    },
+    {
+      "id": "npc-performance",
+      "name": "NPC VAMP",
+      "tagline": "NPC VAMP",
+      "description": "Bí ẩn, quyến rũ và có chút nguy hiểm. Phù hợp NPC táo bạo, tinh quái và sở hữu sức hút khó cưỡng.",
+      "image": "/api/uploads/npc-model/card-bcff7ef9-1eba-4530-94cd-d39e1bb8cd60.webp"
     }
   ]
 }

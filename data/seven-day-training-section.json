@@ -1,5 +1,5 @@
 {
-  "headingHighlight": "7 NGÀY",
+  "headingHighlight": "10 NGÀY",
   "headingSuffix": "hoàn thiện",
   "headingBadge": "live NPC",
   "intro": "Từ định hình nhân vật, lựa chọn phong cách đến luyện tập biểu cảm, hiệu ứng và triển khai LIVE. \r\nChương trình mang tính ứng dụng cao, giúp nhanh chóng tạo dấu ấn cá nhân, thu hút người xem và nâng cao khả năng tương tác. Phù hợp cho người mới và Creator muốn xây dựng hình ảnh nhân vật rõ nét, dễ ghi nhớ.",
@@ -8,32 +8,64 @@
   "backgroundImage": "/uploads/seven-day-training/background-01a34435-8cd5-4c74-a8bf-0b1e938aca83.webp",
   "steps": [
     {
-      "id": "chon-vibe",
+      "id": "train-dance",
       "day": "1",
-      "title": "Trao đổi & chọn vibe",
-      "description": "Tư vấn và đưa ra vibe phù hợp theo tính cách và phục trang.",
-      "image": "/uploads/seven-day-training/step-6865ecc1-3e25-48cb-a96e-12d61ab00265.webp"
+      "title": "Train dance",
+      "image": "/img/day1.webp"
     },
     {
-      "id": "xay-dung-hieu-ung",
+      "id": "train-bieu-cam-than-thai",
       "day": "2",
-      "title": "Xây dựng hiệu ứng",
-      "description": "Lên ý tưởng hiệu ứng riêng theo từng nhân vật đã chọn và tập luyện cơ bản.",
-      "image": "/uploads/seven-day-training/step-d504127c-6540-4e7b-b635-86ecaea05b81.webp"
+      "title": "Train biểu cảm và thần thái",
+      "image": "/img/day2.webp"
     },
     {
-      "id": "tap-luyen",
-      "day": "3–5",
-      "title": "Tập luyện",
-      "description": "Tăng cường tập luyện hiệu ứng nhảy, biểu cảm và bài diễn có sẵn.",
-      "image": "/uploads/seven-day-training/step-90577459-cb32-47c5-9996-9eaf21d96924.webp"
+      "id": "phong-may-hoc-nhay-dien",
+      "day": "3",
+      "title": "Phòng máy + học nhảy/diễn",
+      "image": "/img/day3.webp"
     },
     {
-      "id": "quay-bien-hinh",
-      "day": "6–7",
-      "title": "Quay biến hình",
-      "description": "Quay biến hình, hoàn thiện danh sách quà và chốt thời gian debut.",
-      "image": "/uploads/seven-day-training/step-29540b73-3f62-4bd4-b0d3-5996cd45c9bc.webp"
+      "id": "train-nang-cao",
+      "day": "4",
+      "title": "Train nâng cao (ghép kỹ năng)",
+      "image": "/img/day4.webp"
+    },
+    {
+      "id": "san-xuat-hinh-anh-on-tap",
+      "day": "5",
+      "title": "Sản xuất hình ảnh + ôn tập",
+      "image": "/img/day5.webp"
+    },
+    {
+      "id": "live-trai-nghiem-1",
+      "day": "6",
+      "title": "Train + live trải nghiệm 1",
+      "image": "/img/day6.webp"
+    },
+    {
+      "id": "live-trai-nghiem-2",
+      "day": "7",
+      "title": "Train + live trải nghiệm 2 + feedback",
+      "image": "/img/day7.webp"
+    },
+    {
+      "id": "live-3-4-tieng",
+      "day": "8",
+      "title": "Train (ít hơn) + live 3–4 tiếng",
+      "image": "/img/day8.webp"
+    },
+    {
+      "id": "live-full-ca",
+      "day": "9",
+      "title": "Live full ca + đánh giá tổng",
+      "image": "/img/day9.webp"
+    },
+    {
+      "id": "tong-duyet-poster-debut",
+      "day": "10",
+      "title": "Tổng duyệt + poster debut",
+      "image": "/img/day10.webp"
     }
   ]
 }

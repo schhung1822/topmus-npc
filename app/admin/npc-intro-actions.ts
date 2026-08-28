@@ -40,8 +40,7 @@ export async function updateNpcIntroAction(formData: FormData) {
 
   content.heading = requiredText(formData, "heading", "Tiêu đề");
   content.paragraphs = [
-    requiredText(formData, "paragraph1", "Đoạn giới thiệu thứ nhất"),
-    requiredText(formData, "paragraph2", "Đoạn giới thiệu thứ hai"),
+    requiredText(formData, "paragraph1", "Đoạn giới thiệu"),
   ];
   if (uploadedBanner) content.bannerImage = uploadedBanner;
 

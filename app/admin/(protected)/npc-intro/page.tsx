@@ -57,8 +57,7 @@ export default async function AdminNpcIntroPage({
 
           <form className="mt-5 grid gap-4" action={updateNpcIntroAction}>
             <label className={labelClasses}>Tiêu đề<input className={inputClasses} name="heading" defaultValue={content.heading} required /></label>
-            <label className={labelClasses}>Đoạn giới thiệu 1<textarea className={textareaClasses} name="paragraph1" defaultValue={content.paragraphs[0]} required /></label>
-            <label className={labelClasses}>Đoạn giới thiệu 2<textarea className={textareaClasses} name="paragraph2" defaultValue={content.paragraphs[1]} required /></label>
+            <label className={labelClasses}>Đoạn giới thiệu<textarea className={textareaClasses} name="paragraph1" defaultValue={content.paragraphs[0]} required /></label>
             <ImagePicker name="banner" label="Thay banner" library={library} />
             <p className="text-[11px] leading-5 text-[#8a918d]">Hỗ trợ JPG, PNG, WEBP; tối đa 8MB. Để trống nếu giữ ảnh hiện tại.</p>
             <button className="h-11 cursor-pointer rounded-xl border-0 bg-[#5d1476] px-5 text-sm font-bold text-white transition hover:bg-[#741b91]" type="submit">Lưu banner và mô tả</button>

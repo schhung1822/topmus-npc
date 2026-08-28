@@ -56,7 +56,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6">
-        <article className="relative min-h-[430px] overflow-hidden rounded-[22px] bg-[linear-gradient(135deg,#3d0069,rgba(255,255,255,0))] shadow-[0_24px_60px_rgba(115,28,145,0.2)] sm:min-h-[470px] lg:min-h-[430px]">
+        <article className="relative min-h-[430px] overflow-hidden rounded-[22px] bg-[linear-gradient(135deg,#3d0069,rgba(255,255,255,0))] shadow-[0_24px_60px_rgba(115,28,145,0.2)] sm:min-h-[470px] lg:min-h-[520px]">
           <Image
             className="object-cover object-center lg:object-right"
             src={content.bannerImage}
@@ -66,7 +66,7 @@ export function NpcIntroSection({ content }: { content: NpcIntroContent }) {
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(58,0,93,0.96)_0%,rgba(75,0,112,0.82)_30%,rgba(75,0,112,0)_70%,transparent_100%)] max-lg:bg-[linear-gradient(90deg,rgba(58,0,93,0.94),rgba(64,0,96,0.66))]" />
 
-          <div className="relative z-10 flex min-h-[430px] max-w-[570px] flex-col justify-center px-6 py-10 text-white sm:min-h-[470px] sm:px-10 lg:min-h-[430px] lg:w-[54%] lg:px-11">
+          <div className="relative z-10 flex min-h-[430px] max-w-[570px] flex-col justify-center px-6 py-10 text-white sm:min-h-[470px] sm:px-10 lg:min-h-[520px] lg:w-[54%] lg:px-11">
             <h2 aria-label={content.heading} className={styles.npcHeading}>
               <span aria-hidden="true" className={styles.headingLead} data-text={headingLead}>
                 {headingLead}

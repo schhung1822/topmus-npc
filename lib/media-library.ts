@@ -28,7 +28,8 @@ const dataFileLabels = new Map([
   ["npc-intro-section.json", "NPC là gì?"],
   ["npc-model-section.json", "Mô hình NPC"],
   ["seo-settings.json", "SEO & Favicon"],
-  ["seven-day-training-section.json", "Lộ trình 7 ngày"],
+  ["seven-day-training-section.json", "Lộ trình 10 ngày"],
+  ["why-topmus-section.json", "Vì sao chọn TOPMUS"],
 ]);
 
 function collectImagePaths(value: unknown, found: Set<string>) {

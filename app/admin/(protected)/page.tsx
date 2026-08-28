@@ -5,6 +5,7 @@ import { getNpcIntroContent } from "@/lib/npc-intro-content";
 import { getNpcModelContent } from "@/lib/npc-model-content";
 import { getHeroBannerContent } from "@/lib/hero-banner-content";
 import { getSevenDayTrainingContent } from "@/lib/seven-day-training-content";
+import { getWhyTopmusContent } from "@/lib/why-topmus-content";
 import { listMediaImages } from "@/lib/media-library";
 
 export const metadata: Metadata = {
@@ -13,13 +14,14 @@ export const metadata: Metadata = {
 };
 
 export default async function AdminDashboardPage() {
-  const [heroBannerContent, npcContent, introContent, modelContent, trainingContent, mediaImages] =
+  const [heroBannerContent, npcContent, introContent, modelContent, trainingContent, whyTopmusContent, mediaImages] =
     await Promise.all([
       getHeroBannerContent(),
       getNpcSectionContent(),
       getNpcIntroContent(),
       getNpcModelContent(),
       getSevenDayTrainingContent(),
+      getWhyTopmusContent(),
       listMediaImages(),
     ]);
 
@@ -27,8 +29,9 @@ export default async function AdminDashboardPage() {
     { label: "Banner đầu trang", value: "1", help: "Ảnh đang hiển thị", accent: "from-[#5b1686] to-[#a92fc0]" },
     { label: "Creator NPC", value: String(npcContent.npcs.length), help: "Hồ sơ đang hiển thị", accent: "from-[#7b20a0] to-[#c331bd]" },
     { label: "Nội dung giới thiệu", value: String(introContent.features.length), help: "Ô nội dung đang hoạt động", accent: "from-[#a326a8] to-[#f044cf]" },
+    { label: "Vì sao chọn TOPMUS", value: String(whyTopmusContent.creatorSlides.length + whyTopmusContent.trainingSlides.length), help: "Ảnh trong hai slider", accent: "from-[#7e20aa] to-[#e33fc8]" },
     { label: "Mô hình NPC", value: String(modelContent.cards.length), help: "Thẻ lật đang hiển thị", accent: "from-[#8b1fb0] to-[#e23ad6]" },
-    { label: "Lộ trình 7 ngày", value: String(trainingContent.steps.length), help: "Bước đào tạo đang hiển thị", accent: "from-[#a3239b] to-[#f0479f]" },
+    { label: "Lộ trình 10 ngày", value: String(trainingContent.steps.length), help: "Ngày đào tạo đang hiển thị", accent: "from-[#a3239b] to-[#f0479f]" },
     { label: "Thư viện ảnh", value: String(mediaImages.length), help: "Ảnh đã tải lên", accent: "from-[#6a1b9a] to-[#b44ae0]" },
   ];
 
@@ -37,8 +40,9 @@ export default async function AdminDashboardPage() {
     { href: "/admin/hero-banner", title: "Banner đầu trang", description: `Thay ảnh banner hiện tại: ${heroBannerContent.alt}`, icon: "▣" },
     { href: "/admin/npc", title: "Creator NPC", description: "Quản lý banner, danh mục và hồ sơ creator.", icon: "✦" },
     { href: "/admin/npc-intro", title: "NPC là gì?", description: "Cập nhật banner giới thiệu và các điểm nổi bật.", icon: "?" },
+    { href: "/admin/why-topmus", title: "Vì sao chọn TOPMUS", description: "Quản lý danh sách ảnh của hai slider thành tựu và đào tạo.", icon: "◇" },
     { href: "/admin/npc-model", title: "Mô hình NPC", description: "Quản lý các thẻ lật: ảnh mặt trước và nội dung mặt sau.", icon: "◱" },
-    { href: "/admin/seven-day-training", title: "Lộ trình 7 ngày", description: "Cập nhật tiêu đề, ảnh nền và các bước đào tạo.", icon: "◷" },
+    { href: "/admin/seven-day-training", title: "Lộ trình 10 ngày", description: "Cập nhật tiêu đề, ảnh nền, nội dung và icon của từng ngày.", icon: "◷" },
     { href: "/admin/media", title: "Thư viện ảnh", description: "Xem, dùng lại và xóa ảnh đã tải lên trước đó.", icon: "◨" },
   ];
 

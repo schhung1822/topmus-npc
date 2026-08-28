@@ -94,7 +94,7 @@
   margin: 0;
   color: #f485ed;
   font-size: clamp(31px, 4.5vw, 47px);
-  font-weight: 900;
+  font-weight: 700;
   font-style: italic;
   line-height: 1.3;
   letter-spacing: -0.045em;
@@ -196,6 +196,10 @@
     radial-gradient(circle at 50% 12%, rgb(248 51 238 / 20%), transparent 34%);
   content: "";
   pointer-events: none;
+}
+
+.posterShine {
+  animation: benefit-poster-shine 4.5s ease-in-out infinite;
 }
 
 .posterOverlay {
@@ -713,5 +717,16 @@
 
   50% {
     translate: 0 7px;
+  }
+}
+
+@keyframes benefit-poster-shine {
+  0% {
+    transform: translate3d(-140%, 0, 0) skewX(-18deg);
+  }
+
+  55%,
+  100% {
+    transform: translate3d(440%, 0, 0) skewX(-18deg);
   }
 }

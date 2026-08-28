@@ -57,7 +57,7 @@
   position: relative;
   z-index: 1;
   display: inline-block;
-  padding-right: 0.13em;
+  padding-right: 16px;
   color: transparent;
   font-size: clamp(50px, 6.2vw, 76px);
   font-weight: 700;

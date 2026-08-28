@@ -35,9 +35,9 @@ export async function updateNpcModelHeaderAction(formData: FormData) {
   await requireAdmin();
   const content = await getNpcModelContent();
 
-  content.eyebrow = requiredText(formData, "eyebrow", "Dòng chữ nhỏ");
-  content.heading = requiredText(formData, "heading", "Tiêu đề lớn");
-  content.badge = requiredText(formData, "badge", "Nhãn tròn");
+  content.eyebrow = requiredText(formData, "eyebrow", "Dòng 1 – phần đầu");
+  content.heading = requiredText(formData, "heading", "Dòng 1 – phần nổi bật");
+  content.badge = requiredText(formData, "badge", "Dòng 2");
   content.ctaLabel = requiredText(formData, "ctaLabel", "Chữ trên nút");
   content.ctaHref = requiredText(formData, "ctaHref", "Liên kết nút");
 

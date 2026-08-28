@@ -52,9 +52,9 @@ export default async function AdminNpcModelPage({
           <h2 className="mt-1.5 text-xl font-bold tracking-[-0.02em] text-[#24182a]">Phần đầu section</h2>
 
           <form className="mt-5 grid gap-4" action={updateNpcModelHeaderAction}>
-            <label className={labelClasses}>Dòng chữ nhỏ<input className={inputClasses} name="eyebrow" defaultValue={content.eyebrow} required /></label>
-            <label className={labelClasses}>Tiêu đề lớn<input className={inputClasses} name="heading" defaultValue={content.heading} required /></label>
-            <label className={labelClasses}>Nhãn tròn<input className={inputClasses} name="badge" defaultValue={content.badge} required /></label>
+            <label className={labelClasses}>Dòng 1 – phần đầu<input className={inputClasses} name="eyebrow" defaultValue={content.eyebrow} required /></label>
+            <label className={labelClasses}>Dòng 1 – phần nổi bật<input className={inputClasses} name="heading" defaultValue={content.heading} required /></label>
+            <label className={labelClasses}>Dòng 2<input className={inputClasses} name="badge" defaultValue={content.badge} required /></label>
             <label className={labelClasses}>Chữ trên nút<input className={inputClasses} name="ctaLabel" defaultValue={content.ctaLabel} required /></label>
             <label className={labelClasses}>Liên kết nút<input className={inputClasses} name="ctaHref" defaultValue={content.ctaHref} required /></label>
             <p className="text-[11px] leading-5 text-[#8a918d]">Liên kết dạng “#lien-he” sẽ cuộn tới form đăng ký ngay trên trang chủ.</p>

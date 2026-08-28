@@ -8,7 +8,7 @@ import styles from "./benefits-section.module.css";
 const benefitCards = [
   {
     id: "luong-cung",
-    src: "/img/img2.webp",
+    src: "/img/img1a.webp",
     alt: "Poster tuyển dụng NPC Live với lương cứng từ 10 đến 40 triệu mỗi tháng",
     title: (
       <>
@@ -22,7 +22,7 @@ const benefitCards = [
   },
   {
     id: "hoa-hong",
-    src: "/img/img4.webp",
+    src: "/img/img2a.webp",
     alt: "Poster hoa hồng lên tới 70% dành cho NPC Live Creator",
     title: (
       <>
@@ -36,7 +36,7 @@ const benefitCards = [
   },
   {
     id: "thuong-bxh",
-    src: "/img/img1.webp",
+    src: "/img/img3a.webp",
     alt: "Poster bảng xếp hạng NST Live tháng 5",
     title: (
       <>
@@ -170,7 +170,7 @@ export function BenefitsSection() {
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 300px"
                     />
                     <span
-                      className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 animate-benefit-shine bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)] motion-reduce:hidden"
+                      className={`${styles.posterShine} pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent)] motion-reduce:hidden`}
                       aria-hidden="true"
                     />
                   </div>
