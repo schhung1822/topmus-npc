@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import {
+  allowsAutomaticInlinePlayback,
+  prepareInlineVideo,
+} from "@/lib/inline-video-playback";
 
 export function RecruitmentVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -12,10 +16,13 @@ export function RecruitmentVideo() {
       return;
     }
 
-    video.defaultMuted = true;
-    video.muted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
+    prepareInlineVideo(video);
+
+    if (!allowsAutomaticInlinePlayback()) {
+      video.autoplay = false;
+      video.pause();
+      return;
+    }
 
     let isInView = false;
 
@@ -57,7 +64,6 @@ export function RecruitmentVideo() {
       ref={videoRef}
       aria-label="Video giới thiệu TOPMUS Entertainment"
       className="aspect-[9/16] max-h-[680px] w-full max-w-[382px] rounded-[24px] border border-white/25 bg-black object-contain shadow-[0_24px_70px_rgba(17,0,28,0.38),0_0_34px_rgba(241,0,220,0.2)]"
-      autoPlay
       controls
       muted
       playsInline

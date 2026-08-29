@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import {
+  allowsAutomaticInlinePlayback,
+  prepareInlineVideo,
+} from "@/lib/inline-video-playback";
 import { SharedTicker } from "./shared-ticker";
 
 const softwareTools = [
@@ -53,10 +57,13 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
     const video = phoneVideoRef.current;
     if (!video) return;
 
-    video.defaultMuted = true;
-    video.muted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
+    prepareInlineVideo(video);
+
+    if (!allowsAutomaticInlinePlayback()) {
+      video.autoplay = false;
+      video.pause();
+      return;
+    }
 
     let isVideoInView = false;
 
@@ -152,7 +159,6 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                     className="software-phone-video pointer-events-none absolute inset-0 size-full object-contain object-center"
                     aria-label="Video giới thiệu TOPMUS trong màn hình điện thoại"
                     poster="/img/phone-bg.webp"
-                    autoPlay
                     controls={false}
                     muted
                     loop
@@ -160,6 +166,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                     preload="metadata"
                     disablePictureInPicture
                     disableRemotePlayback
+                    tabIndex={-1}
                   >
                     <source src="/video/npcloop.mp4" type="video/mp4" />
                   </video>
