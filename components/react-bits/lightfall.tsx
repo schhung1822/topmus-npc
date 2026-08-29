@@ -11,6 +11,7 @@ export interface LightfallProps {
   backgroundColor?: string;
   speed?: number;
   streakCount?: number;
+  mobileStreakCount?: number;
   streakWidth?: number;
   streakLength?: number;
   glow?: number;
@@ -221,6 +222,7 @@ export default function Lightfall({
   backgroundColor = "#0A29FF",
   speed = 0.5,
   streakCount = 1,
+  mobileStreakCount,
   streakWidth = 1,
   streakLength = 1,
   glow = 1,
@@ -275,6 +277,12 @@ export default function Lightfall({
     canvas.style.display = "block";
 
     const prepared = prepColors(colors);
+    const streakCountForWidth = (width: number) => {
+      const count = width < 640 && mobileStreakCount !== undefined
+        ? mobileStreakCount
+        : streakCount;
+      return Math.max(1, Math.min(16, Math.round(count)));
+    };
     const uniforms = {
       iResolution: { value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1] },
       iMouse: { value: [0, 0] },
@@ -291,7 +299,7 @@ export default function Lightfall({
       uBgColor: { value: hexToRGB(backgroundColor) },
       uMouseColor: { value: prepared.average },
       uSpeed: { value: speed },
-      uStreakCount: { value: Math.max(1, Math.min(16, Math.round(streakCount))) },
+      uStreakCount: { value: streakCountForWidth(container.getBoundingClientRect().width) },
       uStreakWidth: { value: streakWidth },
       uStreakLength: { value: streakLength },
       uGlow: { value: glow },
@@ -331,6 +339,7 @@ export default function Lightfall({
       const rect = container.getBoundingClientRect();
       renderer.setSize(rect.width, rect.height);
       uniforms.iResolution.value = [gl.drawingBufferWidth, gl.drawingBufferHeight, 1];
+      uniforms.uStreakCount.value = streakCountForWidth(rect.width);
     };
 
     resize();
@@ -440,6 +449,7 @@ export default function Lightfall({
     mouseInteraction,
     mouseRadius,
     mouseStrength,
+    mobileStreakCount,
     opacity,
     paused,
     speed,

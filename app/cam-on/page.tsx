@@ -25,6 +25,7 @@ export default function ThankYouPage() {
           density={0.58}
           dpr={1.1}
           glow={1.15}
+          mobileStreakCount={1}
           mouseInteraction
           mouseRadius={0.8}
           mouseStrength={0.75}
