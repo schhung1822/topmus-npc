@@ -212,62 +212,24 @@ export function ApplicationSection() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid w-full max-w-[1280px] items-start gap-10 px-5 sm:px-6 lg:grid-cols-[minmax(0,1.12fr)_minmax(320px,0.88fr)] lg:gap-[46px]">
-        <div>
-          <span className="inline-flex items-center rounded-full bg-[#f22ad8] px-4 py-1.5 text-[12px] leading-none font-bold text-white shadow-[0_8px_20px_rgba(242,42,216,0.2)]">
+      <div className="mx-auto grid w-full max-w-[1280px] items-start gap-8 px-5 sm:px-6 lg:grid-cols-[minmax(0,1.12fr)_minmax(320px,0.88fr)] lg:gap-x-[46px] lg:gap-y-10">
+        <div className="lg:col-start-1 lg:row-start-1">
+          <span className="hidden items-center rounded-full bg-[#f22ad8] px-4 py-1.5 text-[12px] leading-none font-bold text-white shadow-[0_8px_20px_rgba(242,42,216,0.2)] lg:inline-flex">
             🔥 Tuyển dụng NPC Live
           </span>
 
-          <h2 className="mt-7 text-[clamp(32px,4vw,48px)] leading-[1.04] font-bold tracking-[-0.045em] text-[#eddcff]">
+          <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-bold tracking-[-0.045em] text-[#eddcff] lg:mt-7">
             <span className="block">Gửi hồ sơ – TOPMUS liên</span>
             <span className="block">hệ bạn trong <span className="text-[#FFAEDE]">24–48h</span></span>
           </h2>
 
-          <p className="mt-7 max-w-[560px] text-[14px] leading-[1.55] text-[#DFBDCF] sm:text-[16px]">
+          <p className="mt-5 max-w-[560px] text-[14px] leading-[1.55] text-[#DFBDCF] sm:text-[16px] lg:mt-7">
             Trở thành Nhà Sáng Tạo NPC Live tại TOPMUS đồng nghĩa bạn sẽ biến đam mê thành sự
             nghiệp vững chắc với hệ sinh thái hỗ trợ toàn diện.
           </p>
-
-          <ul className="mt-10 grid gap-5">
-            {benefits.map((benefit) => (
-              <li
-                className="flex max-w-[580px] items-center gap-4 text-[15px] leading-[1.45] text-[#EDDCFF]"
-                key={benefit}
-              >
-                <Image
-                  className="mt-[-2px] size-[22px] shrink-0 object-contain"
-                  src="/img/icon-start.webp"
-                  alt=""
-                  width={32}
-                  height={32}
-                  aria-hidden="true"
-                />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            className="mt-10 flex min-h-[102px] max-w-[580px] items-center gap-5 rounded-[12px] border border-white/10 bg-[linear-gradient(105deg,rgba(72,22,83,0.78),rgba(53,13,68,0.8))] px-5 py-4 text-white no-underline shadow-[inset_0_1px_rgba(255,255,255,0.04),0_16px_36px_rgba(8,0,15,0.16)] transition hover:-translate-y-0.5 hover:border-[#f244de]/35 hover:bg-[#4e185a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f244de]"
-            href="https://zalo.me/g/aceotd514"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#ed37db] text-white shadow-[0_8px_20px_rgba(237,55,219,0.3)]">
-              <MessageCircle className="size-5" fill="currentColor" aria-hidden="true" />
-            </span>
-            <span>
-              <strong className="block text-[18px] leading-[1.15] font-extrabold text-[#EDDCFF] sm:text-[20px]">
-                Cộng đồng 2.000+ nhà sáng tạo tinh hoa
-              </strong>
-              <span className="mt-1.5 block text-[11px] font-bold text-[#D1BCFF]">
-                Tham gia nhóm Zalo TOPMUS →
-              </span>
-            </span>
-          </a>
         </div>
 
-        <div className="rounded-[10px] border border-white/10 bg-[linear-gradient(155deg,rgba(78,25,88,0.78),rgba(71,20,78,0.7))] p-5 shadow-[0_24px_60px_rgba(9,0,18,0.2)] backdrop-blur-md sm:px-8 sm:py-12">
+        <div className="rounded-[10px] border border-white/10 bg-[linear-gradient(155deg,rgba(78,25,88,0.78),rgba(71,20,78,0.7))] p-5 shadow-[0_24px_60px_rgba(9,0,18,0.2)] backdrop-blur-md sm:px-8 sm:py-12 lg:col-start-2 lg:row-span-3 lg:row-start-1">
           <div className="text-center">
             <h2 className="text-[19px] leading-tight font-bold text-[#f1e5f4] sm:text-[24px]">
               Form ứng tuyển <span className="text-[#f02bd5]">NPC Live</span>
@@ -397,6 +359,44 @@ export function ApplicationSection() {
             </p>
           </form>
         </div>
+
+        <ul className="grid gap-5 lg:col-start-1 lg:row-start-2">
+          {benefits.map((benefit) => (
+            <li
+              className="flex max-w-[580px] items-center gap-4 text-[15px] leading-[1.45] text-[#EDDCFF]"
+              key={benefit}
+            >
+              <Image
+                className="mt-[-2px] size-[22px] shrink-0 object-contain"
+                src="/img/icon-start.webp"
+                alt=""
+                width={32}
+                height={32}
+                aria-hidden="true"
+              />
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          className="flex min-h-[102px] max-w-[580px] items-center gap-5 rounded-[12px] border border-white/10 bg-[linear-gradient(105deg,rgba(72,22,83,0.78),rgba(53,13,68,0.8))] px-5 py-4 text-white no-underline shadow-[inset_0_1px_rgba(255,255,255,0.04),0_16px_36px_rgba(8,0,15,0.16)] transition hover:-translate-y-0.5 hover:border-[#f244de]/35 hover:bg-[#4e185a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f244de] lg:col-start-1 lg:row-start-3"
+          href="https://zalo.me/g/aceotd514"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#ed37db] text-white shadow-[0_8px_20px_rgba(237,55,219,0.3)]">
+            <MessageCircle className="size-5" fill="currentColor" aria-hidden="true" />
+          </span>
+          <span>
+            <strong className="block text-[18px] leading-[1.15] font-extrabold text-[#EDDCFF] sm:text-[20px]">
+              Cộng đồng 2.000+ nhà sáng tạo tinh hoa
+            </strong>
+            <span className="mt-1.5 block text-[11px] font-bold text-[#D1BCFF]">
+              Tham gia nhóm Zalo TOPMUS →
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );
