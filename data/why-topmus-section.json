@@ -2,65 +2,65 @@
   "creatorSlides": [
     {
       "id": "creator-rully",
-      "src": "/api/uploads/why-topmus/creator-27664e6d-15ee-4dcc-b02d-ce0e776ab300.webp",
-      "alt": "MIEIGHT8"
+      "src": "/api/uploads/why-topmus/creator-f9e43da0-fc08-431a-a363-5595dcd7c315.webp",
+      "alt": "Cúp tiktok"
     },
     {
       "id": "creator-haazy",
-      "src": "/api/uploads/why-topmus/creator-9131a2ff-3a7b-401e-8ae5-2f04a5728573.webp",
-      "alt": "LÊ NGUYỄN TRÀ VI"
+      "src": "/api/uploads/why-topmus/creator-5d489380-554f-41ca-94a6-9a39839c5082.webp",
+      "alt": "Cúp tiktok"
     },
     {
       "id": "creator-amber",
-      "src": "/api/uploads/why-topmus/creator-a1afd071-ceda-4c06-93c9-da30ed31ec84.webp",
-      "alt": "Creator Live NPC AMBER"
+      "src": "/api/uploads/why-topmus/creator-4beb039c-6c3b-4cfa-aba7-6703d4c5d3a2.webp",
+      "alt": "Cúp tiktok"
     },
     {
       "id": "creator-amber-devil",
-      "src": "/api/uploads/why-topmus/creator-298e2837-78b8-4230-b7b3-6e8bb7d53c55.webp",
-      "alt": "JENNY TRẦN"
+      "src": "/api/uploads/why-topmus/creator-b5a44f8f-0f46-480d-92bc-de8d8d16f5c9.webp",
+      "alt": "Cúp tiktok"
     },
     {
       "id": "793d1290-b4b6-469d-aec7-464def512dae",
-      "src": "/api/uploads/why-topmus/creator-79604497-32f4-4421-ba3e-986b662a8994.webp",
-      "alt": "TRÚC PHƯƠNG"
+      "src": "/api/uploads/why-topmus/creator-a42c2eff-5496-4589-87e5-fee7ff04933d.webp",
+      "alt": "Cúp tiktok"
     },
     {
       "id": "7377c807-08b5-458d-9375-989b944847fd",
-      "src": "/api/uploads/why-topmus/creator-8173c9f9-55c7-427a-87c4-42f25403d6b2.webp",
-      "alt": "TINA TRANG"
+      "src": "/api/uploads/why-topmus/creator-1891db24-7d7b-48eb-be98-50eb4b8e4a00.webp",
+      "alt": "Cúp tiktok"
+    },
+    {
+      "id": "fdfcc076-dc8f-498a-9e8c-a65c2bb38111",
+      "src": "/api/uploads/why-topmus/creator-ac8c097e-23ff-4d60-b614-1b762362262e.webp",
+      "alt": "Cúp tiktok"
+    },
+    {
+      "id": "5cddaba5-bbb3-40a1-b036-2d9da944d83c",
+      "src": "/api/uploads/why-topmus/creator-69990ef7-114f-4220-8cc3-571569633387.webp",
+      "alt": "Cúp tiktok"
     }
   ],
   "trainingSlides": [
     {
       "id": "training-chon-vibe",
-      "src": "/api/uploads/seven-day-training/step-6865ecc1-3e25-48cb-a96e-12d61ab00265.webp",
-      "alt": "Hỗ trợ kỹ thuật"
+      "src": "/api/uploads/why-topmus/training-4f71bbeb-9fc2-42d5-af0b-c332d5fc13e1.webp",
+      "alt": "Skyled"
     },
     {
       "id": "training-xay-dung-hieu-ung",
-      "src": "/api/uploads/seven-day-training/step-d504127c-6540-4e7b-b635-86ecaea05b81.webp",
-      "alt": "Hỗ trợ kỹ thuật"
+      "src": "/api/uploads/why-topmus/training-a3cb679f-2827-46ab-ba95-e941b72ddd0c.webp",
+      "alt": "Skyled"
     },
     {
       "id": "training-tap-luyen",
-      "src": "/api/uploads/seven-day-training/step-90577459-cb32-47c5-9996-9eaf21d96924.webp",
-      "alt": "Đào tạo kỹ năng"
+      "src": "/api/uploads/why-topmus/training-68814bfa-c513-4fa8-b681-9b4da659b65e.webp",
+      "alt": "Skyled"
     },
     {
       "id": "training-quay-bien-hinh",
-      "src": "/api/uploads/seven-day-training/step-29540b73-3f62-4bd4-b0d3-5996cd45c9bc.webp",
-      "alt": "Thiết bị hiện đại"
-    },
-    {
-      "id": "5c92da0e-9212-41e1-969b-58f13fffd0da",
-      "src": "/api/uploads/why-topmus/training-b7730ebb-fca1-4da6-b42e-02b7d2d317b6.webp",
-      "alt": "Hỗ trợ kỹ thuật"
-    },
-    {
-      "id": "922d049f-15b3-4a46-9b1e-03ee850b36bf",
-      "src": "/api/uploads/why-topmus/training-12d6c702-3b1d-4149-9714-f5878895de99.webp",
-      "alt": "Hỗ trợ makeup"
+      "src": "/api/uploads/why-topmus/training-51887276-84e1-44cb-85c0-4444b08be4f7.webp",
+      "alt": "Skyled"
     }
   ]
 }

@@ -28,8 +28,8 @@
       "platform": "TikTok",
       "contentType": "Video",
       "image": "/api/uploads/npc/creator-797a7f5c-5c9e-427b-aa45-332f589f71b6.webp",
-      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
-      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
+      "tiktokUrl": "https://www.tiktok.com/@rulyy.npc",
+      "videoUrl": "https://www.tiktok.com/@rulyy.npc/video/7679005058033356052"
     },
     {
       "id": "minhanh-npc",
@@ -40,8 +40,8 @@
       "platform": "TikTok",
       "contentType": "Video",
       "image": "/api/uploads/npc/creator-15061797-3b7e-454a-af7b-4235929d5d6b.webp",
-      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
-      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
+      "tiktokUrl": "https://www.tiktok.com/@haazyy.npc",
+      "videoUrl": "https://www.tiktok.com/@haazyy.npc/video/7673690146998406407"
     },
     {
       "id": "linhchii",
@@ -52,20 +52,20 @@
       "platform": "TikTok",
       "contentType": "Video",
       "image": "/api/uploads/npc/creator-be79294c-0966-4a2d-beff-9e15cb916ec2.webp",
-      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
-      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
+      "tiktokUrl": "https://www.tiktok.com/@ember.sc",
+      "videoUrl": "https://www.tiktok.com/@ember.sc/video/7675780747034103061"
     },
     {
       "id": "miyuki",
-      "name": "AMBER DEVIL",
+      "name": "HIAN",
       "categoryId": "cosplay",
       "tag": "Cosplayer",
       "liveTime": "19:30 - 23:30",
       "platform": "TikTok",
       "contentType": "Live",
-      "image": "/api/uploads/npc/creator-20151c7a-eb3d-4ecc-bda0-b8a52d9d563d.webp",
-      "tiktokUrl": "https://www.tiktok.com/@topmusvn",
-      "videoUrl": "https://www.tiktok.com/@topmusvn/video/7666460090676956436?is_from_webapp=1&sender_device=pc"
+      "image": "/api/uploads/npc/creator-c68589f1-1036-402c-a857-28d3b7764186.webp",
+      "tiktokUrl": "https://www.tiktok.com/@hian8668",
+      "videoUrl": "https://www.tiktok.com/@hian8668/video/7649036233963851026"
     }
   ]
 }
