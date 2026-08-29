@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { MessageCircle, Send } from "lucide-react";
 import { type FormEvent, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
@@ -88,7 +89,8 @@ async function collectTrackingData() {
 }
 
 export function ApplicationSection() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const router = useRouter();
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -97,6 +99,7 @@ export function ApplicationSection() {
   function handleFormStart() {
     if (formStarted.current) return;
     formStarted.current = true;
+    router.prefetch("/cam-on");
     trackEvent("form_start", { form_id: "dang-ky-npc" });
   }
 
@@ -187,8 +190,7 @@ export function ApplicationSection() {
         utm_medium: trackingData.utm_medium,
         utm_campaign: trackingData.utm_campaign,
       });
-      setStatus("success");
-      setMessage("Hồ sơ đã được gửi thành công. TOPMUS sẽ sớm liên hệ với bạn!");
+      router.push("/cam-on");
     } catch (error) {
       trackEvent("form_error", { form_id: "dang-ky-npc", error_field: "submit" });
       setStatus("error");
@@ -374,11 +376,7 @@ export function ApplicationSection() {
 
             {message ? (
               <p
-                className={`rounded-md border px-3 py-2.5 text-center text-[10px] font-semibold ${
-                  status === "success"
-                    ? "border-emerald-300/20 bg-emerald-300/10 text-emerald-200"
-                    : "border-red-300/20 bg-red-300/10 text-red-200"
-                }`}
+                className="rounded-md border border-red-300/20 bg-red-300/10 px-3 py-2.5 text-center text-[10px] font-semibold text-red-200"
                 role="status"
               >
                 {message}
