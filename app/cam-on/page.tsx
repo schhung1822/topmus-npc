@@ -73,7 +73,7 @@ export default function ThankYouPage() {
             creaseShading={0.62}
             duration={0.72}
             ease="power3.out"
-            fontSize="clamp(2.3rem, 7vw, 4.9rem)"
+            fontSize="clamp(2rem, 7vw, 4.9rem)"
             fontWeight={700}
             hinge="top"
             perspective={760}
