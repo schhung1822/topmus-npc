@@ -22,7 +22,7 @@ export default function ThankYouPage() {
           backgroundColor="#5f057b"
           backgroundGlow={0.85}
           colors={["#ff9ee9", "#f02ad7", "#a86cff", "#ffffff"]}
-          density={0.82}
+          density={0.58}
           dpr={1.1}
           glow={1.15}
           mouseInteraction
@@ -30,7 +30,7 @@ export default function ThankYouPage() {
           mouseStrength={0.75}
           opacity={0.92}
           speed={0.72}
-          streakCount={6}
+          streakCount={3}
           streakLength={1.35}
           streakWidth={1.05}
           twinkle={0.82}
@@ -73,13 +73,13 @@ export default function ThankYouPage() {
             creaseShading={0.62}
             duration={0.72}
             ease="power3.out"
-            fontSize="clamp(3.4rem, 12vw, 7.5rem)"
-            fontWeight={900}
+            fontSize="clamp(2.3rem, 7vw, 4.9rem)"
+            fontWeight={700}
             hinge="top"
             perspective={760}
             splitBy="char"
             stagger={0.075}
-            text="Cảm ơn"
+            text="Đăng ký thành công"
             trigger="mount"
           />
         </h1>
