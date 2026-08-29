@@ -53,6 +53,11 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
     const video = phoneVideoRef.current;
     if (!video) return;
 
+    video.defaultMuted = true;
+    video.muted = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+
     let isVideoInView = false;
 
     const syncPlayback = () => {
@@ -73,11 +78,17 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
     );
 
     observer.observe(video);
+    video.addEventListener("canplay", syncPlayback);
     document.addEventListener("visibilitychange", syncPlayback);
+    document.addEventListener("pointerdown", syncPlayback, { passive: true });
+    window.addEventListener("pageshow", syncPlayback);
 
     return () => {
       observer.disconnect();
+      video.removeEventListener("canplay", syncPlayback);
       document.removeEventListener("visibilitychange", syncPlayback);
+      document.removeEventListener("pointerdown", syncPlayback);
+      window.removeEventListener("pageshow", syncPlayback);
       video.pause();
     };
   }, []);
@@ -138,14 +149,17 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                 <div className="relative aspect-[1/2] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
                   <video
                     ref={phoneVideoRef}
-                    className="absolute inset-0 size-full object-contain object-center"
+                    className="software-phone-video pointer-events-none absolute inset-0 size-full object-contain object-center"
                     aria-label="Video giới thiệu TOPMUS trong màn hình điện thoại"
                     poster="/img/phone-bg.webp"
+                    autoPlay
+                    controls={false}
                     muted
                     loop
                     playsInline
                     preload="metadata"
                     disablePictureInPicture
+                    disableRemotePlayback
                   >
                     <source src="/video/npcloop.mp4" type="video/mp4" />
                   </video>

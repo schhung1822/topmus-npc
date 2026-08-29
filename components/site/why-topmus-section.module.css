@@ -78,7 +78,7 @@
 .achievementCard {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3/4;
   margin: 0;
   overflow: hidden;
   background:

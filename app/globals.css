@@ -164,6 +164,14 @@
   }
 }
 
+.software-phone-video::-webkit-media-controls,
+.software-phone-video::-webkit-media-controls-enclosure,
+.software-phone-video::-webkit-media-controls-panel,
+.software-phone-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -12,6 +12,11 @@ export function RecruitmentVideo() {
       return;
     }
 
+    video.defaultMuted = true;
+    video.muted = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+
     let isInView = false;
 
     const syncPlayback = () => {
@@ -32,11 +37,17 @@ export function RecruitmentVideo() {
     );
 
     observer.observe(video);
+    video.addEventListener("canplay", syncPlayback);
     document.addEventListener("visibilitychange", syncPlayback);
+    document.addEventListener("pointerdown", syncPlayback, { passive: true });
+    window.addEventListener("pageshow", syncPlayback);
 
     return () => {
       observer.disconnect();
+      video.removeEventListener("canplay", syncPlayback);
       document.removeEventListener("visibilitychange", syncPlayback);
+      document.removeEventListener("pointerdown", syncPlayback);
+      window.removeEventListener("pageshow", syncPlayback);
       video.pause();
     };
   }, []);
@@ -46,6 +57,7 @@ export function RecruitmentVideo() {
       ref={videoRef}
       aria-label="Video giới thiệu TOPMUS Entertainment"
       className="aspect-[9/16] max-h-[680px] w-full max-w-[382px] rounded-[24px] border border-white/25 bg-black object-contain shadow-[0_24px_70px_rgba(17,0,28,0.38),0_0_34px_rgba(241,0,220,0.2)]"
+      autoPlay
       controls
       muted
       playsInline
