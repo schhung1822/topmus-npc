@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   allowsAutomaticInlinePlayback,
+  isZaloAppleMobileWebView,
   prepareInlineVideo,
 } from "@/lib/inline-video-playback";
 import { SharedTicker } from "./shared-ticker";
@@ -35,6 +36,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
   const sectionRef = useRef<HTMLElement>(null);
   const phoneVideoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showPhoneVideoControls, setShowPhoneVideoControls] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -58,6 +60,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
     if (!video) return;
 
     prepareInlineVideo(video);
+    setShowPhoneVideoControls(isZaloAppleMobileWebView());
 
     if (!allowsAutomaticInlinePlayback()) {
       video.autoplay = false;
@@ -156,17 +159,17 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                 <div className="relative aspect-[1/2] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
                   <video
                     ref={phoneVideoRef}
-                    className="software-phone-video pointer-events-none absolute inset-0 size-full object-contain object-center"
+                    className={`${showPhoneVideoControls ? "" : "software-phone-video pointer-events-none"} absolute inset-0 size-full object-contain object-center`}
                     aria-label="Video giới thiệu TOPMUS trong màn hình điện thoại"
                     poster="/img/phone-bg.webp"
-                    controls={false}
+                    controls={showPhoneVideoControls}
                     muted
                     loop
                     playsInline
                     preload="metadata"
                     disablePictureInPicture
                     disableRemotePlayback
-                    tabIndex={-1}
+                    tabIndex={showPhoneVideoControls ? undefined : -1}
                   >
                     <source src="/video/npcloop.mp4" type="video/mp4" />
                   </video>

@@ -7,12 +7,16 @@ export function prepareInlineVideo(video: HTMLVideoElement) {
   video.setAttribute("webkit-playsinline", "true");
 }
 
+export function isZaloAppleMobileWebView(userAgent = navigator.userAgent) {
+  return /zalo/i.test(userAgent) && /iPad|iPhone|iPod/i.test(userAgent);
+}
+
 export function allowsAutomaticInlinePlayback() {
   const userAgent = navigator.userAgent;
-  const isZaloWebView = /zalo/i.test(userAgent);
   const isAppleMobile = /iPad|iPhone|iPod/i.test(userAgent);
+  const isZaloOnAppleMobile = isZaloAppleMobileWebView(userAgent);
   const isIosWebView = isAppleMobile && /AppleWebKit/i.test(userAgent) && !/Safari/i.test(userAgent);
   const reportsInlinePlayback = window.matchMedia("(-webkit-video-playable-inline)").matches;
 
-  return !isZaloWebView && !isIosWebView && (!isAppleMobile || reportsInlinePlayback);
+  return !isZaloOnAppleMobile && !isIosWebView && (!isAppleMobile || reportsInlinePlayback);
 }
