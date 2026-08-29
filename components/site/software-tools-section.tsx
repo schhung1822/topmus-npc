@@ -138,7 +138,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                 <div className="relative aspect-[1/2] overflow-hidden rounded-[38px] border-[7px] border-[#21102f] bg-[#170525] shadow-[0_0_0_2px_rgba(234,205,255,0.54),0_28px_48px_rgba(24,0,40,0.56)]">
                   <video
                     ref={phoneVideoRef}
-                    className="absolute inset-0 size-full object-cover object-center"
+                    className="absolute inset-0 size-full object-contain object-center"
                     aria-label="Video giới thiệu TOPMUS trong màn hình điện thoại"
                     poster="/img/phone-bg.webp"
                     muted
@@ -147,7 +147,7 @@ export function SoftwareToolsSection({ tickerItems }: { tickerItems: string[] })
                     preload="metadata"
                     disablePictureInPicture
                   >
-                    <source src="/video/gioithieu.mp4" type="video/mp4" />
+                    <source src="/video/npcloop.mp4" type="video/mp4" />
                   </video>
                   <div
                     className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(31,0,58,0.28)_0%,rgba(75,0,118,0.08)_28%,transparent_62%,rgba(26,0,49,0.42)_100%)]"

@@ -14,7 +14,7 @@ const benefits = [
     ),
   },
   {
-    icon: "/img/icon2.webp",
+    icon: "/img/icon-camera.webp",
     alt: "Biểu tượng studio livestream",
     content: (
       <>
@@ -23,7 +23,7 @@ const benefits = [
     ),
   },
   {
-    icon: "/img/icon3.webp",
+    icon: "/img/icon-user.webp",
     alt: "Biểu tượng mentor",
     content: (
       <>

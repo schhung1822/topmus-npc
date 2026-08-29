@@ -10,35 +10,35 @@
       "name": "NPC BADDIE",
       "tagline": "NPC BADDIE",
       "description": "Cá tính, lạnh lùng và đầy cuốn hút. Phù hợp NPC ngầu, tương tác mạnh và có chất “bad girl energy”.",
-      "image": "/api/uploads/npc-model/card-576bb9d8-abb5-488d-8487-35400d63f25f.webp"
+      "image": "/api/uploads/npc-model/card-69bcc1b7-ea92-4f9f-8822-da1f6d9af8fa.webp"
     },
     {
       "id": "npc-cosplay",
       "name": "NPC RACER",
       "tagline": "NPC RACER",
       "description": "Năng động, tự tin và luôn thích dẫn đầu. Phù hợp NPC cá tính, phản ứng nhanh và mang tinh thần cạnh tranh đầy nhiệt huyết.",
-      "image": "/api/uploads/npc-model/card-d76e3651-9408-4195-a2e2-636876176f23.webp"
+      "image": "/api/uploads/npc-model/card-9d826c5a-a2bd-4a7e-bcda-bc419934a0d6.webp"
     },
     {
       "id": "npc-online",
       "name": "NPC SAILOR",
       "tagline": "NPC SAILOR",
       "description": "Thanh lịch, tinh nghịch và có chút kiêu kỳ. Phù hợp NPC đáng yêu, lanh lợi và mang nét cổ điển đầy duyên dáng.",
-      "image": "/api/uploads/npc-model/card-452129ca-7a6b-404b-9073-c5846f999f5e.webp"
+      "image": "/api/uploads/npc-model/card-05e92c54-964c-4e5c-bdfb-fd256e48fad5.webp"
     },
     {
       "id": "npc-studio",
       "name": "NPC ANGEL",
       "tagline": "NPC ANGEL",
       "description": "Dịu dàng, trong trẻo và đầy mộng mơ. Phù hợp NPC ngọt ngào, ấm áp và mang năng lượng chữa lành.",
-      "image": "/api/uploads/npc-model/card-87a25f23-e142-4f74-97e7-020029662363.webp"
+      "image": "/api/uploads/npc-model/card-176ebbbd-438d-46b2-bcea-a5349c8a396c.webp"
     },
     {
       "id": "npc-performance",
       "name": "NPC VAMP",
       "tagline": "NPC VAMP",
       "description": "Bí ẩn, quyến rũ và có chút nguy hiểm. Phù hợp NPC táo bạo, tinh quái và sở hữu sức hút khó cưỡng.",
-      "image": "/api/uploads/npc-model/card-bcff7ef9-1eba-4530-94cd-d39e1bb8cd60.webp"
+      "image": "/api/uploads/npc-model/card-f2663258-62d8-4131-b0e8-0b14677c7ab3.webp"
     }
   ]
 }

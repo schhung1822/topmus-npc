@@ -12,7 +12,7 @@ const painPoints = [
         Nhàm chán với live nhóm, chạy KPI áp lực, thu nhập không đạt mong muốn
       </>
     ),
-    icon: "/img/icon.mess.webp",
+    icon: "/img/day7.webp",
     position: "lg:absolute lg:top-0 lg:left-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(-4deg)_rotateY(20deg)]",
     animation: "animate-pain-float",
@@ -34,7 +34,7 @@ const painPoints = [
         Không được đào tạo, không có công cụ, phần mền chuyên dụng - ekip hỗ trợ
       </>
     ),
-    icon: "/img/icon3.webp",
+    icon: "/img/icon-user.webp",
     position: "lg:absolute lg:bottom-0 lg:left-0",
     rotation: "lg:[transform:perspective(900px)_translateZ(0px)_rotateX(2deg)_rotateY(24deg)]",
     animation: "animate-pain-float-reverse",
@@ -144,7 +144,7 @@ export function PainPointsSection() {
                     <div className="relative mx-auto">
                       <PainPointIcon src={painPoint.icon} />
                     </div>
-                    <h3 className="relative mt-1 text-[clamp(16px,3vw,22px)] leading-[27px] font-bold tracking-[-0.035em] text-white [text-shadow:0_2px_5px_rgba(94,0,111,0.26)] lg:h-[114px] lg:text-[22px]">
+                    <h3 className="relative mt-1 text-[clamp(15px,3vw,22px)] leading-[22px] sm:leading-[27px] font-bold tracking-[-0.035em] text-white [text-shadow:0_2px_5px_rgba(94,0,111,0.26)] lg:h-[114px] lg:text-[22px]">
                       {painPoint.title}
                     </h3>
                   </article>
