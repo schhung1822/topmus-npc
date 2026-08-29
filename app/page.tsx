@@ -16,6 +16,7 @@ import { PainPointsSection } from "@/components/site/pain-points-section";
 import { FloatingContactActions } from "@/components/site/floating-contact-actions";
 import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { SiteAnalytics } from "@/components/site/site-analytics";
+import { CommunityPopup } from "@/components/site/community-popup";
 import { getNpcSectionContent } from "@/lib/npc-content";
 import { getNpcIntroContent } from "@/lib/npc-intro-content";
 import { getNpcModelContent } from "@/lib/npc-model-content";
@@ -73,6 +74,7 @@ export default async function Home() {
 
       <SiteFooter />
       <FloatingContactActions />
+      <CommunityPopup />
 
       {/* Chỉ gắn Google Analytics cho landing page, không theo dõi khu vực /admin. */}
       <GoogleAnalytics analyticsId={seo.googleAnalyticsId} />
